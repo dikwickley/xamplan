@@ -20,3 +20,7 @@ Step18: Buy domain and mail
 Step19: Go Live!
  
 
+
+ more:
+ Remember to add email and password error in the alert
+

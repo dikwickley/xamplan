@@ -86,7 +86,7 @@ def sendCsvToMongo(filename):
         document[subject].append(rec)
 
     syllabus = db['syllabus']
-    x = syllabus.insert_one({ "GME" : document })
+    x = syllabus.insert_one({"exam": "GME", "GME" : document })
     print(x)
 
 #sendCsvToMongo('./syllabus/gateme.csv')

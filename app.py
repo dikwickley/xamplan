@@ -9,6 +9,36 @@ import algo
 from bson import Binary, Code
 from bson.json_util import dumps
 
+#------------------------------------Algorithm Funcitons Begins
+
+	#Increasing
+def increasing_curve(number_of_weeks, number_of_topics):
+	print(increasing_curve)
+	increasing_distribution = algo.getDistribution(weeks=number_of_weeks, topics=number_of_topics)
+	increasing_distribution.reverse()
+	return increasing_distribution
+
+#Increasing
+def decreasing_curve(number_of_weeks, number_of_topics):
+	print("decreasing_curve")
+	decreasing_distribution = algo.getDistribution(weeks=number_of_weeks, topics=number_of_topics)
+	return decreasing_distribution
+
+def nonlinear_curve(number_of_weeks, number_of_topics):
+	print("nonlinear_curve")
+	time_half1 = int(number_of_weeks / 2)	#apply increasing
+	topics_half1 = int(number_of_topics/2)
+	time_half2 = number_of_weeks - time_half1		#apply decreasing
+	topics_half2 =  number_of_topics - topics_half1
+	distribution_half1 = increasing_curve(time_half1,topics_half1)
+	distribution_half2 = decreasing_curve(time_half2,topics_half2)
+	(distribution_half1).extend(distribution_half2)
+	nonlinear_distribution = distribution_half1
+	return nonlinear_distribution
+
+
+#------------------------------------Algorithm Funcitons Ends
+
 #..................................Global Funcitons
 
 month_list = ['january', 'febuary', 'march', 'april', 'may', 'june', 'july','august','september','october','novermber','december']
@@ -18,7 +48,7 @@ month_list = ['january', 'febuary', 'march', 'april', 'may', 'june', 'july','aug
 
 #returns the list of all the topics for a particular exam
 def allTopicList(exam):
-	print(exam)
+	
 	all_topics = {}
 	data =  mongo.db.syllabus.find_one({'exam': exam})
 	for key in data[exam]:
@@ -31,9 +61,9 @@ def allTopicList(exam):
 #returns the codes for all the topics for a particular exam
 def allTopicCode(exam):
 	all_topics = [] 
-	data = mongo.db.syllabus.find_one()[exam]
-	for key in data:
-		subject_topics = data[key]
+	data = mongo.db.syllabus.find_one({'exam': exam})
+	for key in data[exam]:
+		subject_topics = data[exam][key]
 		for topic in subject_topics:
 			all_topics.append(topic[0])
 	return all_topics
@@ -89,17 +119,23 @@ def getPlan(target_year,curve,topic_list,revision):
 	#the function has to be made dynamic
 
 	if  curve == 'linear':
-		function_curve = linear_curve
+		hard_distribution = linear_curve(total_weeks, (revision+1)*len(sorted_topics[0]))
+		medium_distribution = linear_curve(total_weeks, (revision+1)*len(sorted_topics[1]))
+		easy_distribution = linear_curve(total_weeks, (revision+1)*len(sorted_topics[2]))
 	elif curve == 'increasing':
-		function_curve = increasing_curve
+		hard_distribution = increasing_curve(total_weeks, (revision+1)*len(sorted_topics[0]))
+		medium_distribution = increasing_curve(total_weeks, (revision+1)*len(sorted_topics[1]))
+		easy_distribution = increasing_curve(total_weeks, (revision+1)*len(sorted_topics[2]))
 	elif curve == 'decreasing':
-		function_curve =  decreasing_curve
+		hard_distribution = decreasing_curve(total_weeks, (revision+1)*len(sorted_topics[0]))
+		medium_distribution = decreasing_curve(total_weeks, (revision+1)*len(sorted_topics[1]))
+		easy_distribution = decreasing_curve(total_weeks, (revision+1)*len(sorted_topics[2]))
 	else:
-		function_curve = nonlinear_curve
+		hard_distribution = nonlinear_curve(total_weeks, (revision+1)*len(sorted_topics[0]))
+		medium_distribution = nonlinear_curve(total_weeks, (revision+1)*len(sorted_topics[1]))
+		easy_distribution = nonlinear_curve(total_weeks, (revision+1)*len(sorted_topics[2]))
 
-	hard_distribution = function_curve(total_weeks, (revision+1)*len(sorted_topics[0]))
-	medium_distribution = function_curve(total_weeks, (revision+1)*len(sorted_topics[1]))
-	easy_distribution = function_curve(total_weeks, (revision+1)*len(sorted_topics[2]))
+
 
 	print('hard: ',hard_distribution)
 	print('med: ',medium_distribution)
@@ -129,11 +165,16 @@ def getPlan(target_year,curve,topic_list,revision):
 	#current month is already filled as it may not have all four weeks
 
 	year = current_year
+	times = 0
 	for x in range(current_month+1,month_left + current_month + 1):
 		if(x%13 == 0 ):
 			year +=1
-		if(x>12):
+		if(x>12 and x<=24):
 			plan_month = month_list[x - 12 -1]+'_'+str(year)
+		elif (x>24 and x<=36):
+			plan_month = month_list[x - 24 -1]+'_'+str(year)
+		elif (x>48 and x<=60):
+			plan_month = month_list[x - 48 -1]+'_'+str(year)
 		else:
 			plan_month = month_list[x -1]+'_'+str(year)
 		print(plan_month)
@@ -161,35 +202,7 @@ def getPlan(target_year,curve,topic_list,revision):
 
 #....................................Global Funcitons Ends
 
-#------------------------------------Algorithm Funcitons Begins
 
-	#Increasing
-def increasing_curve(number_of_weeks, number_of_topics):
-	print(increasing_curve)
-	increasing_distribution = algo.getDistribution(weeks=number_of_weeks, topics=number_of_topics)
-	increasing_distribution.reverse()
-	return increasing_distribution
-
-#Increasing
-def decreasing_curve(number_of_weeks, number_of_topics):
-	print("decreasing_curve")
-	decreasing_distribution = algo.getDistribution(weeks=number_of_weeks, topics=number_of_topics)
-	return decreasing_distribution
-
-def nonlinear_curve(number_of_weeks, number_of_topics):
-	print("nonlinear_curve")
-	time_half1 = int(number_of_weeks / 2)	#apply increasing
-	topics_half1 = int(number_of_topics/2)
-	time_half2 = number_of_weeks - time_half1		#apply decreasing
-	topics_half2 =  number_of_topics - topics_half1
-	distribution_half1 = increasing_curve(time_half1,topics_half1)
-	distribution_half2 = decreasing_curve(time_half2,topics_half2)
-	(distribution_half1).extend(distribution_half2)
-	nonlinear_distribution = distribution_half1
-	return nonlinear_distribution
-
-
-#------------------------------------Algorithm Funcitons Ends
 
 
 
@@ -212,7 +225,8 @@ app.permanent_session_lifetime = timedelta(days = 28)
 
 @app.route('/test')
 def test():
-	allTopicList('GME')
+	print(allTopicCode('GCS'))
+
 	return 'this is test'
 
 @app.route('/')
@@ -321,9 +335,9 @@ def handle_login():
 				else:
 					return redirect(url_for('user_config'))
 			else:
-				return "wrong password"
+				return redirect(url_for('login',msg="password_error", **request.args))
 		else:
-			return "No such email account"
+			return redirect(url_for('login',msg="email_error", **request.args))
 	else:
 		return redirect(url_for('login'))
 

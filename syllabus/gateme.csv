@@ -25,7 +25,7 @@ GMEEMDE02,higher order linear differential equations with constant coefficients,
 GMEEMDE03,Euler-Cauchy equation,,Engineering Mathematics ,Differential equations
 GMEEMDE04,initial and boundary value problems,,Engineering Mathematics ,Differential equations
 GMEEMDE05,Laplace transforms,,Engineering Mathematics ,Differential equations
-GMEEMDE06," solutions of heat, wave and Laplace's equations",,Engineering Mathematics ,Differential equations
+GMEEMDE06," solutions of heat, wave and Laplaces equations",,Engineering Mathematics ,Differential equations
 GMEEMCV01,Analytic functions,,Engineering Mathematics ,Complex variables
 GMEEMCV02,Cauchy-Riemann equations,,Engineering Mathematics ,Complex variables
 GMEEMCV03,Cauchy’s integral theorem and integral formula,,Engineering Mathematics ,Complex variables
@@ -47,7 +47,7 @@ GMEMDEM05, impulse and momentum (linear and angular) and energy formulations,, A
 GMEMDEM06,collisions,, Applied Mechanics and Design ,Engineering Mechanics
 GMEMDMM01,Stress and strain,, Applied Mechanics and Design ,Mechanics of Materials
 GMEMDMM02,elastic constants,, Applied Mechanics and Design ,Mechanics of Materials
-GMEMDMM03,Poisson's ratio,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM03,Poissons ratio,, Applied Mechanics and Design ,Mechanics of Materials
 GMEMDMM04,Mohr’s circle for plane stress and plane strain,, Applied Mechanics and Design ,Mechanics of Materials
 GMEMDMM05,thin cylinders,, Applied Mechanics and Design ,Mechanics of Materials
 GMEMDMM06,shear force and bending moment diagrams,, Applied Mechanics and Design ,Mechanics of Materials
@@ -95,7 +95,7 @@ GMEFTHT03,resistance concept and electrical analogy,, Fluid Mechanics and Therma
 GMEFTHT04,heat transfer through fins,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT05,unsteady heat conduction,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT06,lumped parameter system,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
-GMEFTHT07,Heisler's charts,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT07,Heislers charts,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT08,thermal boundary layer,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT09,dimensionless parameters in free and forced convective heat transfer,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT10,heat transfer correlations for flow over flat plates and through pipes,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
@@ -104,7 +104,7 @@ GMEFTHT12,heat exchanger performance,, Fluid Mechanics and Thermal Sciences,Heat
 GMEFTHT13,LMTD and NTU methods,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT14,radiative heat transfer,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT15,Stefan- Boltzmann law,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
-GMEFTHT16,Wien's displacement law,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT16,Wiens displacement law,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT17,black and grey surfaces,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT18,view factors,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
 GMEFTHT19,radiation network analysis,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
@@ -173,4 +173,3 @@ GMEMIOR04,assignment,,"Materials, Manufacturing and Industrial Engineering",Oper
 GMEMIOR05,network flow models,,"Materials, Manufacturing and Industrial Engineering",Operations Research
 GMEMIOR06,simple queuing models,,"Materials, Manufacturing and Industrial Engineering",Operations Research
 GMEMIOR07,PERT and CPM. ,,"Materials, Manufacturing and Industrial Engineering",Operations Research
-, ,,,

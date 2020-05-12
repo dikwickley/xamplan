@@ -1,0 +1,22 @@
+Step1: Decide Datastorage									[done]
+Step2: Write the algorithm 									[done]
+Step3: Make Create User functionality						[done]
+Step4: Find the learning curve function 					[not needed, it will be basic]
+Step5: Collect Data(cs,me,civil,el,ec)						[done only cs,me for now]
+Step6: Config Plan Page 									[done]
+Step7: Integrate the algorithm								[done]
+Step8: Make individual user tables							[done]
+Step9: Make Login											[done]
+Step10: Make Account page 									[done]
+Step11: Fetch data to account page 							[done]
+Step12: Display data to account Page 						[partially done, has to display names]
+step13: Add Chart
+step14: Add Motivation Changer
+Step14: Add the point system
+Step15: Add More info
+Step16: Make feedback form
+Step17: Finish Up the front end (footer, cookie warning, etc) 
+Step18: Buy domain and mail
+Step19: Go Live!
+ 
+

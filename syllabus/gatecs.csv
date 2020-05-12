@@ -1,0 +1,96 @@
+GCSEMDM01,Propositional and first order logic,,Engineering Mathematics,Discrete Mathematics
+GCSEMDM02,Sets,,Engineering Mathematics,Discrete Mathematics
+GCSEMDM03,relations,,Engineering Mathematics,Discrete Mathematics
+GCSEMDM04,functions,,Engineering Mathematics,Discrete Mathematics
+GCSEMDM05,partial orders,,Engineering Mathematics,Discrete Mathematics
+GCSEMDM06,lattices,,Engineering Mathematics,Discrete Mathematics
+GCSEMDM07,Groups,,Engineering Mathematics,Discrete Mathematics
+GCSEMDM08,"Graphs: connectivity, matching, coloring",,Engineering Mathematics,Discrete Mathematics
+GCSEMDM09,"Combinatorics: counting, recurrence relations, generating functions",,Engineering Mathematics,Discrete Mathematics
+GCSEMLA10,Matrices,,Engineering Mathematics,Linear Algebra
+GCSEMLA11,determinants,,Engineering Mathematics,Linear Algebra
+GCSEMLA12,system of linear equations,,Engineering Mathematics,Linear Algebra
+GCSEMLA13,eigenvalues and eigenvectors,,Engineering Mathematics,Linear Algebra
+GCSEMLA14,LU decomposition.,,Engineering Mathematics,Linear Algebra
+GCSEMCL15,Limits,,Engineering Mathematics,Calculus
+GCSEMCL16,continuity,,Engineering Mathematics,Calculus
+GCSEMCL17,differentiability,,Engineering Mathematics,Calculus
+GCSEMCL18,Maxima and minima,,Engineering Mathematics,Calculus
+GCSEMCL19,Mean value theorem,,Engineering Mathematics,Calculus
+GCSEMCL20,Integration,,Engineering Mathematics,Calculus
+GCSEMPB21,Random variables,,Engineering Mathematics,Probability
+GCSEMPB22,Uniform and normal Distribution,,Engineering Mathematics,Probability
+GCSEMPB23,"exponential, poisson and binomial distributions",,Engineering Mathematics,Probability
+GCSEMPB24,Mean and median,,Engineering Mathematics,Probability
+GCSEMPB25,mode and standard deviation,,Engineering Mathematics,Probability
+GCSEMPB26,Conditional probability,,Engineering Mathematics,Probability
+GCSEMPB27,Bayes theorem.,,Engineering Mathematics,Probability
+GCSDLoo01,Boolean algebra,,Digital Logic,None
+GCSDLoo02,Combinational and sequential circuits,,Digital Logic,None
+GCSDLoo03,Minimization,,Digital Logic,None
+GCSDLoo04,Number representations,,Digital Logic,None
+GCSDLoo05,computer arithmetic (fixed and floating point),,Digital Logic,None
+GCSOAoo01,Machine instructions and addressing modes,,Computer Organization and Architecture,None
+GCSOAoo02,ALU,,Computer Organization and Architecture,None
+GCSOAoo03,data?path and control unit,,Computer Organization and Architecture,None
+GCSOAoo04,Instruction pipelining,,Computer Organization and Architecture,None
+GCSOAoo05,"Memory hierarchy: cache, main memory and secondary storage",,Computer Organization and Architecture,None
+GCSOAoo06,I/O interface (interrupt and DMA mode),,Computer Organization and Architecture,None
+GCSDSoo01,Programming in C,,Programming and Data Structures,None
+GCSDSoo02,recurrenceursion,,Programming and Data Structures,None
+GCSDSoo03,Arrays,,Programming and Data Structures,None
+GCSDSoo04,stacks,,Programming and Data Structures,None
+GCSDSoo05,queues,,Programming and Data Structures,None
+GCSDSoo06,linked lists,,Programming and Data Structures,None
+GCSDSoo07,trees,,Programming and Data Structures,None
+GCSDSoo08,binary search trees,,Programming and Data Structures,None
+GCSDSoo09,binary heaps,,Programming and Data Structures,None
+GCSDSoo10,graphs.,,Programming and Data Structures,None
+GCSALoo01,Searching,,Algorithms,None
+GCSALoo02,sorting,,Algorithms,None
+GCSALoo03,hashing,,Algorithms,None
+GCSALoo04,Asymptotic worst case time and space complexity,,Algorithms,None
+GCSALoo05,"Algorithm design techniques: greedy, dynamic programming and divide?and?conquer",,Algorithms,None
+GCSALoo06,Graph search,,Algorithms,None
+GCSALoo07,Minimum spanning trees,,Algorithms,None
+GCSALoo08,Shortest paths,,Algorithms,None
+GCSTCoo01,Regular expressions and finite automata,,Theory of Computation,None
+GCSTCoo02,Context-free grammars and push-down automata,,Theory of Computation,None
+GCSTCoo03,Regular and contex-free languages,,Theory of Computation,None
+GCSTCoo04,pumping lemma,,Theory of Computation,None
+GCSTCoo05,Turing machines,,Theory of Computation,None
+GCSTCoo06,undecidability,,Theory of Computation,None
+GCSCDoo01,Lexical analysis,,Compiler Design,None
+GCSCDoo02,parsing,,Compiler Design,None
+GCSCDoo03,syntax-directed translation,,Compiler Design,None
+GCSCDoo04,Runtime environments,,Compiler Design,None
+GCSCDoo05,Intermediate code generation,,Compiler Design,None
+GCSOSoo01,Processes,,Operating System,None
+GCSOSoo02,threads,,Operating System,None
+GCSOSoo03,inter?process communication,,Operating System,None
+GCSOSoo04,concurrency and synchronization,,Operating System,None
+GCSOSoo05,Deadlock,,Operating System,None
+GCSOSoo06,CPU scheduling,,Operating System,None
+GCSOSoo07,Memory management and virtual memory,,Operating System,None
+GCSOSoo08,File systems,,Operating System,None
+GCSDBoo01,ER?mode,,Databases,None
+GCSDBoo02,"Relational model: relational algebra, tuple calculus, SQL",,Databases,None
+GCSDBoo03,Integrity constraints,,Databases,None
+GCSDBoo04,normal forms,,Databases,None
+GCSDBoo05,File organization,,Databases,None
+GCSDBoo06,"indexing (e.g., B and B+ trees)",,Databases,None
+GCSDBoo07,Transactions and concurrency control,,Databases,None
+GCSCNoo01,Concept of layering,,Computer Networks,None
+GCSCNoo02,LAN technologies (Ethernet),,Computer Networks,None
+GCSCNoo03,Flow and error control techniques,,Computer Networks,None
+GCSCNoo04,switching,,Computer Networks,None
+GCSCNoo05,IPv4/IPv6,,Computer Networks,None
+GCSCNoo06,"routers and routing algorithms (distance vector, link state)",,Computer Networks,None
+GCSCNoo07,TCP/UDP and sockets,,Computer Networks,None
+GCSCNoo08,congestion control,,Computer Networks,None
+GCSCNoo09,"Application layer protocols (DNS, SMTP, POP, FTP, HTTP)",,Computer Networks,None
+GCSCNoo10,Basics of Wi-Fi,,Computer Networks,None
+GCSCNoo11,Network security: authentication,,Computer Networks,None
+GCSCNoo12,basics of public key and private key cryptography,,Computer Networks,None
+GCSCNoo13,digital signatures and certificates,,Computer Networks,None
+GCSCNoo14,firewalls,,Computer Networks,None

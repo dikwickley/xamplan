@@ -1,0 +1,176 @@
+GMEEMLA01,Matrix algebra,,Engineering Mathematics ,Linear Algebra
+GMEEMLA02,systems of linear equations,,Engineering Mathematics ,Linear Algebra
+GMEEMLA03,eigenvalues and eigenvectors,,Engineering Mathematics ,Linear Algebra
+GMEEMCA01,Functions of single variable,,Engineering Mathematics ,Calculus
+GMEEMCA02,limit,,Engineering Mathematics ,Calculus
+GMEEMCA03,continuity and differentiability,,Engineering Mathematics ,Calculus
+GMEEMCA04,mean value theorems,,Engineering Mathematics ,Calculus
+GMEEMCA05,indeterminate forms,,Engineering Mathematics ,Calculus
+GMEEMCA06,evaluation of definite and improper integrals,,Engineering Mathematics ,Calculus
+GMEEMCA07,double and triple integrals,,Engineering Mathematics ,Calculus
+GMEEMCA08,partial derivatives,,Engineering Mathematics ,Calculus
+GMEEMCA09,total derivative,,Engineering Mathematics ,Calculus
+GMEEMCA10,Taylor series (in one and two variables),,Engineering Mathematics ,Calculus
+GMEEMCA11,maxima and minima,,Engineering Mathematics ,Calculus
+GMEEMCA12,Fourier series,,Engineering Mathematics ,Calculus
+GMEEMCA13,gradient,,Engineering Mathematics ,Calculus
+GMEEMCA14,divergence and curl,,Engineering Mathematics ,Calculus
+GMEEMCA15,vector identities,,Engineering Mathematics ,Calculus
+GMEEMCA16,directional derivatives,,Engineering Mathematics ,Calculus
+GMEEMCA17,line,,Engineering Mathematics ,Calculus
+GMEEMCA18,surface and volume integrals,,Engineering Mathematics ,Calculus
+GMEEMCA19,"applications of Gauss, Stokes and Green’s theorems",,Engineering Mathematics ,Calculus
+GMEEMDE01,First order equations (linear and nonlinear),,Engineering Mathematics ,Differential equations
+GMEEMDE02,higher order linear differential equations with constant coefficients,,Engineering Mathematics ,Differential equations
+GMEEMDE03,Euler-Cauchy equation,,Engineering Mathematics ,Differential equations
+GMEEMDE04,initial and boundary value problems,,Engineering Mathematics ,Differential equations
+GMEEMDE05,Laplace transforms,,Engineering Mathematics ,Differential equations
+GMEEMDE06," solutions of heat, wave and Laplace's equations",,Engineering Mathematics ,Differential equations
+GMEEMCV01,Analytic functions,,Engineering Mathematics ,Complex variables
+GMEEMCV02,Cauchy-Riemann equations,,Engineering Mathematics ,Complex variables
+GMEEMCV03,Cauchy’s integral theorem and integral formula,,Engineering Mathematics ,Complex variables
+GMEEMCV04,Taylor and Laurent series,,Engineering Mathematics ,Complex variables
+GMEEMPS01,Definitions of probability,,Engineering Mathematics ,Probability and Statistics
+GMEEMPS02,sampling theorems,,Engineering Mathematics ,Probability and Statistics
+GMEEMPS03,conditional probability,,Engineering Mathematics ,Probability and Statistics
+GMEEMPS04,"mean, median, mode and standard deviation",,Engineering Mathematics ,Probability and Statistics
+GMEEMPS05, random variables,,Engineering Mathematics ,Probability and Statistics
+GMEEMPS06,"binomial, Poisson and normal distributions",,Engineering Mathematics ,Probability and Statistics
+GMEEMNM01, Numerical solutions of linear and non-linear algebraic equations,,Engineering Mathematics ,Numerical Methods
+GMEEMNM02,integration by trapezoidal and Simpson’s rules,,Engineering Mathematics ,Numerical Methods
+GMEEMNM03, single and multi-step methods for differential equations,,Engineering Mathematics ,Numerical Methods
+GMEMDEM01,Free-body diagrams and equilibrium,, Applied Mechanics and Design ,Engineering Mechanics
+GMEMDEM02,trusses and frames,, Applied Mechanics and Design ,Engineering Mechanics
+GMEMDEM03,virtual work,, Applied Mechanics and Design ,Engineering Mechanics
+GMEMDEM04,kinematics and dynamics of particles and of rigid bodies in plane motion,, Applied Mechanics and Design ,Engineering Mechanics
+GMEMDEM05, impulse and momentum (linear and angular) and energy formulations,, Applied Mechanics and Design ,Engineering Mechanics
+GMEMDEM06,collisions,, Applied Mechanics and Design ,Engineering Mechanics
+GMEMDMM01,Stress and strain,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM02,elastic constants,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM03,Poisson's ratio,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM04,Mohr’s circle for plane stress and plane strain,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM05,thin cylinders,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM06,shear force and bending moment diagrams,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM07,bending and shear stresses,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM08,deflection of beams,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM09,torsion of circular shafts,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM10,Euler’s theory of columns,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM11,energy methods,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM12,thermal stresses,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM13,strain gauges and rosettes,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM14,testing of materials with universal testing machine,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDMM15,testing of hardness and impact strength,, Applied Mechanics and Design ,Mechanics of Materials
+GMEMDTM01,"Displacement, velocity and acceleration analysis of plane mechanisms",, Applied Mechanics and Design ,Theory of Machines
+GMEMDTM02,dynamic analysis of linkages,, Applied Mechanics and Design ,Theory of Machines
+GMEMDTM03,cams,, Applied Mechanics and Design ,Theory of Machines
+GMEMDTM04,gears and gear trains,, Applied Mechanics and Design ,Theory of Machines
+GMEMDTM05,flywheels and governors,, Applied Mechanics and Design ,Theory of Machines
+GMEMDTM06,balancing of reciprocating and rotating masses,, Applied Mechanics and Design ,Theory of Machines
+GMEMDTM07,gyroscope,, Applied Mechanics and Design ,Theory of Machines
+GMEMDVB01,Free and forced vibration of single degree of freedom systems,, Applied Mechanics and Design ,Vibrations
+GMEMDVB02,effect of damping,, Applied Mechanics and Design ,Vibrations
+GMEMDVB03,vibration isolation,, Applied Mechanics and Design ,Vibrations
+GMEMDVB04,resonance,, Applied Mechanics and Design ,Vibrations
+GMEMDVB05,critical speeds of shafts,, Applied Mechanics and Design ,Vibrations
+GMEMDMD01,Design for static and dynamic loading,, Applied Mechanics and Design ,Machine Design
+GMEMDMD02,failure theories,, Applied Mechanics and Design ,Machine Design
+GMEMDMD03,fatigue strength and the S-N diagram,, Applied Mechanics and Design ,Machine Design
+GMEMDMD04,"principles of the design of machine elements such as bolted, riveted and welded joints",, Applied Mechanics and Design ,Machine Design
+GMEMDMD05,"shafts, gears, rolling and sliding contact bearings, brakes and clutches, springs",, Applied Mechanics and Design ,Machine Design
+GMEFTFM01,Fluid properties,, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM02,"fluid statics, manometry, buoyancy, forces on submerged bodies, stability of floating bodies",, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM03,"control-volume analysis of mass, momentum and energy",, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM04,fluid acceleration,, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM05,differential equations of continuity and momentum,, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM06,Bernoulli’s equation,, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM07,dimensional analysis,, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM08,viscous flow of incompressible fluids,, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM09,boundary layer,, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM10,elementary turbulent flow,, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM11,flow through pipes,, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTFM12,"head losses in pipes, bends and fittings",, Fluid Mechanics and Thermal Sciences,Fluid Mechanics
+GMEFTHT01,Modes of heat transfer,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT02,one dimensional heat conduction,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT03,resistance concept and electrical analogy,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT04,heat transfer through fins,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT05,unsteady heat conduction,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT06,lumped parameter system,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT07,Heisler's charts,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT08,thermal boundary layer,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT09,dimensionless parameters in free and forced convective heat transfer,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT10,heat transfer correlations for flow over flat plates and through pipes,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT11,effect of turbulence,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT12,heat exchanger performance,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT13,LMTD and NTU methods,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT14,radiative heat transfer,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT15,Stefan- Boltzmann law,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT16,Wien's displacement law,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT17,black and grey surfaces,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT18,view factors,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTHT19,radiation network analysis,, Fluid Mechanics and Thermal Sciences,Heat-Transfer
+GMEFTTD01,Thermodynamic systems and processes,, Fluid Mechanics and Thermal Sciences,Thermodynamics
+GMEFTTD02,properties of pure substances,, Fluid Mechanics and Thermal Sciences,Thermodynamics
+GMEFTTD03,behavior of ideal and real gases,, Fluid Mechanics and Thermal Sciences,Thermodynamics
+GMEFTTD04,zeroth and first laws of thermodynamics,, Fluid Mechanics and Thermal Sciences,Thermodynamics
+GMEFTTD05,calculation of work and heat in various processes,, Fluid Mechanics and Thermal Sciences,Thermodynamics
+GMEFTTD06,second law of thermodynamics,, Fluid Mechanics and Thermal Sciences,Thermodynamics
+GMEFTTD07,"thermodynamic property charts and tables, availability and irreversibility",, Fluid Mechanics and Thermal Sciences,Thermodynamics
+GMEFTTD08,thermodynamic relations,, Fluid Mechanics and Thermal Sciences,Thermodynamics
+GMEFTPE01,Air and gas compressors,, Fluid Mechanics and Thermal Sciences,Power Engineering Applications
+GMEFTPE02,vapour and gas power cycles,, Fluid Mechanics and Thermal Sciences,Power Engineering Applications
+GMEFTIC01,Air-standard Otto,, Fluid Mechanics and Thermal Sciences,I.C. Engines Applications
+GMEFTIC02,Diesel and dual cycles,, Fluid Mechanics and Thermal Sciences,I.C. Engines Applications
+GMEFTRA01,Vapour and gas refrigeration and heat pump cycles,, Fluid Mechanics and Thermal Sciences,Refrigeration and airconditioning
+GMEFTRA02,properties of moist air,, Fluid Mechanics and Thermal Sciences,Refrigeration and airconditioning
+GMEFTRA03,psychrometric chart,, Fluid Mechanics and Thermal Sciences,Refrigeration and airconditioning
+GMEFTRA04,basic psychrometric processes,, Fluid Mechanics and Thermal Sciences,Refrigeration and airconditioning
+GMEFTTM01,Impulse and reaction principles,, Fluid Mechanics and Thermal Sciences,Turbo machinery
+GMEFTTM02,velocity diagrams,, Fluid Mechanics and Thermal Sciences,Turbo machinery
+GMEFTTM03,Pelton-wheel,, Fluid Mechanics and Thermal Sciences,Turbo machinery
+GMEFTTM04,Francis and Kaplan turbines,, Fluid Mechanics and Thermal Sciences,Turbo machinery
+GMEMIEM01,Structure and properties of engineering materials,,"Materials, Manufacturing and Industrial Engineering",Engineering Materials
+GMEMIEM02,phase diagrams,,"Materials, Manufacturing and Industrial Engineering",Engineering Materials
+GMEMIEM03,heat treatment,,"Materials, Manufacturing and Industrial Engineering",Engineering Materials
+GMEMIEM04,stress-strain diagrams for engineering materials,,"Materials, Manufacturing and Industrial Engineering",Engineering Materials
+GMEMIJP01,Different types of castings,,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMIJP02,"design of patterns, moulds and cores",,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMIJP03,solidification and cooling,,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMIJP04,riser and gating design,,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMIJP05,Plastic deformation and yield criteria,,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMIJP06,fundamentals of hot and cold working processes,,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMIJP07,"load estimation for bulk (forging, rolling, extrusion, drawing)",,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMIJP08,"sheet (shearing, deep drawing, bending) metal forming processes",,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMIJP09,principles of powder metallurgy,,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMIJP10,"Principles of welding, brazing, soldering and adhesive bonding",,"Materials, Manufacturing and Industrial Engineering","Casting, Forming and Joining Processes"
+GMEMITO01,Mechanics of machining,,"Materials, Manufacturing and Industrial Engineering",Machining and Machine Tool Operations
+GMEMITO02,basic machine tools,,"Materials, Manufacturing and Industrial Engineering",Machining and Machine Tool Operations
+GMEMITO03,single and multi-point cutting tools,,"Materials, Manufacturing and Industrial Engineering",Machining and Machine Tool Operations
+GMEMITO04,tool geometry and materials,,"Materials, Manufacturing and Industrial Engineering",Machining and Machine Tool Operations
+GMEMITO05,tool life and wear,,"Materials, Manufacturing and Industrial Engineering",Machining and Machine Tool Operations
+GMEMITO06,economics of machining,,"Materials, Manufacturing and Industrial Engineering",Machining and Machine Tool Operations
+GMEMITO07,principles of non-traditional machining processes,,"Materials, Manufacturing and Industrial Engineering",Machining and Machine Tool Operations
+GMEMITO08,principles of work holding,,"Materials, Manufacturing and Industrial Engineering",Machining and Machine Tool Operations
+GMEMITO09,design of jigs and fixtures,,"Materials, Manufacturing and Industrial Engineering",Machining and Machine Tool Operations
+GMEMIMI01,"Limits, fits and tolerances",,"Materials, Manufacturing and Industrial Engineering",Metrology and Inspection
+GMEMIMI02,linear and angular measurements,,"Materials, Manufacturing and Industrial Engineering",Metrology and Inspection
+GMEMIMI03,comparators,,"Materials, Manufacturing and Industrial Engineering",Metrology and Inspection
+GMEMIMI04,gauge design,,"Materials, Manufacturing and Industrial Engineering",Metrology and Inspection
+GMEMIMI05,interferometry,,"Materials, Manufacturing and Industrial Engineering",Metrology and Inspection
+GMEMIMI06,form and finish measurement,,"Materials, Manufacturing and Industrial Engineering",Metrology and Inspection
+GMEMIMI07,alignment and testing methods,,"Materials, Manufacturing and Industrial Engineering",Metrology and Inspection
+GMEMIMI08,tolerance analysis in manufacturing and assembly,,"Materials, Manufacturing and Industrial Engineering",Metrology and Inspection
+GMEMICI01,Basic concepts of CAD/CAM and their integration tools,,"Materials, Manufacturing and Industrial Engineering",Computer Integrated Manufacturing
+GMEMIPP01,Forecasting models,,"Materials, Manufacturing and Industrial Engineering",Production Planning and Control
+GMEMIPP02,aggregate production planning,,"Materials, Manufacturing and Industrial Engineering",Production Planning and Control
+GMEMIPP03,scheduling,,"Materials, Manufacturing and Industrial Engineering",Production Planning and Control
+GMEMIPP04,materials requirement plannin,,"Materials, Manufacturing and Industrial Engineering",Production Planning and Control
+GMEMIIC01,Deterministic models,,"Materials, Manufacturing and Industrial Engineering",Inventory Control
+GMEMIIC02,safety stock inventory control systems,,"Materials, Manufacturing and Industrial Engineering",Inventory Control
+GMEMIOR01,Linear programming,,"Materials, Manufacturing and Industrial Engineering",Operations Research
+GMEMIOR02,simplex method,,"Materials, Manufacturing and Industrial Engineering",Operations Research
+GMEMIOR03,transportation,,"Materials, Manufacturing and Industrial Engineering",Operations Research
+GMEMIOR04,assignment,,"Materials, Manufacturing and Industrial Engineering",Operations Research
+GMEMIOR05,network flow models,,"Materials, Manufacturing and Industrial Engineering",Operations Research
+GMEMIOR06,simple queuing models,,"Materials, Manufacturing and Industrial Engineering",Operations Research
+GMEMIOR07,PERT and CPM. ,,"Materials, Manufacturing and Industrial Engineering",Operations Research
+, ,,,

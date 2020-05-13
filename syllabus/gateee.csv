@@ -1,0 +1,151 @@
+GEEEMLA01, Matrix algebra,,Engineering Mathematics ,Linear Algebra
+GEEEMLA02, Systems of linear equations,,Engineering Mathematics ,Linear Algebra
+GEEEMLA03,Eigen values and Eigen vectors,,Engineering Mathematics ,Linear Algebra
+GEEEMCA01, Mean value theorems,,Engineering Mathematics ,Calculus
+GEEEMCA02,Theorems of integral calculus,,Engineering Mathematics ,Calculus
+GEEEMCA03,Evaluation of definite and improper integrals,,Engineering Mathematics ,Calculus
+GEEEMCA04, Partial Derivatives,,Engineering Mathematics ,Calculus
+GEEEMCA05,Maxima and minima,,Engineering Mathematics ,Calculus
+GEEEMCA06,Multiple integrals,,Engineering Mathematics ,Calculus
+GEEEMCA07,Fourier series,,Engineering Mathematics ,Calculus
+GEEEMCA08,Vector identities,,Engineering Mathematics ,Calculus
+GEEEMCA09,Directional derivatives,,Engineering Mathematics ,Calculus
+GEEEMCA10,"Line integral, Surface integral, Volume integral",,Engineering Mathematics ,Calculus
+GEEEMCA11,"Stokes’s theorem, Gauss’s theorem, Green’s theorem",,Engineering Mathematics ,Calculus
+GEEEMDE01,First order equations (linear and nonlinear),,Engineering Mathematics ,Differential equations
+GEEEMDE02,Higher order linear differential equations with constant coefficients,,Engineering Mathematics ,Differential equations
+GEEEMDE03,Method of variation of parameters,,Engineering Mathematics ,Differential equations
+GEEEMDE04,"Cauchy’s equation, Euler’s equation",,Engineering Mathematics ,Differential equations
+GEEEMDE05,Initial and boundary value problems,,Engineering Mathematics ,Differential equations
+GEEEMDE06, Partial Differential Equations,,Engineering Mathematics ,Differential equations
+GEEEMDE07,Method of separation of variables,,Engineering Mathematics ,Differential equations
+GEEEMCV01, Analytic functions,,Engineering Mathematics ,Complex variables
+GEEEMCV02,"Cauchy’s integral theorem, Cauchy’s integral formula",,Engineering Mathematics ,Complex variables
+GEEEMCV03,"Taylor series, Laurent series",,Engineering Mathematics ,Complex variables
+GEEEMCV04,Residue theorem,,Engineering Mathematics ,Complex variables
+GEEEMCV05,Solution integrals,,Engineering Mathematics ,Complex variables
+GEEEMPS01,Sampling theorems,,Engineering Mathematics ,Probability and Statistics
+GEEEMPS02,Conditional probability,,Engineering Mathematics ,Probability and Statistics
+GEEEMPS03,"Mean, Median, Mode, Standard Deviation",,Engineering Mathematics ,Probability and Statistics
+GEEEMPS04,Random variables,,Engineering Mathematics ,Probability and Statistics
+GEEEMPS05,Discrete and Continuous distributions,,Engineering Mathematics ,Probability and Statistics
+GEEEMPS06,Poisson distribution,,Engineering Mathematics ,Probability and Statistics
+GEEEMPS07,Normal distribution,,Engineering Mathematics ,Probability and Statistics
+GEEEMPS08,Binomial distribution,,Engineering Mathematics ,Probability and Statistics
+GEEEMPS09,Correlation analysis,,Engineering Mathematics ,Probability and Statistics
+GEEEMPS10,Regression analysis,,Engineering Mathematics ,Probability and Statistics
+GEEEMNM01,Solutions of nonlinear algebraic equations,,Engineering Mathematics ,Numerical Methods
+GEEEMNM02, Single and Multi?step methods for differential equations,,Engineering Mathematics ,Numerical Methods
+GEEEMTE01, Fourier Transform,,Engineering Mathematics ,Transform Theory
+GEEEMTE02,Laplace Transform,,Engineering Mathematics ,Transform Theory
+GEEEMTE03, z?Transform,,Engineering Mathematics ,Transform Theory
+GEEECoo01,Network graph,,Electric Circuits ,None
+GEEECoo02,KCL,,Electric Circuits ,None
+GEEECoo03,KVL ,,Electric Circuits ,None
+GEEECoo04,Node and Mesh analysis,,Electric Circuits ,None
+GEEECoo05,Transient response of dc and ac networks,,Electric Circuits ,None
+GEEECoo06,Sinusoidal steady?state analysis,,Electric Circuits ,None
+GEEECoo07,Resonance,,Electric Circuits ,None
+GEEECoo08,Passive filters,,Electric Circuits ,None
+GEEECoo09,Ideal current and voltage sources,,Electric Circuits ,None
+GEEECoo10,Thevenin’s theorem,,Electric Circuits ,None
+GEEECoo11,Norton’s theorem,,Electric Circuits ,None
+GEEECoo12,Superposition theorem,,Electric Circuits ,None
+GEEECoo13, Maximum power transfer theorem,,Electric Circuits ,None
+GEEECoo14,Two?port networks,,Electric Circuits ,None
+GEEECoo15, Three phase circuits,,Electric Circuits ,None
+GEEECoo16,Power and power factor in ac circuits,,Electric Circuits ,None
+GEEEFoo01,"Coulombs Law,",,Electromagnetic Fields ,None
+GEEEFoo02,Electric Field Intensity,,Electromagnetic Fields ,None
+GEEEFoo03,Electric Flux Density,,Electromagnetic Fields ,None
+GEEEFoo04,Gausss Law,,Electromagnetic Fields ,None
+GEEEFoo05,Divergence,,Electromagnetic Fields ,None
+GEEEFoo06,Electric field and potential due to point,,Electromagnetic Fields ,None
+GEEEFoo07," line, plane and spherical charge distributions",,Electromagnetic Fields ,None
+GEEEFoo08,"Effect of dielectric medium, Capacitance of simple configurations",,Electromagnetic Fields ,None
+GEEEFoo09,Biot?Savart’s law,,Electromagnetic Fields ,None
+GEEEFoo10,Ampere’s law,,Electromagnetic Fields ,None
+GEEEFoo11,Curl,,Electromagnetic Fields ,None
+GEEEFoo12,Faraday’s law,,Electromagnetic Fields ,None
+GEEEFoo13, Lorentz force,,Electromagnetic Fields ,None
+GEEEFoo14,Inductance,,Electromagnetic Fields ,None
+GEEEFoo15,Magnetomotive force,,Electromagnetic Fields ,None
+GEEEFoo16,Reluctance,,Electromagnetic Fields ,None
+GEEEFoo17,Magnetic circuits,,Electromagnetic Fields ,None
+GEEEFoo18,Self and Mutual inductance of simple configurations,,Electromagnetic Fields ,None
+GEESSoo01,Representation of continuous and discrete?time signals,,Signals and Systems ,None
+GEESSoo02,Shifting and scaling operations,,Signals and Systems ,None
+GEESSoo03,Linear Time Invariant and Causal systems,,Signals and Systems ,None
+GEESSoo04,Fourier series representation of continuous periodic signals,,Signals and Systems ,None
+GEESSoo05,Sampling theorem,,Signals and Systems ,None
+GEESSoo06, Applications of Fourier Transform,,Signals and Systems ,None
+GEESSoo07,Laplace Transform and z-Transform,,Signals and Systems ,None
+GEEEMoo01,"Single phase transformer: equivalent circuit, phasor diagram, open circuit and short circuit tests, regulation and efficiency",,Electrical Machines ,None
+GEEEMoo02,"Three phase transformers: connections, parallel operation",,Electrical Machines ,None
+GEEEMoo03,Auto?transformer,,Electrical Machines ,None
+GEEEMoo04,Electromechanical energy conversion principles,,Electrical Machines ,None
+GEEEMoo05,"DC machines: separately excited, series and shunt, motoring and generating mode of operation and their characteristics, starting and speed control of dc motors",,Electrical Machines ,None
+GEEEMoo06," Three phase induction motors: principle of operation, types, performance, torque-speed characteristics, no-load and blocked rotor tests, equivalent circuit, starting and speed control",,Electrical Machines ,None
+GEEEMoo07, Operating principle of single phase induction motors,,Electrical Machines ,None
+GEEEMoo08,"Synchronous machines: cylindrical and salient pole machines, performance, regulation and parallel operation of generators, starting of synchronous motor, characteristics",,Electrical Machines ,None
+GEEEMoo09,Types of losses and efficiency calculations of electric machines,,Electrical Machines ,None
+GEEPSoo01,Power generation concepts,,Power Systems,None
+GEEPSoo02, ac and dc transmission concepts,,Power Systems,None
+GEEPSoo03,Models and performance of transmission lines and cables,,Power Systems,None
+GEEPSoo04,Series and shunt compensation,,Power Systems,None
+GEEPSoo05,Electric field distribution and insulators,,Power Systems,None
+GEEPSoo06,Distribution systems,,Power Systems,None
+GEEPSoo07,Per?unit quantities,,Power Systems,None
+GEEPSoo08,Bus admittance matrix,,Power Systems,None
+GEEPSoo09,Gauss- Seidel and Newton-Raphson load flow methods,,Power Systems,None
+GEEPSoo10,Voltage and Frequency control,,Power Systems,None
+GEEPSoo11,Power factor correction,,Power Systems,None
+GEEPSoo12,Symmetrical components,,Power Systems,None
+GEEPSoo13,Symmetrical and unsymmetrical fault analysis,,Power Systems,None
+GEEPSoo14,Principles of over?current,,Power Systems,None
+GEEPSoo15,differential and distance protection,,Power Systems,None
+GEEPSoo16,Circuit breakers,,Power Systems,None
+GEEPSoo17, System stability concepts,,Power Systems,None
+GEEPSoo18,Equal area criterion,,Power Systems,None
+GEECSoo01,Mathematical modeling and representation of systems,,Control  Systems,None
+GEECSoo02, Feedback principle,,Control  Systems,None
+GEECSoo03,transfer function,,Control  Systems,None
+GEECSoo04, Block diagrams and Signal flow graphs,,Control  Systems,None
+GEECSoo05, Transient and Steady?state analysis of linear time invariant systems,,Control  Systems,None
+GEECSoo06,Routh-Hurwitz and Nyquist criteria,,Control  Systems,None
+GEECSoo07,Bode plots,,Control  Systems,None
+GEECSoo08,Root loci,,Control  Systems,None
+GEECSoo09,Stability analysis,,Control  Systems,None
+GEECSoo10,"Lag, Lead and Lead?Lag compensators",,Control  Systems,None
+GEECSoo11," P, PI and PID controllers",,Control  Systems,None
+GEECSoo12, State space model,,Control  Systems,None
+GEECSoo13, State transition matrix,,Control  Systems,None
+GEEEEoo01,Bridges and Potentiometers,,Electrical and Electronic Measurements ,None
+GEEEEoo02,"Measurement of voltage, current, power, energy and power factor",,Electrical and Electronic Measurements ,None
+GEEEEoo03,Instrument transformers,,Electrical and Electronic Measurements ,None
+GEEEEoo04,Digital voltmeters and multimeters,,Electrical and Electronic Measurements ,None
+GEEEEoo05," Phase, Time and Frequency measurement",,Electrical and Electronic Measurements ,None
+GEEEEoo06,Oscilloscopes,,Electrical and Electronic Measurements ,None
+GEEEEoo07, Error analysis,,Electrical and Electronic Measurements ,None
+GEEADoo01,"Characteristics of diodes, BJT, MOSFET",,Analog and Digital Electronics ,None
+GEEADoo02,"Simple diode circuits: clipping, clamping, rectifiers",,Analog and Digital Electronics ,None
+GEEADoo03,"Amplifiers: Biasing, Equivalent circuit and Frequency response",,Analog and Digital Electronics ,None
+GEEADoo04, Oscillators and Feedback amplifiers,,Analog and Digital Electronics ,None
+GEEADoo05,Operational amplifiers: Characteristics and applications,,Analog and Digital Electronics ,None
+GEEADoo06,Simple active filters,,Analog and Digital Electronics ,None
+GEEADoo07,VCOs and Timers,,Analog and Digital Electronics ,None
+GEEADoo08,Combinational and Sequential logic circuits,,Analog and Digital Electronics ,None
+GEEADoo09,"Multiplexer, Demultiplexer, Schmitt trigger",,Analog and Digital Electronics ,None
+GEEADoo10,Sample and hold circuits,,Analog and Digital Electronics ,None
+GEEADoo11,A|D and D|A converters,,Analog and Digital Electronics ,None
+GEEADoo12," 8085Microprocessor: Architecture, Programming and Interfacing",,Analog and Digital Electronics ,None
+GEEPEoo01,"Characteristics of semiconductor power devices: Diode, Thyristor, Triac, GTO, MOSFET, IGBT",, Power Electronics ,None
+GEEPEoo02," DC to DC conversion: Buck, Boost and Buck-Boost converters",, Power Electronics ,None
+GEEPEoo03,Single and three phase configuration of uncontrolled rectifiers,, Power Electronics ,None
+GEEPEoo04, Line commutated thyristor based converters,, Power Electronics ,None
+GEEPEoo05, Bidirectional ac to dc voltage source converters,, Power Electronics ,None
+GEEPEoo06, Issues of line current harmonics,, Power Electronics ,None
+GEEPEoo07, Power factor,, Power Electronics ,None
+GEEPEoo08, Distortion factor of ac to dc converters,, Power Electronics ,None
+GEEPEoo09,Single phase and three phase inverters,, Power Electronics ,None
+GEEPEoo10, Sinusoidal pulse width modulation,, Power Electronics ,None

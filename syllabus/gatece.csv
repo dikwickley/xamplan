@@ -1,0 +1,181 @@
+GCEEMLA01, Matrix algebra,,Engineering Mathematics ,Linear Algebra
+GCEEMLA02, Systems of linear equations,,Engineering Mathematics ,Linear Algebra
+GCEEMLA03,Eigen values and Eigen vectors,,Engineering Mathematics ,Linear Algebra
+GCEEMCA01,Functions of single variable,,Engineering Mathematics ,Calculus
+GCEEMCA02,Limit,,Engineering Mathematics ,Calculus
+GCEEMCA03,continuity and differentiability,,Engineering Mathematics ,Calculus
+GCEEMCA04,Mean value theorems,,Engineering Mathematics ,Calculus
+GCEEMCA05,local maxima and minima,,Engineering Mathematics ,Calculus
+GCEEMCA06,Taylor and Maclaurin series,,Engineering Mathematics ,Calculus
+GCEEMCA07,Evaluation of definite and indefinite integrals,,Engineering Mathematics ,Calculus
+GCEEMCA08,application of definite integral to obtain area and volume,,Engineering Mathematics ,Calculus
+GCEEMCA09,Partial derivatives,,Engineering Mathematics ,Calculus
+GCEEMCA10,Total derivative,,Engineering Mathematics ,Calculus
+GCEEMCA11,"Gradient, Divergence and Curl",,Engineering Mathematics ,Calculus
+GCEEMCA12,Vector identities,,Engineering Mathematics ,Calculus
+GCEEMCA13, Directional derivatives,,Engineering Mathematics ,Calculus
+GCEEMCA14," Line, Surface and Volume integrals",,Engineering Mathematics ,Calculus
+GCEEMCA15,"Stokes, Gauss and Green’s theorems",,Engineering Mathematics ,Calculus
+GCEEMOD01,First order (linear and non-linear) equations,,Engineering Mathematics ,Ordinary Differential Equation (ODE)
+GCEEMOD02,higher order linear equations with constant coefficients,,Engineering Mathematics ,Ordinary Differential Equation (ODE)
+GCEEMOD03,Euler-Cauchy equations,,Engineering Mathematics ,Ordinary Differential Equation (ODE)
+GCEEMOD04, Laplace transform and its application in solving linear ODEs,,Engineering Mathematics ,Ordinary Differential Equation (ODE)
+GCEEMOD05,initial and boundary value problems,,Engineering Mathematics ,Ordinary Differential Equation (ODE)
+GCEEMPD01,Fourier series,,Engineering Mathematics ,Partial Differential Equation (PDE)
+GCEEMPD02,separation of variables,,Engineering Mathematics ,Partial Differential Equation (PDE)
+GCEEMPD03,solutions of one- dimensional diffusion equation,,Engineering Mathematics ,Partial Differential Equation (PDE)
+GCEEMPD04,first and second order one-dimensional wave equation,,Engineering Mathematics ,Partial Differential Equation (PDE)
+GCEEMPD05,two dimensional Laplace equation,,Engineering Mathematics ,Partial Differential Equation (PDE)
+GCEEMPS01, Definitions of probability and sampling theorems,,Engineering Mathematics ,Probability and Statistics
+GCEEMPS02,Conditional probability,,Engineering Mathematics ,Probability and Statistics
+GCEEMPS03,Discrete Random variables: Poisson and Binomial distributions,,Engineering Mathematics ,Probability and Statistics
+GCEEMPS04,Continuous random variables: normal and exponential distributions,,Engineering Mathematics ,Probability and Statistics
+GCEEMPS05,"Descriptive statistics - Mean, median, mode and standard deviation",,Engineering Mathematics ,Probability and Statistics
+GCEEMPS06,Hypothesis testing,,Engineering Mathematics ,Probability and Statistics
+GCEEMNM01,Accuracy and precision,,Engineering Mathematics ,Numerical Methods
+GCEEMNM02,error analysis,,Engineering Mathematics ,Numerical Methods
+GCEEMNM03,Numerical solutions of linear and non-linear algebraic equations,,Engineering Mathematics ,Numerical Methods
+GCEEMNM04,Least square approximation,,Engineering Mathematics ,Numerical Methods
+GCEEMNM05,Newton’s and Lagrange polynomials,,Engineering Mathematics ,Numerical Methods
+GCEEMNM06,numerical differentiation,,Engineering Mathematics ,Numerical Methods
+GCEEMNM07,Integration by trapezoidal and Simpson’s rule,,Engineering Mathematics ,Numerical Methods
+GCEEMNM08,single and multi-step methods for first order differential equations,,Engineering Mathematics ,Numerical Methods
+GCESEEM01,System of forces,,Structural Engineering ,Engineering Mechanics
+GCESEEM02,free-body diagrams,,Structural Engineering ,Engineering Mechanics
+GCESEEM03,equilibrium equations,,Structural Engineering ,Engineering Mechanics
+GCESEEM04, Internal forces in structures,,Structural Engineering ,Engineering Mechanics
+GCESEEM05,Friction and its applications,,Structural Engineering ,Engineering Mechanics
+GCESEEM06,Kinematics of point mass and rigid body,,Structural Engineering ,Engineering Mechanics
+GCESEEM07,Centre of mass,,Structural Engineering ,Engineering Mechanics
+GCESEEM08,Euler’s equations of motion,,Structural Engineering ,Engineering Mechanics
+GCESEEM09,Impulse-momentum,,Structural Engineering ,Engineering Mechanics
+GCESEEM10,Energy methods,,Structural Engineering ,Engineering Mechanics
+GCESEEM11,Principles of virtual work,,Structural Engineering ,Engineering Mechanics
+GCESESM01,Bending moment and shear force in statically determinate beams,,Structural Engineering ,Solid Mechanics
+GCESESM02,Simple stress and strain relationships,,Structural Engineering ,Solid Mechanics
+GCESESM03,Theories of failures,,Structural Engineering ,Solid Mechanics
+GCESESM04,Simple bending theory,,Structural Engineering ,Solid Mechanics
+GCESESM05,flexural and shear stresses,,Structural Engineering ,Solid Mechanics
+GCESESM06,shear centre,,Structural Engineering ,Solid Mechanics
+GCESESM07,Uniform torsion,,Structural Engineering ,Solid Mechanics
+GCESESM08,buckling of column,,Structural Engineering ,Solid Mechanics
+GCESESM09,combined and direct bending stresses,,Structural Engineering ,Solid Mechanics
+GCESESA01,Statically determinate and indeterminate structures by force energy methods,,Structural Engineering ,Structural Analysis
+GCESESA02,Method of superposition,,Structural Engineering ,Structural Analysis
+GCESESA03,"Analysis of trusses, arches, beams, cables and frames",,Structural Engineering ,Structural Analysis
+GCESESA04,Displacement methods: Slope deflection and moment distribution methods,,Structural Engineering ,Structural Analysis
+GCESESA05, Influence lines,,Structural Engineering ,Structural Analysis
+GCESESA06,Stiffness and flexibility methods of structural analysis,,Structural Engineering ,Structural Analysis
+GCESEMM01,"Construction Materials: Structural steel - composition, material properties and behaviour",,Structural Engineering ,Construction Materials and Management
+GCESEMM02,"Concrete - constituents, mix design, short-term and long-term properties",,Structural Engineering ,Construction Materials and Management
+GCESEMM03,Bricks and mortar,,Structural Engineering ,Construction Materials and Management
+GCESEMM04,Timber,,Structural Engineering ,Construction Materials and Management
+GCESEMM05,Bitumen,,Structural Engineering ,Construction Materials and Management
+GCESEMM06,Construction Management: Types of construction projects,,Structural Engineering ,Construction Materials and Management
+GCESEMM07,Tendering and construction contracts,,Structural Engineering ,Construction Materials and Management
+GCESEMM08,Rate analysis and standard specifications,,Structural Engineering ,Construction Materials and Management
+GCESEMM09,Cost estimation,,Structural Engineering ,Construction Materials and Management
+GCESEMM10,Project planning and network analysis - PERT and CPM,,Structural Engineering ,Construction Materials and Management
+GCESECS01,"Working stress, Limit state and Ultimate load design concepts",,Structural Engineering ,Concrete Structures
+GCESECS02,"Design of beams, slabs, columns",,Structural Engineering ,Concrete Structures
+GCESECS03,Bond and development length,,Structural Engineering ,Concrete Structures
+GCESECS04,Prestressed concrete,,Structural Engineering ,Concrete Structures
+GCESECS05,Analysis of beam sections at transfer and service loads,,Structural Engineering ,Concrete Structures
+GCESESS01,Working stress and Limit state design concepts,,Structural Engineering ,Steel Structures
+GCESESS02,"Design of tension and compression members, beams and beam- columns, column bases",,Structural Engineering ,Steel Structures
+GCESESS03,"Connections - simple and eccentric, beam-column connections, plate girders and trusses",,Structural Engineering ,Steel Structures
+GCESESS04, Plastic analysis of beams and frames,,Structural Engineering ,Steel Structures
+GCEGTSM01," Origin of soils, soil structure and fabric",,Geotechnical Engineering ,Soil Mechanics
+GCEGTSM02,"Three-phase system and phase relationships, index properties",,Geotechnical Engineering ,Soil Mechanics
+GCEGTSM03, Unified and Indian standard soil classification system,,Geotechnical Engineering ,Soil Mechanics
+GCEGTSM04,"Permeability - one dimensional flow, Darcy’s law",,Geotechnical Engineering ,Soil Mechanics
+GCEGTSM05,"Seepage through soils - two-dimensional flow, flow nets, uplift pressure, piping",,Geotechnical Engineering ,Soil Mechanics
+GCEGTSM06,"Principle of effective stress, capillarity, seepage force and quicksand condition",,Geotechnical Engineering ,Soil Mechanics
+GCEGTSM07,Compaction in laboratory and field conditions,,Geotechnical Engineering ,Soil Mechanics
+GCEGTSM08," One- dimensional consolidation, time rate of consolidation",,Geotechnical Engineering ,Soil Mechanics
+GCEGTSM09,"Mohr’s circle, stress paths, effective and total shear strength parameters, characteristics of clays and sand",,Geotechnical Engineering ,Soil Mechanics
+GCEGTFE01,"Sub-surface investigations - scope, drilling bore holes, sampling, plate load test, standard penetration and cone penetration tests",,Geotechnical Engineering ,Foundation Engineering
+GCEGTFE02, Earth pressure theories - Rankine and Coulomb,,Geotechnical Engineering ,Foundation Engineering
+GCEGTFE03,"Stability of slopes - finite and infinite slopes, method of slices and Bishop’s method",,Geotechnical Engineering ,Foundation Engineering
+GCEGTFE04,"Stress distribution in soils - Boussinesq’s and Westergaard’s theories, pressure bulbs",,Geotechnical Engineering ,Foundation Engineering
+GCEGTFE05,"Shallow foundations - Terzaghi’s and Meyerhoff’s bearing capacity theories, effect of water table",,Geotechnical Engineering ,Foundation Engineering
+GCEGTFE06, Combined footing and raft foundation,,Geotechnical Engineering ,Foundation Engineering
+GCEGTFE07,Contact pressure,,Geotechnical Engineering ,Foundation Engineering
+GCEGTFE08,Settlement analysis in sands and clays,,Geotechnical Engineering ,Foundation Engineering
+GCEGTFE09,"Deep foundations - types of piles, dynamic and static formulae",,Geotechnical Engineering ,Foundation Engineering
+GCEGTFE10,"load capacity of piles in sands and clays, pile load test, negative skin friction",,Geotechnical Engineering ,Foundation Engineering
+GCEWRFM01,"Properties of fluids, fluid statics",,Water Resources Engineering ,Fluid Mechanics
+GCEWRFM02,"Continuity, momentum, energy and corresponding equations",,Water Resources Engineering ,Fluid Mechanics
+GCEWRFM03,"Potential flow, applications of momentum and energy equations",,Water Resources Engineering ,Fluid Mechanics
+GCEWRFM04, Laminar and turbulent flow,,Water Resources Engineering ,Fluid Mechanics
+GCEWRFM05,"Flow in pipes, pipe networks",,Water Resources Engineering ,Fluid Mechanics
+GCEWRFM06, Concept of  boundary layer and its growth,,Water Resources Engineering ,Fluid Mechanics
+GCEWRHY01,Forces on immersed bodies,,Water Resources Engineering ,Hydraulics
+GCEWRHY02, Flow measurement in channels and pipes,,Water Resources Engineering ,Hydraulics
+GCEWRHY03, Dimensional analysis and hydraulic similitude,,Water Resources Engineering ,Hydraulics
+GCEWRHY04,"Kinematics of flow, velocity triangles; Basics of hydraulic machines, specific speed of pumps and turbines",,Water Resources Engineering ,Hydraulics
+GCEWRHY05, Channel Hydraulics - Energy-depth relationships,,Water Resources Engineering ,Hydraulics
+GCEWRHY06,"specific energy, critical flow, slope profile, hydraulic jump, uniform flow and gradually varied flow",,Water Resources Engineering ,Hydraulics
+GCEWRHL01,"Hydrologic cycle, precipitation, evaporation, evapo-transpiration, watershed, infiltration",,Water Resources Engineering ,Hydrology
+GCEWRHL02,"unit hydrographs, hydrograph analysis",,Water Resources Engineering ,Hydrology
+GCEWRHL03, flood estimation and routing,,Water Resources Engineering ,Hydrology
+GCEWRHL04,"reservoir capacity, reservoir and channel routing, surface run-off models",,Water Resources Engineering ,Hydrology
+GCEWRHL05,ground water hydrology - steady state well hydraulics and aquifers,,Water Resources Engineering ,Hydrology
+GCEWRHL06, Application of Darcy’s law,,Water Resources Engineering ,Hydrology
+GCEWRIR01," Duty, delta, estimation of evapo-transpiration",,Water Resources Engineering ,Irrigation
+GCEWRIR02, Crop water requirements,,Water Resources Engineering ,Irrigation
+GCEWRIR03,"Design of lined and unlined canals, head works, gravity dams and spillways",,Water Resources Engineering ,Irrigation
+GCEWRIR04, Design of weirs on permeable foundation,,Water Resources Engineering ,Irrigation
+GCEWRIR05,"Types of irrigation systems, irrigation methods",,Water Resources Engineering ,Irrigation
+GCEWRIR06, Water logging and drainage,,Water Resources Engineering ,Irrigation
+GCEWRIR07,"Canal regulatory works, cross-drainage structures, outlets and escapes",,Water Resources Engineering ,Irrigation
+GCEEEWW01,Quality standards,,Environmental Engineering,Water and Waste Water
+GCEEEWW02, basic unit processes and operations for water treatment,,Environmental Engineering,Water and Waste Water
+GCEEEWW03,Drinking water standards,,Environmental Engineering,Water and Waste Water
+GCEEEWW04, water requirements,,Environmental Engineering,Water and Waste Water
+GCEEEWW05,basic unit operations and unit processes for surface water treatment,,Environmental Engineering,Water and Waste Water
+GCEEEWW06, distribution of water,,Environmental Engineering,Water and Waste Water
+GCEEEWW07,Sewage and sewerage treatment,,Environmental Engineering,Water and Waste Water
+GCEEEWW08,quantity and characteristics of wastewater,,Environmental Engineering,Water and Waste Water
+GCEEEWW09,"Primary, secondary and tertiary treatment of wastewater",,Environmental Engineering,Water and Waste Water
+GCEEEWW10,effluent discharge standards,,Environmental Engineering,Water and Waste Water
+GCEEEWW11,Domestic wastewater treatment,,Environmental Engineering,Water and Waste Water
+GCEEEWW12,quantity of characteristics of domestic wastewater,,Environmental Engineering,Water and Waste Water
+GCEEEWW13, primary and secondary treatment,,Environmental Engineering,Water and Waste Water
+GCEEEWW14,Unit operations and unit processes of domestic wastewater,,Environmental Engineering,Water and Waste Water
+GCEEEWW15,sludge disposal,,Environmental Engineering,Water and Waste Water
+GCEEEAP01,"Types of pollutants, their sources and impacts",,Environmental Engineering,Air Pollution
+GCEEEAP02, air pollution meteorology,,Environmental Engineering,Air Pollution
+GCEEEAP03,air pollution control,,Environmental Engineering,Air Pollution
+GCEEEAP04,air quality standards and limits,,Environmental Engineering,Air Pollution
+GCEEEMS01,"Characteristics, generation, collection and transportation of solid wastes",,Environmental Engineering,Municipal Solid Wastes
+GCEEEMS02,"engineered systems for solid waste management (reuse recycle, energy recovery, treatment and disposal)",,Environmental Engineering,Municipal Solid Wastes
+GCEEENP01,Impacts of noise,,Environmental Engineering,Noise Pollution
+GCEEENP02,permissible limits of noise pollution,,Environmental Engineering,Noise Pollution
+GCEEENP03, measurement of noise,,Environmental Engineering,Noise Pollution
+GCEEENP04,control of noise pollution,,Environmental Engineering,Noise Pollution
+GCETETI01, Highway alignment and engineering surveys,,Transportation Engineering,Transportation Infrastructure
+GCETETI02,"Geometric design of highways - cross-sectional elements, sight distances, horizontal and vertical alignments",,Transportation Engineering,Transportation Infrastructure
+GCETETI03, Geometric design of railway track,,Transportation Engineering,Transportation Infrastructure
+GCETETI04," Airport runway length, taxiway and exit taxiway design",,Transportation Engineering,Transportation Infrastructure
+GCETEHP01,Highway materials - desirable properties and quality control tests,,Transportation Engineering,Highway Pavements
+GCETEHP02, Design of bituminous paving mixes,,Transportation Engineering,Highway Pavements
+GCETEHP03,Design factors for flexible and rigid pavements,,Transportation Engineering,Highway Pavements
+GCETEHP04, Design of flexible pavement using IRC: 37-2012,,Transportation Engineering,Highway Pavements
+GCETEHP05,Design of rigid pavements using IRC: 58-2011,,Transportation Engineering,Highway Pavements
+GCETEHP06, Distresses in concrete pavements,,Transportation Engineering,Highway Pavements
+GCETETE01,"Traffic studies on flow, speed, travel time - delay and O-D study, PCU, peak hour factor, parking study, accident study and analysis, statistical analysis of traffic data",,Transportation Engineering,Traffic Engineering
+GCETETE02," Microscopic and macroscopic parameters of traffic flow, fundamental relationships",,Transportation Engineering,Traffic Engineering
+GCETETE03," Control devices, signal design by Webster’s method",,Transportation Engineering,Traffic Engineering
+GCETETE04,Types of intersections and channelization,,Transportation Engineering,Traffic Engineering
+GCETETE05, Highway capacity and level of service of rural highways and urban roads,,Transportation Engineering,Traffic Engineering
+GCEGMoo01,Principles of surveying,,Geomatics Engineering ,None
+GCEGMoo02,Errors and their adjustment,,Geomatics Engineering ,None
+GCEGMoo03," Maps - scale, coordinate system",,Geomatics Engineering ,None
+GCEGMoo04, Distance and angle measurement - Levelling and trigonometric levelling; Traversing and triangulation survey,,Geomatics Engineering ,None
+GCEGMoo05,Total station,,Geomatics Engineering ,None
+GCEGMoo06, Horizontal and vertical curves,,Geomatics Engineering ,None
+GCEGMoo07,"Photogrammetry - scale, flying height",,Geomatics Engineering ,None
+GCEGMoo08,"Remote sensing - basics, platform and sensors, visual image interpretation",,Geomatics Engineering ,None
+GCEGMoo09,Basics of Geographical information system (GIS) ,,Geomatics Engineering ,None
+GCEGMoo10, Geographical Positioning system (GPS),,Geomatics Engineering ,None

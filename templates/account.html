@@ -73,15 +73,17 @@
 
 		for(month in data['plan']){
 			for(week in data['plan'][month]){
-				for(difficulty_group in data['plan'][month][week]){
-					for(topic in data['plan'][month][week][difficulty_group])
-						topic_status = (data['plan'][month][week][difficulty_group][topic][1])
-					if(topic_status == 'P') status[0] += 1
-					if(topic_status == 'C') status[1] += 1
-					if(topic_status == 'B') status[2] += 1
-
+				for(topic_difficulty in data['plan'][month][week]){
+					for(topic in data['plan'][month][week][topic_difficulty]){
+						
+						if(data['plan'][month][week][topic_difficulty][topic][1] == 'P')
+							status[0] += 1;
+						if(data['plan'][month][week][topic_difficulty][topic][1] == 'C')
+							status[1] += 1;
+						if(data['plan'][month][week][topic_difficulty][topic][1] == 'B')
+							status[2] += 1;
+					}
 				}
-
 			}
 		}
 
@@ -428,10 +430,7 @@
 
 //CHARTS CREATION
 
-	var ctx1 = document.getElementById('canvas1').getContext('2d');
-	window.myChartRadar = new Chart(ctx1, {
-		type: 'doughnut', 
-		data: {											
+	myChartData =  {											
 		labels: ['Pending','Completed','Backlogs'],
 		datasets: [{
 			label: 'prices', 
@@ -442,7 +441,12 @@
 			data: getTopicStatus(),
 			borderColor: 'white',
 			}]
-		},									//The Default data
+		}
+
+	var ctx1 = document.getElementById('canvas1').getContext('2d');
+	window.myChart = new Chart(ctx1, {
+		type: 'doughnut', 
+		data: myChartData,									//The Default data
 		labels: ['Pending','Completed','Backlogs'],
 		datasets: [{
 			label: 'prices', 
@@ -498,6 +502,7 @@
 
 		console.log(checkedTopicData);
 
+
 		///Make an AJAX Function to send this data to the back end and save it's state
 
 		$.ajax({
@@ -506,7 +511,27 @@
 	            type: 'POST',
 	            success: function(response) {
 	                console.log(response)
-	               }
+	                checkedDifficulty = (checkedTopicData['topicCode'].charAt(checkedTopicData['topicCode'].length - 1))  //gives me difficulty
+					//Update the chart, update the counter here
+					for(topicDifficulty in data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']]){
+						for(topic in data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty]){
+							console.log(data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty][topic])
+							if(data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty][topic][0] == checkedTopicData['topicCode']){
+								console.log("FOUND")
+								if(checkedTopicData['topicState'] == true)
+									data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty][topic][1] = 'C'
+								else{
+									data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty][topic][1] = 'P'
+								}
+							}
+						}
+					}
+					var topicStatusCount = getTopicStatus()
+					document.getElementById('completed_count').innerHTML = topicStatusCount[1]
+					document.getElementById('backlog_count').innerHTML = topicStatusCount[2]
+					myChartData.datasets[0].data = getTopicStatus()
+					window.myChart.update()
+	            }
 	    });
 	}
 

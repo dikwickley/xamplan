@@ -230,7 +230,14 @@ app.permanent_session_lifetime = timedelta(days = 28)
 
 @app.route('/test')
 def test():
-	print('streak: ', getStreak('r@r'))
+
+	myquery = { "email": "r@r" }
+	newvalues = { "$set": { "streak": {'start_date' : [2020,5,4],'last_date' : [2020,5,13]} } }
+
+	x = mongo.db.cred.update_one(myquery, newvalues)
+	
+	print(x)
+
 	return 'this is test'
 
 @app.route('/')
@@ -314,7 +321,7 @@ def handle_config():
 		'curve' : curve,
 		'college' : college,
 		'college_year' : college_year,
-		'plan' : plan
+		'plan' : [plan]
 		}
 
 		
@@ -360,7 +367,28 @@ def handle_login():
 @app.route('/send_checked_topics', methods=['POST','GET'])
 def send_checked_topics():
 	data = request.form
-	print("data: ",dict(data))
+	data = dict(data)
+	thePlan = mongo.db.user.find_one({'email': data['email']})['plan'][0]
+	print(thePlan)
+
+	theWeek = thePlan[data['topicMonth']][data['topicWeek']]
+	print("before: ", theWeek)
+	print(data['topicCode'])
+	for x in range(len(theWeek)):
+		for y in range(len(theWeek[x])):
+			print(theWeek[x][y])
+			if (data['topicCode'] == theWeek[x][y][0]):
+				if data['topicState'] == 'true':
+					theWeek[x][y][1] = 'C'
+				else:
+					theWeek[x][y][1] = 'P'
+
+	thePlan[data['topicMonth']][data['topicWeek']] =  theWeek
+
+	mongo.db.user.update_one({'email' : data['email']},{'$set':{'plan' : [thePlan]}})
+	print("after: ", theWeek)
+
+
 	return "success"
 
 @app.route('/account')
@@ -376,6 +404,7 @@ def account():
 		year = str(today.year)
 		month = month_list[today.month - 1 ] +'_'+ year
 		streak  = getStreak(data['email'])
+		data['plan'] = data['plan'][0]
 
 		return render_template('account.html',data=json.dumps(data),date=json.dumps({'month':month, 'streak': streak}),topics=json.dumps({'topics':allTopicList(exam=data['exam'])}))
 	else:

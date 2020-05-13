@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  	<link rel="icon" href="./static/img/xamplanicon.ico">
 	
 </head>
 <style type="text/css">
@@ -65,6 +67,31 @@
 	   return splitStr.join(' '); 
 	}
 
+	function getTopicStatus(){
+
+		var status = [0,0,0]  //[pending,completed,backlog]
+
+		for(month in data['plan']){
+			for(week in data['plan'][month]){
+				for(difficulty_group in data['plan'][month][week]){
+					for(topic in data['plan'][month][week][difficulty_group])
+						topic_status = (data['plan'][month][week][difficulty_group][topic][1])
+					if(topic_status == 'P') status[0] += 1
+					if(topic_status == 'C') status[1] += 1
+					if(topic_status == 'B') status[2] += 1
+
+				}
+
+			}
+		}
+
+		return status;
+	}
+
+	
+
+
+
 	function openModal(id){
 		document.getElementById('modal').style.display='block'
 		document.getElementById('modal_heading').innerHTML = titleCase(id.split('_').join(' '))
@@ -83,7 +110,24 @@
 
 				var hard_div = '<div id="hard"><h2 style="color: black;">' + titleCase(weeks[w]) +'</h2><h3>Hard Topic</h3>'
 				for(var x=0;x<data.plan[id][weeks[w]][0].length;x++){
+
+
+
 					topic = '<div id="hard_topic">'
+
+					if(date.month == id){
+
+						if(data.plan[id][weeks[w]][0][x][1] == 'P'){
+						checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][0][x][0] + '|' + id + '|' + weeks[w]  +'" onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						if(data.plan[id][weeks[w]][0][x][1] == 'C'){
+							checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][0][x][0] + '|' + id + '|' + weeks[w]  + '" checked onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						topic += checkbox
+					}
+
 					//this is the topic name
 					topic += '<span>Topic: </span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][0][x][0]][0])
 					//this is the topic subject
@@ -92,6 +136,8 @@
 					topic += '<br><span>Sub-Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][0][x][0]][3])
 					topic += '</div>'
 					hard_div += topic
+
+					
 				}
 				hard_div += '</div>'
 
@@ -100,6 +146,20 @@
 				for(var x=0;x<data.plan[id][weeks[w]][1].length;x++){
 					
 					topic = '<div id="med_topic">'
+
+					if(date.month == id){
+
+						if(data.plan[id][weeks[w]][1][x][1] == 'P'){
+						checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][1][x][0] + '|' + id + '|' + weeks[w]  + '" onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						if(data.plan[id][weeks[w]][1][x][1] == 'C'){
+							checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][1][x][0] + '|' + id + '|' + weeks[w]  + '" checked onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						topic += checkbox
+					}
+
 					//this is the topic name
 					topic += '<span>Topic: </span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][1][x][0]][0])
 					//this is the topic subject
@@ -116,6 +176,20 @@
 				for(var x=0;x<data.plan[id][weeks[w]][2].length;x++){
 
 					topic = '<div id="easy_topic">'
+
+					if(date.month == id){
+
+						if(data.plan[id][weeks[w]][2][x][1] == 'P'){
+						checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][2][x][0] + '|' + id + '|' + weeks[w]  + '"onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						if(data.plan[id][weeks[w]][2][x][1] == 'C'){
+							checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][2][x][0] + '|' + id + '|' + weeks[w]  + '" checked onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						topic += checkbox
+					}
+
 					//this is the topic name
 					topic += '<span>Topic: </span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][2][x][0]][0])
 					//this is the topic subject
@@ -183,10 +257,22 @@
 				
 				<div class=" row p-1">
 
-					<div class="container  col-12 col-md-8 p-2">
+					<div class="container  col-12 col-md-6 p-2">
 
-						<div class="container bg-warning p-2">
-							<h3>Chart</h3>
+						<div class="container p-2">
+							<h3 class="container bg-info py-2 text-white" >Plan Progress</h3>
+							<div id="bar">
+							<canvas id="canvas1"  class="chartjs-render-monitor"></canvas>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="container  col-12 col-md-2 p-2">
+
+						<div class="container text-white p-2 text-center">
+							<h3 class="container bg-warning py-2">Streak</h3>
+							<div class="text-dark"> <h1 id='streak_count'> </h1><span style='font-size:6em;'>&#9889;</span></div>
 						</div>
 						
 					</div>
@@ -194,8 +280,8 @@
 
 					<div class="container  col-12 col-md-4 p-2">
 						
-						<div class="container bg-primary p-2">
-							<h3>Motivation</h3>
+						<div class="container p-2">
+							<h3 class="container bg-primary py-2 text-white" >Motivation</h3>
 						</div>
 
 					</div>
@@ -206,8 +292,10 @@
 
 					<div class="container  col-12 col-md-6 p-2">
 
-						<div class="container bg-success p-2">
-							<h3>Completed Topics</h3>
+						<div class="container  p-2">
+							<h3 class="container bg-success py-2 text-white" >Completed Topics</h3>
+							<div id="completed_count" class="text-center text-success display-3">
+							</div>
 						</div>
 						
 					</div>
@@ -215,8 +303,10 @@
 
 					<div class="container  col-12 col-md-6 p-2">
 						
-						<div class="container bg-danger p-2">
-							<h3>Backlogs</h3>
+						<div class="container p-2">
+							<h3 class="container bg-danger py-2 text-white" >Backlogs</h3>
+							<div id="backlog_count" class="text-center text-danger display-3">
+							</div>
 						</div>
 
 					</div>
@@ -244,18 +334,20 @@
 						</div>
 				      	
 				      	<div class="w3-content" style="max-width:800px">
-							<div class="mySlides w3-animate-opacity"  style="width:100%" id="week1">
-								week 1 
-							</div>
-							<div class="mySlides w3-animate-opacity"  style="width:100%" id="week2">
-								week 2 
-							</div>
-							<div class="mySlides w3-animate-opacity"  style="width:100%" id="week3">
-								week 3 
-							</div>
-							<div class="mySlides w3-animate-opacity"  style="width:100%" id="week4">
-								week 4 
-							</div>							
+				      		<form>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week1">
+									week 1 
+								</div>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week2">
+									week 2 
+								</div>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week3">
+									week 3 
+								</div>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week4">
+									week 4 
+								</div>							
+							</form>
 						</div>
 
 						<div class="w3-center"> 
@@ -294,8 +386,17 @@
 </body>
 <script type="text/javascript">
 	console.log(data.name)
+	
+	//Name Heading and Streaks and completed and backlog count
+
 	document.getElementById('heading_name1').innerHTML = data.name;
 	document.getElementById('heading_name2').innerHTML = data.name;
+	document.getElementById('streak_count').innerHTML = date.streak;
+	var topicStatusCount = getTopicStatus()
+	
+	document.getElementById('completed_count').innerHTML = topicStatusCount[1]
+	document.getElementById('backlog_count').innerHTML = topicStatusCount[2]
+
 
 	document.getElementById('info_div')
 	var college = '<h3><span style="color: #EB4146; font-size: 1.5em" >College</span>: ' + data.college + '</h3>'
@@ -325,7 +426,89 @@
 	}
 
 
+//CHARTS CREATION
 
+	var ctx1 = document.getElementById('canvas1').getContext('2d');
+	window.myChartRadar = new Chart(ctx1, {
+		type: 'doughnut', 
+		data: {											
+		labels: ['Pending','Completed','Backlogs'],
+		datasets: [{
+			label: 'prices', 
+			borderWidth: 2, 
+			hoverBorderWidth: 10,
+			hoverBorderColor: 'white' ,
+			backgroundColor: ['lightgray','lightgreen','tomato'], 
+			data: getTopicStatus(),
+			borderColor: 'white',
+			}]
+		},									//The Default data
+		labels: ['Pending','Completed','Backlogs'],
+		datasets: [{
+			label: 'prices', 
+			borderWidth: 5, 
+			hoverBorderWidth: 10, 
+			backgroundColor: ['lightgray','lightgreen','tomato'], 
+			data: [10,30,10],
+			borderColor: 'black',
+		}] ,
+		options: {
+			responsive: true,
+			scales: {
+		        xAxes: [{
+		        	ticks: {
+                		display: false
+            		},
+		            gridLines: {
+		                display:false
+		            }
+		        }],
+		        yAxes: [{
+		        	ticks: {
+                		display: false
+            		},
+		            gridLines: {
+		                display:false
+		            }   
+		        }]
+		    }, 
+			legend: {
+				position: 'top'
+			}, 
+			title: {
+				display: false,
+				text: 'Plan Progress'
+			}
+		}
+	});
+
+
+	function topicCheckBoxChanged(topicCheck){
+
+		topicData = topicCheck.value.split('|');
+
+		//The check topic state
+		checkedTopicData = {
+				'email' : data.email,
+				'topicCode' : topicData[0],
+				'topicMonth' : topicData[1],
+				'topicWeek' : topicData[2],
+				'topicState' : topicCheck.checked
+		}
+
+		console.log(checkedTopicData);
+
+		///Make an AJAX Function to send this data to the back end and save it's state
+
+		$.ajax({
+	            url: '/send_checked_topics',
+	            data: checkedTopicData,
+	            type: 'POST',
+	            success: function(response) {
+	                console.log(response)
+	               }
+	    });
+	}
 
 	//Modal Slide Show 
 	var slideIndex = 1;

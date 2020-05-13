@@ -30,7 +30,11 @@ Cred Collection
 {
 	email: [email],
 	name : [name],
-	membership : [unpaid]
+	membership : [unpaid],
+	streak :{
+		startDate : [start date]
+		lastDate : [last date]
+	}
 }
 
 User Collection

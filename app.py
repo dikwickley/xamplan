@@ -43,9 +43,23 @@ def nonlinear_curve(number_of_weeks, number_of_topics):
 
 month_list = ['january', 'febuary', 'march', 'april', 'may', 'june', 'july','august','september','october','novermber','december']
 
+
+
+def getStreak(email):
+	data = mongo.db.cred.find_one({'email' : email})
+	start_date = date(int(data['streak']['start_date'][0]), int(data['streak']['start_date'][1]), int(data['streak']['start_date'][2]))
+	last_date = date(int(data['streak']['last_date'][0]), int(data['streak']['last_date'][1]), int(data['streak']['last_date'][2]))
+	today_date = date.today()
+	if (today_date - last_date).days > 1:
+		start_date = today_date
+		return 0
+	else:
+		return (today_date -  start_date).days
+	
+
+
 #algo.getDistribution(weeks=x,topics=y)
 #this function is use to distriubte the topics accross a week
-
 #returns the list of all the topics for a particular exam
 def allTopicList(exam):
 	
@@ -195,19 +209,10 @@ def getPlan(target_year,curve,topic_list,revision):
 	return plan
 
 
-
-
-
-
-
 #....................................Global Funcitons Ends
 
-
-
-
-
-
 app = Flask(__name__)
+
 
 #database configuration
 app.config["MONGO_URI"] = "mongodb://aniket:Aniketsprx077@cluster0-shard-00-00-uugt8.mongodb.net:27017,cluster0-shard-00-01-uugt8.mongodb.net:27017,cluster0-shard-00-02-uugt8.mongodb.net:27017/main?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority"
@@ -225,8 +230,7 @@ app.permanent_session_lifetime = timedelta(days = 28)
 
 @app.route('/test')
 def test():
-	print(allTopicCode('GCS'))
-
+	print('streak: ', getStreak('r@r'))
 	return 'this is test'
 
 @app.route('/')
@@ -251,7 +255,18 @@ def handle_create():
 		 	return redirect(url_for('create'))
 		else:
 		 	print("no such email")
-		 	mongo.db.cred.insert_one({'email':email, 'password': password, 'membership' : 'unpaid'})
+		 	now = date.today()
+		 	user_data =  {	'email':email,
+		 					'password': password,
+		 					 'membership' : 'unpaid',
+		 					 'streak' : {
+		 					 			'start_date' : [now.year, now.month, now.day],
+		 					 			'last_date'	: [now.year, now.month, now.day]
+
+		 					 }
+		 				}
+
+		 	mongo.db.cred.insert_one(user_data)
 		 	session['user'] = email
 		return redirect(url_for('login'))
 	else:
@@ -342,6 +357,11 @@ def handle_login():
 		return redirect(url_for('login'))
 
 
+@app.route('/send_checked_topics', methods=['POST','GET'])
+def send_checked_topics():
+	data = request.form
+	print("data: ",dict(data))
+	return "success"
 
 @app.route('/account')
 def account():
@@ -355,9 +375,9 @@ def account():
 		today = date.today()
 		year = str(today.year)
 		month = month_list[today.month - 1 ] +'_'+ year
+		streak  = getStreak(data['email'])
 
-
-		return render_template('account.html',data=json.dumps(data),date=json.dumps({'month':month}),topics=json.dumps({'topics':allTopicList(exam=data['exam'])}))
+		return render_template('account.html',data=json.dumps(data),date=json.dumps({'month':month, 'streak': streak}),topics=json.dumps({'topics':allTopicList(exam=data['exam'])}))
 	else:
 		return redirect(url_for('login'))
 

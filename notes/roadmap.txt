@@ -1,18 +1,18 @@
-Step1: Decide Datastorage									[done]
-Step2: Write the algorithm 									[done]
-Step3: Make Create User functionality						[done]
-Step4: Find the learning curve function 					[not needed, it will be basic]
-Step5: Collect Data(cs,me,civil,el,ec)						[done only cs,me for now]
-Step6: Config Plan Page 									[done]
-Step7: Integrate the algorithm								[done]
-Step8: Make individual user tables							[done]
-Step9: Make Login											[done]
-Step10: Make Account page 									[done]
-Step11: Fetch data to account page 							[done]
-Step12: Display data to account Page 						[partially done, has to display names]
-step13: Add Chart
+Step1: Decide Datastorage										[done]
+Step2: Write the algorithm 										[done]
+Step3: Make Create User functionality							[done]
+Step4: Find the learning curve function 						[not needed, it will be basic]
+Step5: Collect Data(cs,me,civil,el,ec)							[done only cs,me for now]
+Step6: Config Plan Page 										[done]
+Step7: Integrate the algorithm									[done]
+Step8: Make individual user tables								[done]
+Step9: Make Login												[done]
+Step10: Make Account page 										[done]
+Step11: Fetch data to account page 								[done]
+Step12: Display data to account Page 							[done!]
+step13: Add Chart and --->Streak<-- Logic						[done]
 step14: Add Motivation Changer
-Step14: Add the point system
+Step14: Add the point system									[not needed]
 Step15: Add More info
 Step16: Make feedback form
 Step17: Finish Up the front end (footer, cookie warning, etc) 
@@ -24,3 +24,14 @@ Step19: Go Live!
  more:
  Remember to add email and password error in the alert
 
+Phase 2:
+
+Step1: Make Privacy policy and terms of users 					[]		dev
+Step2: Get copyright and Trademark								[]		dev
+Step3: Get OAuth												[]					
+Step4: Add Payment Methods (paytm, upi)							[]
+Step5: Make services for paid users (refer paid.txt)			[]
+Step6: Enable services for paid users							[]
+Step7: SEO*****													[]		dev
+Step8: Add the blog functionality and hire a content writer		[]		dev
+Step9: Affiliate marketing for the prep page 					[]

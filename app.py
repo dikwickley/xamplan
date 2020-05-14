@@ -54,13 +54,18 @@ def pretty(d, indent=0):
 
 def getStreak(email):
 	data = mongo.db.cred.find_one({'email' : email})
-	start_date = date(int(data['streak']['start_date'][0]), int(data['streak']['start_date'][1]), int(data['streak']['start_date'][2]))
-	last_date = date(int(data['streak']['last_date'][0]), int(data['streak']['last_date'][1]), int(data['streak']['last_date'][2]))
+	currentStreak = data['streak'][0]
+	start_date = date(int(data['streak'][0]['start_date'][0]), int(data['streak'][0]['start_date'][1]), int(data['streak'][0]['start_date'][2]))
+	last_date = date(int(data['streak'][0]['last_date'][0]), int(data['streak'][0]['last_date'][1]), int(data['streak'][0]['last_date'][2]))
 	today_date = date.today()
 	if (today_date - last_date).days > 1:
-		start_date = today_date
+		currentStreak['start_date'] = [today_date.year,today_date.month,today_date.day]
+		currentStreak['last_date'] = [today_date.year,today_date.month,today_date.day]
+		print('Current Streak: ', currentStreak)
+		mongo.db.cred.update({'email':email},{'$set':{'streak':[currentStreak]}})
 		return 0
 	else:
+		currentStreak['last_date'] = [today_date.year,today_date.month,today_date.day]
 		return (today_date -  start_date).days
 	
 
@@ -240,14 +245,18 @@ app.permanent_session_lifetime = timedelta(days = 28)
 
 @app.route('/test')
 def test():
-	
-	#print(sortTopics(allTopicCode('GCS')))
-	pretty(getPlan(target_year='2022',curve='nonlinear',topic_list=allTopicCode('GCS'),revision=2))
+
+	for ip in mongo.db.ip.find():
+		print(ip)
 	return 'this is test'
 
 @app.route('/')
 def main():
-    return render_template('index.html')
+	ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+	now = datetime.now()
+	date = now.strftime("%Y-%m-%d/%H:%M:%S")
+	mongo.db.ip.insert_one({'ip':ip,'date':date})
+	return render_template('index.html')
 
 @app.route('/create')
 def create():
@@ -271,11 +280,11 @@ def handle_create():
 		 	user_data =  {	'email':email,
 		 					'password': password,
 		 					 'membership' : 'unpaid',
-		 					 'streak' : {
+		 					 'streak' : [{
 		 					 			'start_date' : [now.year, now.month, now.day],
 		 					 			'last_date'	: [now.year, now.month, now.day]
 
-		 					 }
+		 					 }]
 		 				}
 
 		 	mongo.db.cred.insert_one(user_data)

@@ -44,7 +44,13 @@ def nonlinear_curve(number_of_weeks, number_of_topics):
 
 month_list = ['january', 'febuary', 'march', 'april', 'may', 'june', 'july','august','september','october','novermber','december']
 
-
+def pretty(d, indent=0):
+   for key, value in d.items():
+      print('\t' * indent + str(key))
+      if isinstance(value, dict):
+         pretty(value, indent+1)
+      else:
+         print('\t' * (indent+1) + str(value))
 
 def getStreak(email):
 	data = mongo.db.cred.find_one({'email' : email})
@@ -215,6 +221,9 @@ def getPlan(target_year,curve,topic_list,revision):
 app = Flask(__name__)
 
 
+app.config['JSON_SORT_KEYS'] = False
+
+
 #database configuration
 app.config["MONGO_URI"] = "mongodb://aniket:Aniketsprx077@cluster0-shard-00-00-uugt8.mongodb.net:27017,cluster0-shard-00-01-uugt8.mongodb.net:27017,cluster0-shard-00-02-uugt8.mongodb.net:27017/main?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority"
 mongo = PyMongo(app)
@@ -231,14 +240,9 @@ app.permanent_session_lifetime = timedelta(days = 28)
 
 @app.route('/test')
 def test():
-
-	myquery = { "email": "r@r" }
-	newvalues = { "$set": { "streak": {'start_date' : [2020,5,4],'last_date' : [2020,5,13]} } }
-
-	x = mongo.db.cred.update_one(myquery, newvalues)
 	
-	print(x)
-
+	#print(sortTopics(allTopicCode('GCS')))
+	pretty(getPlan(target_year='2022',curve='nonlinear',topic_list=allTopicCode('GCS'),revision=2))
 	return 'this is test'
 
 @app.route('/')
@@ -310,10 +314,19 @@ def handle_config():
 		revision = request.form['revision']
 		college_year = request.form['college_year']
 		completed_topics = request.form.getlist('c_topic')
-		user_topics = (list(set(allTopicCode(exam)) - set(completed_topics)))		#removes the completed topics from all topics
-		plan = getPlan(target_year=str(year),curve=curve,topic_list=user_topics,revision=int(revision))
-	
-	
+
+		#here is the problem the user topics is sorted
+		# user_topics = (list(set(allTopicCode(exam)) - set(completed_topics)))		#removes the completed topics from all topics
+		# print('user_topics', user_topics)
+		
+		allTopicList = allTopicCode(exam)
+		user_topics_unsorted = []
+		for code in allTopicList:
+			if code not in completed_topics:
+				user_topics_unsorted.append(code)
+
+		pretty(getPlan(target_year=str(year),curve=curve,topic_list=user_topics_unsorted,revision=int(revision)))
+
 		document = {
 		'email' : email,
 		'name' : name,
@@ -322,7 +335,7 @@ def handle_config():
 		'curve' : curve,
 		'college' : college,
 		'college_year' : college_year,
-		'plan' : [plan]
+		'plan' : [getPlan(target_year=str(year),curve=curve,topic_list=user_topics_unsorted,revision=int(revision))]
 		}
 
 		
@@ -423,7 +436,7 @@ def account():
 		print(quote)
 		del quote['_id']
 
-		return render_template('account.html',data=json.dumps(data),date=json.dumps({'month':month, 'streak': streak}),topics=json.dumps({'topics':allTopicList(exam=data['exam'])}), motivation=json.dumps(quote))
+		return render_template('account.html',data=json.dumps(data, sort_keys=False),date=json.dumps({'month':month, 'streak': streak}),topics=json.dumps({'topics':allTopicList(exam=data['exam'])}), motivation=json.dumps(quote))
 	else:
 		return redirect(url_for('login'))
 

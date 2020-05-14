@@ -280,12 +280,10 @@ def handle_create():
 		 	user_data =  {	'email':email,
 		 					'password': password,
 		 					 'membership' : 'unpaid',
-		 					 'streak' : [{
-		 					 			'start_date' : [now.year, now.month, now.day],
-		 					 			'last_date'	: [now.year, now.month, now.day]
-
-		 					 }]
+		 					 'streak' : [{'start_date' : [now.year, now.month, now.day],'last_date'	: [now.year, now.month, now.day]}]
 		 				}
+
+		 	print("USER DATA: ", user_data)
 
 		 	mongo.db.cred.insert_one(user_data)
 		 	session['user'] = email

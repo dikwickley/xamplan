@@ -264,7 +264,7 @@ def handle_create():
 		print("user: ", user)
 
 		if mongo.db.cred.find_one({"email": email}) != None:
-		 	return redirect(url_for('create'))
+		 	return redirect(url_for('create', msg="email_exists", **request.args))
 		else:
 		 	print("no such email")
 		 	now = date.today()
@@ -380,39 +380,43 @@ def handle_login():
 
 @app.route('/send_checked_topics', methods=['POST','GET'])
 def send_checked_topics():
-	data = request.form
-	data = dict(data)
-	thePlan = mongo.db.user.find_one({'email': data['email']})['plan'][0]
-	print(thePlan)
+	if request.method == 'POST':
+		data = request.form
+		data = dict(data)
+		thePlan = mongo.db.user.find_one({'email': data['email']})['plan'][0]
+		print(thePlan)
 
-	theWeek = thePlan[data['topicMonth']][data['topicWeek']]
-	print("before: ", theWeek)
-	print(data['topicCode'])
-	for x in range(len(theWeek)):
-		for y in range(len(theWeek[x])):
-			print(theWeek[x][y])
-			if (data['topicCode'] == theWeek[x][y][0]):
-				if data['topicState'] == 'true':
-					theWeek[x][y][1] = 'C'
-				else:
-					theWeek[x][y][1] = 'P'
+		theWeek = thePlan[data['topicMonth']][data['topicWeek']]
+		print("before: ", theWeek)
+		print(data['topicCode'])
+		for x in range(len(theWeek)):
+			for y in range(len(theWeek[x])):
+				print(theWeek[x][y])
+				if (data['topicCode'] == theWeek[x][y][0]):
+					if data['topicState'] == 'true':
+						theWeek[x][y][1] = 'C'
+					else:
+						theWeek[x][y][1] = 'P'
 
-	thePlan[data['topicMonth']][data['topicWeek']] =  theWeek
+		thePlan[data['topicMonth']][data['topicWeek']] =  theWeek
 
-	mongo.db.user.update_one({'email' : data['email']},{'$set':{'plan' : [thePlan]}})
-	print("after: ", theWeek)
-
-
-	return "success"
+		mongo.db.user.update_one({'email' : data['email']},{'$set':{'plan' : [thePlan]}})
+		print("after: ", theWeek)
+		return "success"
+	else:
+		return redirect(url_for('main'))
 
 @app.route('/send_motivation', methods=['GET','POST'])
 def send_motivation():
-	mno = random.randint(0,400)
-	quote = mongo.db.motivation.find_one({'mno': mno})
-	print(quote)
-	del quote['_id']
+	if request.method == 'POST':
+		mno = random.randint(0,400)
+		quote = mongo.db.motivation.find_one({'mno': mno})
+		print(quote)
+		del quote['_id']
 
-	return quote
+		return quote
+	else:
+		return redirect(url_for('main'))
 
 
 @app.route('/account')
@@ -445,6 +449,22 @@ def logout():
 	session.pop('login', None)
 	session.pop('user', None)
 	return redirect(url_for('main'))
+
+@app.route('/delete_account', methods=['POST','GET'])
+def delete_account():
+	if request.method == 'POST':
+		data = dict(request.form)
+
+		user_cred =  mongo.db.cred.find_one({'email' : data['email']})
+		
+		if user_cred['password'] == data['password']:
+			print("Account deleted")
+			database_response = mongo.db.user.remove({'email': data['email']})
+			print(database_response)
+			return "success"
+		else:
+			print('password error')
+			return "Incorrect Password"
 
 
 if __name__ == "__main__":

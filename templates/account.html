@@ -379,9 +379,32 @@
 
 		    <div id=info class="container tab-pane fade"><br>
 		      <h2>This is your Info</h2>
+		      <div id="delteModal" class="w3-modal">
+			  <div class="w3-modal-content w3-animate-zoom">
+			    <div class="w3-container">
+				    <span onclick="document.getElementById('delteModal').style.display='none'"
+				      class="w3-button w3-display-topright">close &times;</span>
+				    <div class="m-3 p-2">
+					    <h3 style="color: #EB4146;" > Want to delete your account huh? </h3>
+					    <p>If you continue, your current plan and progress would be deleted and can not be retrived. </p>
+					    <p>This action does not remove your credentials. You can make a new plan with the same email id.</p>
+					    <br>
+					    <label>Enter your password to continue</label>
+					    <input type="password" name="deletepassword" id='deletepassword' class="col-10 w3-input w3-border m-2" placeholder="Enter Your Password">
+					    <div class=" col-10">
+					    <button class="btn bg-success m-2 text-white" onclick="document.getElementById('delteModal').style.display='none'; document.getElementById('deletepassword').value = ''">Cancel Delete</button>
+					    <button class="btn bg-danger m-2 text-white w3-right" onclick="deleteAccount()">Confirm Delete</button>
+						</div>
+
+					</div>
+			    </div>
+			  </div>
+			</div>
 		      <div id="info_div">
 		      </div>
 		      <img id='curve_img' src='' alt='Your Curve' class="col-12 col-md-5">
+		      <br>
+		      <button class="bg-danger btn m-1 w3-right text-white" onclick="document.getElementById('delteModal').style.display='block'">Delete yo' Account</button>
 		    </div>
 		    
 		  </div>
@@ -563,6 +586,30 @@
 					window.myChart.update()
 	            }
 	    });
+	}
+
+
+
+	function deleteAccount(){
+
+		if(document.getElementById('deletepassword').value != ''){
+			console.log("Delete button pressed")
+			$.ajax({
+				url: '/delete_account',
+				data: {'password': document.getElementById('deletepassword').value,
+						'email' : data['email']
+					},
+				type: 'POST',
+				success : function(response){
+					if(response!='success')
+						alert(response)
+					else
+						window.location.href = "/logout"
+				}
+			});
+		} else {
+			alert("No Password Entered")
+		}
 	}
 
 	//Modal Slide Show 

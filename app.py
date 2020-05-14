@@ -8,6 +8,7 @@ from flask_pymongo import PyMongo
 import algo
 from bson import Binary, Code
 from bson.json_util import dumps
+import random
 
 #------------------------------------Algorithm Funcitons Begins
 
@@ -391,6 +392,16 @@ def send_checked_topics():
 
 	return "success"
 
+@app.route('/send_motivation', methods=['GET','POST'])
+def send_motivation():
+	mno = random.randint(0,400)
+	quote = mongo.db.motivation.find_one({'mno': mno})
+	print(quote)
+	del quote['_id']
+
+	return quote
+
+
 @app.route('/account')
 def account():
 	if 'login' in session:
@@ -406,7 +417,13 @@ def account():
 		streak  = getStreak(data['email'])
 		data['plan'] = data['plan'][0]
 
-		return render_template('account.html',data=json.dumps(data),date=json.dumps({'month':month, 'streak': streak}),topics=json.dumps({'topics':allTopicList(exam=data['exam'])}))
+
+		mno = random.randint(0,400)
+		quote = mongo.db.motivation.find_one({'mno': mno})
+		print(quote)
+		del quote['_id']
+
+		return render_template('account.html',data=json.dumps(data),date=json.dumps({'month':month, 'streak': streak}),topics=json.dumps({'topics':allTopicList(exam=data['exam'])}), motivation=json.dumps(quote))
 	else:
 		return redirect(url_for('login'))
 

@@ -55,6 +55,8 @@
 	console.log('topics: ', topics.topics)
 	var date = JSON.parse('{{ date | safe}}');
 	console.log('date: ',date)
+	var motivation = JSON.parse('{{ motivation | safe }}')
+	console.log('motivation: ', motivation)
 
 	function titleCase(str) {
 	   var splitStr = str.toLowerCase().split(' ');
@@ -284,6 +286,13 @@
 						
 						<div class="container p-2">
 							<h3 class="container bg-primary py-2 text-white" >Motivation</h3>
+							<button class="btn bg-primary text-center text-white w3-right" onclick="getMotivationFromServer()">Get More!</button><br>
+							<div id="quote" class="w3-xlarge">
+							</div>
+							<div id='author' class="w3-right w3-large">
+							</div>
+
+							
 						</div>
 
 					</div>
@@ -399,6 +408,10 @@
 	document.getElementById('completed_count').innerHTML = topicStatusCount[1]
 	document.getElementById('backlog_count').innerHTML = topicStatusCount[2]
 
+	//Motivation
+	document.getElementById('quote').innerHTML =  motivation.quote
+	document.getElementById('author').innerHTML =  motivation.author
+
 
 	document.getElementById('info_div')
 	var college = '<h3><span style="color: #EB4146; font-size: 1.5em" >College</span>: ' + data.college + '</h3>'
@@ -485,6 +498,23 @@
 			}
 		}
 	});
+
+	function getMotivationFromServer(){
+
+		$.ajax({
+
+			url: '/send_motivation',
+			data : 'motivation',
+			type : 'POST',
+			success: function(response){
+
+				console.log(response)
+				document.getElementById('quote').innerHTML =  response.quote
+				document.getElementById('author').innerHTML =  response.author
+
+			}
+		});
+	}
 
 
 	function topicCheckBoxChanged(topicCheck){

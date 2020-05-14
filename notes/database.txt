@@ -112,6 +112,15 @@ IP collection
 	datetime : [date time]	
 }
 
+
+Motivation collection 
+
+{
+	'motivation' : "the motivatoin",
+	'author' : "the author of motivation",
+	'likes' : "number of likes"
+}
+
 1) Cred Table:
 	email,password,membership
 

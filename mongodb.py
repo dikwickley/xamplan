@@ -4,6 +4,7 @@
 import pymongo
 import csv
 import random
+import unicodedata
 
 
 
@@ -90,5 +91,28 @@ def sendCsvToMongo(filename):
     print(x)
 
 #sendCsvToMongo('./syllabus/gatepi.csv')
+
+
+def  sendMotivate(filename):
+    data = []
+    csv_file = open(filename, mode='r')
+    csv_reader = csv.reader(csv_file)
+    for row in csv_reader:
+        row[0] = unicodedata.normalize("NFKD", row[0])
+        row[1] = unicodedata.normalize("NFKD", row[1])        
+        data.append(row)
+    csv_file.close()
+
+
+    for x in range(len(data)):
+        document = {
+            'mno' : x,
+            'quote' : data[x][0],
+            'author' : data[x][1]
+        }
+        print(document)
+        x =  db['motivation'].insert_one(document)
+    
+#sendMotivate('./notes/motivatelist1.csv')
 
 

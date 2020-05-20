@@ -78,7 +78,7 @@ body {
         <div class="d-md-block d-none container-fluid col-9 col-md-10">
             <div class="container-fluid col-12 p-0 row m-0 " id="nav_name">
                 <div class="col-7 container-fluid  my-auto text-center " id="xamplan">
-                    <span style="color: #363b4D">L</span>ogin
+                    <span style="color: #363b4D">S</span>ignup
                 </div>
                 <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
                     <div class="container col-4 p-1">
@@ -110,7 +110,7 @@ body {
     <div class="container-fluid row m-0 py-1 py-md-4" id="login_wrapper">
         <div class="col-12 col-md-6 py-1 py-md-2">
             <form action="/action_page.php" class="bg-white p-2" id="login_form">
-                <h3 class="text-center">Log into your<span style="color: #eb4146;"> Account</span></h3>
+                <h3 class="text-center">Create your<span style="color: #eb4146;"> Account</span></h3>
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input id="div_rounder" type="email" class="form-control" id="email" placeholder="Enter email" name="email">
@@ -119,14 +119,17 @@ body {
                     <label for="pwd">Password:</label>
                     <input id="div_rounder" type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
                 </div>
-                <div class="checkbox mb-1">
-                    <label><input type="checkbox" name="remember"> Remember me</label>
+                <div class="form-group">
+                    <label for="pwd">Retype Password:</label>
+                    <input id="div_rounder" type="password" class="form-control" id="pwd" placeholder="Retype password" name="pwd">
                 </div>
                 <div class="text-right px-4 mb-1">
-                    <button id="div_rounder" type="submit" class="btn btn-default text-white px-4" style="background-color: #eb4146;"><h5>Login</h5></button>
+                    <button id="div_rounder" type="submit" class="btn btn-default text-white px-4" style="background-color: #eb4146;">
+                        <h5>Signup</h5>
+                    </button>
                 </div>
                 <div class="signup_msg text-center">
-                    <h5>Dont have an account?<div style="color: #eb4146;"> SignUp!</div></h5>
+                    <h5>Already have an account?<div style="color: #eb4146;"> SignUp!</div></h5>
                 </div>
             </form>
         </div>
@@ -135,5 +138,4 @@ body {
         </div>
     </div>
 </body>
-
 </html>

@@ -18,11 +18,18 @@
 	#heading p {
 		cursor: pointer;
 	}
+<<<<<<< HEAD
 
 	p {
 		opacity: 0.85;
 	}
 
+=======
+	#nav_button{
+		background-color: #EB4146;
+	}
+	
+>>>>>>> e1ecf2f3db3fd4966b4eb70dbdb20b934e33490e
 </style>
 <body>
 	
@@ -37,37 +44,46 @@
 	</div>
 
 
-	<div  class="bg-light container  p-2" >
+	<div  class=" container  p-2" >
 		
-		<a class="btn w3-right m-3" style="color: white; background-color: #363B4D;"  href="{{ url_for('login') }}">Account</a>
+			
+		<div class="container-fluid row text-center">
+			<div class="col-2 w3-button w3-round-xxlarge  m-2 text-white" id="nav_button">
+				<h2> HOME </h2>
+			</div>
 
-		<!-- Nav tabs -->
-		<ul class="nav nav-tabs" >
-		  <li class="nav-item">
-		    <a class="nav-link active" style="color: #EB4146;" data-toggle="tab" href="#home">Home</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" style="color: #EB4146;"  href="#prep">Prep</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" style="color: #EB4146;"  href="#about">About</a>
-		  </li>
-		</ul>
+			<div class="col-3 w3-button w3-round-xxlarge m-2 text-white" id="nav_button">
+				<h2> PREPARATION </h2>
+			</div>
 
+			<div class="col-2 w3-button w3-round-xxlarge  m-2 text-white" id="nav_button">
+				<h2> ABOUT </h2>
+			</div>
+		</div>
 
-
-		<!-- Tab panes -->
-		<div class="tab-content">
-		  <div class="tab-pane container active" id="home">
-		  	<h1> Welcome to Xam Plan: Your Complete Exam Planning Solution </h1>
-
+<<<<<<< HEAD
 			  	<a class="container btn rounded-lg mt-3 p-2" href="{{ url_for('login') }}"   style="background-color: #363B4D; color: white;">
 			  		<h1 class="display-3 text-center d-none d-md-block" >Make Your Gate Timetable</h1>
 			  		<h1 class="display-4 text-center d-block d-md-none">Make Your Gate Timetable</h1>
 			  		<h5 style="color: #EB4146;">We use <span class="w3-text-yellow"> Advance Algorithms</span> to make the best plan for your success!</h5>
 			  		<p> Completely Free. Click here to Proceed.</p>
+=======
+		
+		
+			<h1>Home</h1>
+		  	
+			  	<a class="container btn mt-3 p-2" href="{{ url_for('login') }}"   style="background-color: #363B4D; color: white; border-radius: 100px;">
+			  		<h1 class="container text-center d-none d-md-block col-10" >Make Your Gate Timetable</h1>
+			  		<h1 class="container text-center d-block d-md-none col-10">Make Your Gate Timetable</h1>			  		
+>>>>>>> e1ecf2f3db3fd4966b4eb70dbdb20b934e33490e
 			  	</a>
+				
+				<div class="container p-4 text-center">
+					<h3 class="w3-button w3-center w3-round-xxlarge text-white" style="background-color: #EB4146;">Login</h3>	
+				</div>
+			  	
  
+<<<<<<< HEAD
 			  	<div class="container mt-3">
 			  		<h2 style="font-size: 2em;">
 				      Make your timetable in
@@ -144,6 +160,10 @@
 		  </div>
 		  <div class="tab-pane container fade p-2" id="about"><h5>This is startup. More features coming up.</h5></div>
 		</div>
+=======
+			  	
+
+>>>>>>> e1ecf2f3db3fd4966b4eb70dbdb20b934e33490e
 	</div>
 
 </body>

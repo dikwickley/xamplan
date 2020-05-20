@@ -17,6 +17,10 @@
 body {
     background-color: #eb4146;
 }
+#submitBtn{
+	background-color: #eb4146;	
+}
+
 </style>
 <body>
 	
@@ -54,9 +58,9 @@ body {
 			<select id="exams" name='exam' onchange="getDropDown()" class="col-12 p-2">
 				<option value="none"></option>
 				<option value="gate"> GATE</option>
-				<option value="cat"> CAT</option>
-				<option value="jee"> JEE</option>
-				<option value="neet"> NEET</option>
+				<option value="cat" disabled="true"> CAT</option>
+				<option value="jee" disabled="true"> JEE</option>
+				<option value="neet" disabled="true"> NEET</option>
 			</select>
 		</div>
 		
@@ -66,6 +70,10 @@ body {
 		</div>
 
 		<button class="my-3 mx-auto btn bg-light p-2 px-4" onclick="getSubjects()">Get Syllabus</button>
+	</div>
+
+	<div class="container bg-light" id='topics'>
+		
 	</div>
 
 
@@ -95,8 +103,55 @@ body {
 
 	function getSubjects(){
 
-		exam = document.getElementById('stream').value
-		console.log(exam)
+		userData = {
+			'exam' : document.getElementById('stream').value,
+			'name' : document.getElementById('name').value,
+			'education' : document.getElementById('education').value,
+			'year' : document.getElementById('year').value
+		}
+
+		$.ajax({
+
+			url : '/get_topics',
+			data : userData,
+			method : 'POST',
+			success(response){
+				document.getElementById('topics').innerHTML = ''
+				console.log(userData['exam'])
+				syllabus = JSON.parse(response)
+				var topics = []
+				topics.length = 0;
+				for(key in syllabus.data){
+
+					var subject = syllabus.data[key][2]
+					var subsubject = syllabus.data[key][3]
+					var topic
+					if(subsubject == 'None'){
+						
+						topic = subject
+						
+					} else {
+						topic = subsubject
+					}
+
+					if(topics.indexOf(topic) == -1)
+					topics.push(topic)
+					
+				}
+
+				console.log(topics)
+				$('#topics').addClass('p-4')
+				for(var x=0; x<topics.length; x+=1){
+					$('#topics').append('<div class="container col-md-6 col-12"><span class="font-weight-bold">' + topics[x] + '</span> </div>')
+					var slider = '<div  class="container col-md-6 col-12"> <br><label>EASY</label><label class="float-right">HARD</label><br><input type="range" class="custom-range " name="' +userData['exam'] + toString(x) + '"></div><br><br>'
+					$('#topics').append(slider)
+
+					
+				}
+				var button = '<button class="btn px-4 py-2 mx-auto text-white " id="submitBtn">Submit Response </button>'
+				$('#topics').append(button)
+			}
+		});
 	}
 </script>
 </html>

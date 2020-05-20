@@ -40,10 +40,14 @@ app.permanent_session_lifetime = timedelta(days = 28)
 
 @app.route('/')
 def survey():
-
-	print(allTopicList('GCS'))
-
 	return render_template('survey.html')
+
+@app.route('/get_topics', methods=['POST','GET'])
+def get_topics():
+
+	exam = dict(request.form)
+	syllabus = allTopicList(exam['exam'])
+	return json.dumps({'data' : syllabus})
 
 if __name__ == "__main__":
     app.run(debug=True)

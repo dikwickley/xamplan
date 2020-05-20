@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>Xam Plan</title>
+    <title>Xam Plan Login</title>
 </head>
 <style>
-* {
+    * {
     border: 1px dashed green;
     margin: 0px;
     padding: 0px;
@@ -46,7 +46,7 @@ body {
     color: white;
 
 }
-
+/*
 #signup,
 #login {
     border-radius: 24px;
@@ -58,7 +58,7 @@ body {
 
 #step_div {
     font-size: 2em;
-}
+}*/
 
 #xamplan {
     font-size: 5em;
@@ -68,7 +68,10 @@ body {
 #xamplan_mobile {
     font-size: 2em;
 }
-
+#login_form {
+    border-radius:  20px;
+}
+/*
 #step1,
 #step2,
 #step3 {
@@ -106,7 +109,7 @@ body {
 
 #three:hover {
     color: #eb4146;
-}
+}*/
 @media screen and (max-width: 425px) {
     #logo img {
         width: 100%;
@@ -122,7 +125,7 @@ body {
         <div class="d-md-block d-none container-fluid col-9 col-md-10">
             <div class="container-fluid col-12 p-0 row m-0 " id="nav_name">
                 <div class="col-7 container-fluid  my-auto text-center " id="xamplan">
-                    <span style="color: #363b4D">X</span>am Plan
+                    <span style="color: #363b4D">L</span>ogin
                 </div>
                 <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
                     <div class="container col-4 p-1">
@@ -151,49 +154,25 @@ body {
             </div>
         </div>
     </div>
-    <div id="moto" class="container text-center row col-md-12 m-0">
-        <img src="../static/img/make-circle.png" alt="Make Your Exam Plan" class="container col-12 col-md-3">
-        <div class="row col-md-12 m-0">
-            <div class="container col-md-6 m-0 text-md-right">
-                <button class="btn btn-lg text-white bg-dark px-md-5 px-4" id="login">LOGIN</button>
-            </div>
-            <div class="container col-md-6 m-0 text-md-left">
-                <button class="btn btn-lg text-white bg-dark px-md-5 px-4" id="signup">SIGNUP</button>
-            </div>
+    <div class="container row p-0" id="login_wrapper">
+        <div class="col-12 col-md-6 bg-white px-4" id="login_form">
+            <h3 class="text-center">Log into your account</h3>
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="remember"> Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-default">Login</button>
+            </form>
         </div>
     </div>
-    <div class="row container-fluid mt-5 mx-0 py-5" id="steps_panel">
-        <div class="container col-12 col-md-3 text-white" id="step_moto">
-            <span id="three"> 3 </span> steps to success
-        </div>
-        <div class="container-fluid col-md-9 text-dark row text-center m-0" id="step_div">
-            <div class="container col-12 my-2 col-md-3">
-                <div class="container  rounded-lg p-3" id="step1">
-                    Step1 <br>
-                    <span id='step_text'>
-                        Choose your target exam
-                    </span>
-                </div>
-            </div>
-            <div class="container col-12 my-1 col-md-3">
-                <div class="container rounded-lg p-3" id="step2">
-                    Step2 <br>
-                    <span id='step_text'>
-                        Choose your target year
-                    </span>
-                </div>
-            </div>
-            <div class="container col-12 my-1 col-md-3">
-                <div class="container rounded-lg p-3" id="step3">
-                    Step3 <br>
-                    <span id='step_text'>
-                        Choose your Effort Curve
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <img src="../static/img/bg-snip.png" style="position: absolute; right: 0; top: 0; z-index: -1;" class="col-md-10 col-9 p-0 m-0"> -->
 </body>
 
 </html>

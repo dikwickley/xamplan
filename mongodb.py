@@ -1,6 +1,4 @@
 #THIS SCRIPT BASICALLY UPLOADS THE SYLLABUS IN MONGO DB
-
-
 import pymongo
 import csv
 import random

@@ -17,7 +17,10 @@
 	#heading p {
 		cursor: pointer;
 	}
-
+	#nav_button{
+		background-color: #EB4146;
+	}
+	
 </style>
 <body>
 	
@@ -32,113 +35,39 @@
 	</div>
 
 
-	<div  class="bg-light container  p-2" >
+	<div  class=" container  p-2" >
 		
-		<a class="btn w3-right m-3" style="color: white; background-color: #363B4D;"  href="{{ url_for('login') }}">Account</a>
+			
+		<div class="container-fluid row text-center">
+			<div class="col-2 w3-button w3-round-xxlarge  m-2 text-white" id="nav_button">
+				<h2> HOME </h2>
+			</div>
 
-		<!-- Nav tabs -->
-		<ul class="nav nav-tabs" >
-		  <li class="nav-item">
-		    <a class="nav-link active" style="color: #EB4146;" data-toggle="tab" href="#home">Home</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" style="color: #EB4146;"  href="#prep">Prep</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" style="color: #EB4146;"  href="#about">About</a>
-		  </li>
-		</ul>
+			<div class="col-3 w3-button w3-round-xxlarge m-2 text-white" id="nav_button">
+				<h2> PREPARATION </h2>
+			</div>
 
-
-
-		<!-- Tab panes -->
-		<div class="tab-content">
-		  <div class="tab-pane container active" id="home">
-		  	<h1> Welcome to Xam Plan: Your Complete Exam Planning Solution </h1>
-
-			  	<a class="container btn rounded-lg mt-3 p-2" href="{{ url_for('login') }}"   style="background-color: #363B4D; color: white;">
-			  		<h1 class="display-3 text-center d-none d-md-block" >Make Your Gate Timetable</h1>
-			  		<h1 class="display-4 text-center d-block d-md-none">Make Your Gate Timetable</h1>
-			  		<h5 style="color: #EB4146;">We use <span class="w3-text-yellow"> Advance Algorithms</span> and <span class="w3-text-yellow">Machine Learning</span> to make the best plan for your success!</h5>
-			  		<p> Completely Free. Click here to Proceed.</p>
-			  	</a>
- 
-			  	<div class="container mt-3">
-			  		<p style="font-size: 2em;">
-				      Make your timetable in
-				      <span style="color: #EB4146; font-size: 1.5em">3</span>
-				      easy steps
-				    </p>
-
-				    <div class="container row">
-
-				    	<div  class="container  col-12 col-md-4 ">
-				    		<div class="container m-4 p-2 w3-border">
-				    			<span style="color: #EB4146; font-size: 1.5em">Step 1</span>
-				    			<br>
-				    			<span>Select Exam</span>
-				    		</div>
-				    	</div>
-				    	<div  class="container col-12 col-md-4">
-				    		<div class="container m-4 p-2 w3-border">
-				    			<span style="color: #EB4146; font-size: 1.5em">Step 2</span>
-				    			<br>
-				    			<span>Choose Target Year</span>
-				    		</div>
-				    	</div>
-				    	<div  class="container  col-12 col-md-4 ">
-				    		<div class="container m-4 p-2 w3-border">
-				    			<span style="color: #EB4146; font-size: 1.5em">Step 3</span>
-				    			<br>
-				    			<span>Select Learning Curve</span>
-				    		</div>
-				    	</div>
-
-				    </div>
-			  	</div>
-
-			  	<div class="container">
-
-			  		<p style="font-size: 2em;">About the Exam</p>
-			  		<p>Graduate Aptitude Test in Engineering (GATE) is an examination conducted jointly by the Indian
-					Institute of Science (IISc), Bangalore and the seven Indian Institutes of Technology (at Bombay,
-					Delhi, Guwahati, Kanpur, Kharagpur, Madras and Roorkee) on behalf of the National Coordination
-					Board (NCB)-GATE, Department of Higher Education, Ministry of Human Resource Development
-					(MHRD), Government of India.</p>
-					<p>
-						Qualifying in GATE is a mandatory requirement for seeking admission and/or financial assistance
-						to: 
-						<ol>
-							<li>Master’s programs and direct Doctoral programs in Engineering/Technology/Architecture </li>
-							<li>Doctoral programs in relevant branches of Science, in the institutions supported by the
-						MHRD and other Government agencies.</li>
-						</ol>
-
-						Even in some colleges and institutions, which admit
-						students without MHRD scholarship/assistantship, the GATE qualification is mandatory. Further,
-						many Public Sector Undertakings (PSUs) have been using the GATE score in their recruitment
-						process.
-					</p>
-					<p>
-						Graduate Aptitude Test in Engineering (GATE) is basically an examination on the comprehensive
-						understanding of the candidates in various undergraduate subjects in Engineering/Technology/
-						Architecture and post-graduate level subjects in Science. GATE 2020 will be conducted for 25
-						subjects (also referred to as “papers”) and it would be distributed over 1st
-
-						, 2nd, 8th & 9th of February
-						2020. The GATE examination centres are spread in different cities across India, as well as, in six
-						cities outside India. The examination would be purely a Computer Based Test (CBT).
-						The GATE score would reflect the relative performance level of the candidate in a particular subject,
-						which is quantified based on the several years of examination data. Note that the GATE 2020 score
-						is valid for THREE YEARS from the date of announcement of the results.
-					</p>
-			  	</div>
-		  </div>
-		  <div class="tab-pane container fade p-2" id="prep">
-		  	<h5>Somethings to help you prepare for the exam:</h5>
-		  </div>
-		  <div class="tab-pane container fade p-2" id="about"><h5>This is startup. More features coming up.</h5></div>
+			<div class="col-2 w3-button w3-round-xxlarge  m-2 text-white" id="nav_button">
+				<h2> ABOUT </h2>
+			</div>
 		</div>
+
+		
+		
+			<h1>Home</h1>
+		  	
+			  	<a class="container btn mt-3 p-2" href="{{ url_for('login') }}"   style="background-color: #363B4D; color: white; border-radius: 100px;">
+			  		<h1 class="container text-center d-none d-md-block col-10" >Make Your Gate Timetable</h1>
+			  		<h1 class="container text-center d-block d-md-none col-10">Make Your Gate Timetable</h1>			  		
+			  	</a>
+				
+				<div class="container p-4 text-center">
+					<h3 class="w3-button w3-center w3-round-xxlarge text-white" style="background-color: #EB4146;">Login</h3>	
+				</div>
+			  	
+ 
+			  	
+
 	</div>
 
 </body>

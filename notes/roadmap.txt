@@ -1,8 +1,9 @@
+Phase 1:
 Step1: Decide Datastorage										[done]
 Step2: Write the algorithm 										[done]
 Step3: Make Create User functionality							[done]
-Step4: Find the learning curve function 						[not needed, it will be basic]
-Step5: Collect Data(cs,me,civil,el,ec)							[done only cs,me for now]
+Step4: Find the learning curve function 						[not needed]
+Step5: Collect data 											[done]
 Step6: Config Plan Page 										[done]
 Step7: Integrate the algorithm									[done]
 Step8: Make individual user tables								[done]
@@ -14,29 +15,22 @@ step13: Add Chart and --->Streak<-- Logic						[done]
 step14: Add Motivation Changer									[done]
 Step14: Add the point system									[not needed]
 Step15: Add More info											[done]
-Step16: Make feedback form
-Step17: Finish Up the front end (footer, cookie warning, etc) 
-Step18: Buy domain and mail
+Step16: Make feedback form 										[]
+Step17: Finish Up the front end (footer, cookie warning, etc) 	[]
+Step18: Buy domain and mail										[done]
 
+hosting-> domain -> privacy policy 								[done]
 
-CAT,GATE,JEE,NEET
-
-
-
-
- 
-hosting-> domain -> privacy policy -> copy right
-
- more:
- Remember to add email and password error in the alert
+more:
+	Remember to add email and password error in the alert		[]
 
 Phase 2:
 
-Step1: Make Privacy policy and terms of users 					[]		saakshi
-Step2: Get copyright and Trademark								[]		
-Step3: Get OAuth												[]					
+Step1: Make Privacy policy and terms of users 					[done]
+Step2: Get copyright and Trademark								[won't be doing the c and tm]		
+Step3: Get OAuth												[can't be added until fully functional website is live]				
 Step4: SEO*****													[]		dev
-Step5: Add the blog functionality and hire a content writer		[]		dev
+Step5: Add the blog functionality and hire a content writer		[]
 
 
 Make Site it  
@@ -56,4 +50,5 @@ Step7: *Ability to change the function at any time				[]
 Step8: *Ability to merge two exams together						[]
 Step9: *Streak protection for two days							[]
 Step10: *Personalised daily whats app subscription				[]
+Step11: Refral code 											[]
 

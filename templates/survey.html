@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>XamPlan Survey</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+* {
+    /*border: 1px dashed green;*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #eb4146;
+}
+</style>
+<body>
+	
+	<div class="container-fluid mx-auto p-3 row">
+
+		<div class="conatiner-fluid m-0 col-5 col-md-2">
+			<img src="./static/img/white_logo_nobg.png" alt='logo' style="width: 100%">
+			<p class="text-white text-center">Xam Plan</p>
+		</div>
+		
+		<h1 class="text-center display-2 d-md-block d-none col-10 text-white">Exam Survey</h1>
+		<h1 class="text-center display-4 d-md-none d-block col-7 text-white">Exam Survey</h1>
+
+
+		
+		<div class="form-group col-md-5 col-12 p-2">
+			<label for="name" class="text-white font-weight-bold">Name:</label>
+			<input type="text" class="form-control" id="name" name='name' placeholder="Name">
+		</div>
+
+		<div class="form-group col-md-5 col-9 p-2">
+			<label for="education" class="text-white font-weight-bold">College or School:</label>
+			<input type="text" class="form-control " id="education" name='education' placeholder="College or School">
+		</div>
+
+		<div class="form-group col-md-2 col-3 p-2">
+			<label for="year" class="text-white font-weight-bold">Year:</label>
+			<input type="text" class="form-control " id="year" name='year' placeholder="Year">
+		</div>
+
+		
+
+		<div class="form-group col-md-6 col-12 mx-auto p-2">
+			<label class="text-white font-weight-bold" >Exam</label>
+			<select id="exams" name='exam' onchange="getDropDown()" class="col-12 p-2">
+				<option value="none"></option>
+				<option value="gate"> GATE</option>
+				<option value="cat"> CAT</option>
+				<option value="jee"> JEE</option>
+				<option value="neet"> NEET</option>
+			</select>
+		</div>
+		
+		<div class="form-group col-md-6 col-12 mx-auto p-2">
+			<label class="text-white font-weight-bold">Stream</label>
+			<select id='stream' name='stream' class="col-12 p-2"></select>
+		</div>
+
+		<button class="my-3 mx-auto btn bg-light p-2 px-4" onclick="getSubjects()">Get Syllabus</button>
+	</div>
+
+
+
+</body>
+		
+<script type="text/javascript">
+	
+	var stream = {
+		gate : [['GCS', 'GATE-CS (Computer Science & IT Engineering'], ['GME', 'GATE-ME (Mechanical Engineering)'], ['GCE', 'GATE-CE (Civil Engineering)' ], ['GEC', 'GATE-EC (Electronics & Communication Engineering)'], ['GEE', 'GATE-EE (Electrical Engineering)'], ['GPI', 'GATE-PI (Production & Industrial Engineering)']],
+		neet : [['NEET', 'National Eligblity cum Entrance Test']],
+		jee : [['M', 'JEE Mains'], ['MA', 'JEE Mains + Advanced']],
+		cat : [['CAT', 'Common Entrance and Aptitude Test']]
+
+	}
+
+	function getDropDown(){
+		var exam = document.getElementById('exams').value
+		document.getElementById('stream').innerHTML = ''
+		if(exam != 'None'){
+			for(sub in stream[exam]){
+				// console.log(stream[exam][sub])
+				$('#stream').append('<option value="' + stream[exam][sub][0] + '" >' + stream[exam][sub][1] +'</option>')
+				}
+		}
+	}
+
+	function getSubjects(){
+
+		exam = document.getElementById('stream').value
+		console.log(exam)
+	}
+</script>
+</html>
+
+
+
+
+
+
+

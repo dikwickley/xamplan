@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Xam Plan Login</title>
+</head>
+<style>
+    * {
+    /*border: 1px dashed green;*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #eb4146;
+}
+
+#logo img {
+    width: 80%;
+}
+
+#nav-round-button 
+{    color: #00CCB1;
+    background-color: white;
+    font-size: 2vw;
+    height: 3.5vw;
+    border-radius: 1.75vw;
+    font-weight: 600;
+    padding: 0 1.25vw;
+    border: none;
+    outline: none;
+}
+
+#nav-round-button:hover {
+    color: white;
+    background-color: #00CCB1;
+    /*outline: 1px double #00CCB1;*/
+}
+
+#nav_button {
+    background-color: #00CCB1;
+    color: white;
+
+}
+
+#xamplan {
+    font-size: 5em;
+    color: #ffffff;
+}
+
+#xamplan_mobile {
+    font-size: 2em;
+}
+#login_form {
+    border-radius:  20px;
+}
+
+#div_rounder {
+    border-radius: 24px;
+}
+
+@media screen and (max-width: 425px) {
+    #logo img {
+        width: 100%;
+    }
+}
+</style>
+
+<body>
+    <div class="row container-fluid mb-3 m-0 p-0" id="heading">
+        <div class="col-3 p-0 p-md-3 col-md-2 container-fluid m-0" id="logo">
+            <img src="../static/img/white_logo_nobg.png" alt="Xam Plan Logo">
+        </div>
+        <div class="d-md-block d-none container-fluid col-9 col-md-10">
+            <div class="container-fluid col-12 p-0 row m-0 " id="nav_name">
+                <div class="col-7 container-fluid  my-auto text-center " id="xamplan">
+                    <span style="color: #363b4D">L</span>ogin
+                </div>
+                <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
+                    <div class="container col-4 p-1">
+                        <button class="btn  px-md-4 py-1" id="nav_button">
+                            HOME
+                        </button>
+                    </div>
+                    <div class="container col-4 p-1 pr-2">
+                        <button class="btn  px-md-4 py-1" id="nav_button">
+                            PREP
+                        </button>
+                    </div>
+                    <div class="container col-4 p-1">
+                        <button class="btn  px-md-4 py-1" id="nav_button">
+                            ABOUT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid col-6 col-offset-1 d-block d-md-none p-0">
+            <div class="container-fluid mr-2 col-4 p-3">
+                <button class="btn  text-white" id="nav_button">
+                    HOME
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid row m-0 py-1 py-md-4" id="login_wrapper">
+        <div class="col-12 col-md-6 py-1 py-md-2">
+            <form action="/action_page.php" class="bg-white p-2" id="login_form">
+                <h3 class="text-center">Log into your<span style="color: #eb4146;"> Account</span></h3>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="div_rounder" type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input id="div_rounder" type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                </div>
+                <div class="checkbox mb-1">
+                    <label><input type="checkbox" name="remember"> Remember me</label>
+                </div>
+                <div class="text-right px-4 mb-1">
+                    <button id="div_rounder" type="submit" class="btn btn-default text-white px-4" style="background-color: #eb4146;"><h5>Login</h5></button>
+                </div>
+                <div class="signup_msg text-center">
+                    <h5>Dont have an account?<div style="color: #eb4146;"> SignUp!</div></h5>
+                </div>
+            </form>
+        </div>
+        <div id="moto" class="container text-center col-12 col-md-6 py-md-4 my-3 m-md-0">
+            <img src="../static/img/make-circle.png" alt="Make Your Exam Plan" class="container col-12 col-md-8 p-1">
+        </div>
+    </div>
+</body>
+
+</html>

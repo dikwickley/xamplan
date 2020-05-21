@@ -28,59 +28,66 @@ body {
 
 		<div class="conatiner-fluid m-0 col-5 col-md-2">
 			<img src="./static/img/white_logo_nobg.png" alt='logo' style="width: 100%">
-			<p class="text-white text-center">Xam Plan</p>
+			
 		</div>
 		
 		<h1 class="text-center display-2 d-md-block d-none col-10 text-white">Exam Survey</h1>
 		<h1 class="text-center display-4 d-md-none d-block col-7 text-white">Exam Survey</h1>
+		
+	
+		
+			<div class="form-group col-md-5 col-12 p-2">
+				<label for="name" class="text-white font-weight-bold">Name:</label>
+				<input type="text" class="form-control" id="name" name='name' placeholder="Name">
+			</div>
 
+			<div class="form-group col-md-5 col-9 p-2">
+				<label for="education" class="text-white font-weight-bold">College or School:</label>
+				<input type="text" class="form-control " id="education" name='education' placeholder="College or School">
+			</div>
+
+			<div class="form-group col-md-2 col-3 p-2">
+				<label for="year" class="text-white font-weight-bold">Year:</label>
+				<input type="text" class="form-control " id="year" name='year' placeholder="Year">
+			</div>
+
+			
+
+			<div class="form-group col-md-6 col-12 mx-auto p-2">
+				<label class="text-white font-weight-bold" >Exam</label>
+				<select id="exams" name='exam' onchange="getDropDown()" class="col-12 p-2">
+					<option value="none"></option>
+					<option value="gate"> GATE</option>
+					<option value="cat" disabled="true"> CAT</option>
+					<option value="jee" disabled="true"> JEE</option>
+					<option value="neet" disabled="true"> NEET</option>
+				</select>
+			</div>
+			
+			<div class="form-group col-md-6 col-12 mx-auto p-2">
+				<label class="text-white font-weight-bold">Stream</label>
+				<select id='stream' name='stream' class="col-12 p-2"></select>
+			</div>
+
+			<button type="button" class="my-3 mx-auto btn bg-light p-2 px-4" onclick="getSubjects()">Get Syllabus</button>
+		</div>
+		<div class="container bg-light">
+			<div id='topics' class="conatiner-fluid m-0 p-0"></div>
+			<input type="submit" class="btn px-4 py-2 mx-auto text-white m-3" id="submitBtn" value="Submit Response">
+		</div>
 
 		
-		<div class="form-group col-md-5 col-12 p-2">
-			<label for="name" class="text-white font-weight-bold">Name:</label>
-			<input type="text" class="form-control" id="name" name='name' placeholder="Name">
-		</div>
-
-		<div class="form-group col-md-5 col-9 p-2">
-			<label for="education" class="text-white font-weight-bold">College or School:</label>
-			<input type="text" class="form-control " id="education" name='education' placeholder="College or School">
-		</div>
-
-		<div class="form-group col-md-2 col-3 p-2">
-			<label for="year" class="text-white font-weight-bold">Year:</label>
-			<input type="text" class="form-control " id="year" name='year' placeholder="Year">
-		</div>
-
 		
 
-		<div class="form-group col-md-6 col-12 mx-auto p-2">
-			<label class="text-white font-weight-bold" >Exam</label>
-			<select id="exams" name='exam' onchange="getDropDown()" class="col-12 p-2">
-				<option value="none"></option>
-				<option value="gate"> GATE</option>
-				<option value="cat" disabled="true"> CAT</option>
-				<option value="jee" disabled="true"> JEE</option>
-				<option value="neet" disabled="true"> NEET</option>
-			</select>
-		</div>
-		
-		<div class="form-group col-md-6 col-12 mx-auto p-2">
-			<label class="text-white font-weight-bold">Stream</label>
-			<select id='stream' name='stream' class="col-12 p-2"></select>
-		</div>
-
-		<button class="my-3 mx-auto btn bg-light p-2 px-4" onclick="getSubjects()">Get Syllabus</button>
-	</div>
-
-	<div class="container bg-light" id='topics'>
-		
-	</div>
+	
 
 
 
 </body>
 		
 <script type="text/javascript">
+
+	document.getElementById('submitBtn').style.display = 'none'
 	
 	var stream = {
 		gate : [['GCS', 'GATE-CS (Computer Science & IT Engineering'], ['GME', 'GATE-ME (Mechanical Engineering)'], ['GCE', 'GATE-CE (Civil Engineering)' ], ['GEC', 'GATE-EC (Electronics & Communication Engineering)'], ['GEE', 'GATE-EE (Electrical Engineering)'], ['GPI', 'GATE-PI (Production & Industrial Engineering)']],
@@ -143,13 +150,10 @@ body {
 				$('#topics').addClass('p-4')
 				for(var x=0; x<topics.length; x+=1){
 					$('#topics').append('<div class="container col-md-6 col-12"><span class="font-weight-bold">' + topics[x] + '</span> </div>')
-					var slider = '<div  class="container col-md-6 col-12"> <br><label>EASY</label><label class="float-right">HARD</label><br><input type="range" class="custom-range " name="' +userData['exam'] + toString(x) + '"></div><br><br>'
-					$('#topics').append(slider)
-
-					
+					var slider = '<div  class="container col-md-6 col-12"> <br><label>EASY</label><label class="float-right">HARD</label><br><input type="range" class="custom-range" required name="' + userData['exam'] + toString(x) + '"></div><br><br>'
+					$('#topics').append(slider)					
 				}
-				var button = '<button class="btn px-4 py-2 mx-auto text-white " id="submitBtn">Submit Response </button>'
-				$('#topics').append(button)
+				document.getElementById('submitBtn').style.display = 'inline-block'
 			}
 		});
 	}

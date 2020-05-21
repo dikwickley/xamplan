@@ -42,6 +42,19 @@ app.permanent_session_lifetime = timedelta(days = 28)
 def survey():
 	return render_template('survey.html')
 
+@app.route('/handle_survey', methods=['GET', 'POST'])
+def handle_survey():
+
+	if request.method == 'POST':
+
+		data = request.form
+		print(data)
+
+		return "DATA"
+	else:
+		return redirect(url_for('/'))
+
+
 @app.route('/get_topics', methods=['POST','GET'])
 def get_topics():
 

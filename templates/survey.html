@@ -22,6 +22,7 @@ body {
 	background-color: #eb4146;	
 }
 
+
 </style>
 <body>
 	
@@ -34,6 +35,8 @@ body {
 		
 		<h1 class="text-center display-2 d-md-block d-none col-10 text-white">Exam Survey</h1>
 		<h1 class="text-center display-4 d-md-none d-block col-7 text-white">Exam Survey</h1>
+
+		
 		
 	
 		
@@ -74,7 +77,7 @@ body {
 		</div>
 		<div class="container bg-light">
 			<div id='topics' class="conatiner-fluid m-0 p-0"></div>
-			<input type="submit" class="btn px-4 py-2 mx-auto text-white m-3" id="submitBtn" value="Submit Response">
+			<input type="button" onclick="submitData()" class="btn px-4 py-2 mx-auto text-white m-3" id="submitBtn" value="Submit Response">
 		</div>
 
 		
@@ -89,9 +92,11 @@ body {
 <script type="text/javascript">
 
 	document.getElementById('submitBtn').style.display = 'none'
+
+	var sliderNames = []
 	
 	var stream = {
-		gate : [['GCS', 'GATE-CS (Computer Science & IT Engineering'], ['GME', 'GATE-ME (Mechanical Engineering)'], ['GCE', 'GATE-CE (Civil Engineering)' ], ['GEC', 'GATE-EC (Electronics & Communication Engineering)'], ['GEE', 'GATE-EE (Electrical Engineering)'], ['GPI', 'GATE-PI (Production & Industrial Engineering)']],
+		gate : [['GCS', 'GATE-CS (Computer Science & IT Engineering)'], ['GME', 'GATE-ME (Mechanical Engineering)'], ['GCE', 'GATE-CE (Civil Engineering)' ], ['GEC', 'GATE-EC (Electronics & Communication Engineering)'], ['GEE', 'GATE-EE (Electrical Engineering)'], ['GPI', 'GATE-PI (Production & Industrial Engineering)'],['GAE', 'GATE-AE (Aerospace Engineering)']],
 		neet : [['NEET', 'National Eligblity cum Entrance Test']],
 		jee : [['M', 'JEE Mains'], ['MA', 'JEE Mains + Advanced']],
 		cat : [['CAT', 'Common Entrance and Aptitude Test']]
@@ -109,6 +114,35 @@ body {
 		}
 	}
 
+	function submitData(){
+
+		var data = {
+			'exam' : document.getElementById('stream').value,
+		}
+
+		for(var x=0; x<sliderNames.length;x+=1){
+
+			data[sliderNames[x]] = (document.getElementById(sliderNames[x]).value)
+		}
+
+		console.log(data)
+
+		$.ajax({
+			url:'/handle_survey',
+			data: data,
+			method: 'POST',
+			success(response){
+				console.log(response)
+				if(response == 'success'){
+					window.location.href = "/thanks"
+				}
+			}
+		});
+
+
+	}
+
+
 	function getSubjects(){
 
 		userData = {
@@ -119,7 +153,6 @@ body {
 		}
 
 		$.ajax({
-
 			url : '/get_topics',
 			data : userData,
 			method : 'POST',
@@ -151,8 +184,11 @@ body {
 				$('#topics').addClass('p-4')
 				for(var x=0; x<topics.length; x+=1){
 					$('#topics').append('<div class="container col-md-6 col-12"><span class="font-weight-bold">' + topics[x] + '</span> </div>')
-					var slider = '<div  class="container col-md-6 col-12"> <br><label>EASY</label><label class="float-right">HARD</label><br><input type="range" class="custom-range" required name="' + userData['exam'] + toString(x) + '"></div><br><br>'
-					$('#topics').append(slider)					
+
+					console.log(topics[x].split(' ').join('_'))
+					var slider = '<div  class="container col-md-6 col-12"> <br><label>EASY</label><label class="float-right">HARD</label><br><input type="range" class="custom-range" required id="' + topics[x].split(' ').join('_') + '"></div><br><br>'
+					$('#topics').append(slider)		
+					sliderNames.push(topics[x].split(' ').join('_'))
 				}
 				document.getElementById('submitBtn').style.display = 'inline-block'
 			}

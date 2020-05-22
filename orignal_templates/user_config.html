@@ -209,8 +209,8 @@ function getDropDown(){
 	                for(key in syllabus[exam]){
 	                	$('#topic_list').append('<br><h4>' + syllabus[exam][key][0][3] + '</h4><br>')
 	                	for(x in syllabus[exam][key]){
-	                		input = '<input type="checkbox" class"w3-check w3-padding" id="'+ syllabus[exam][key][x][0] + '" name="c_topic" value="'+ syllabus[exam][key][x][0] + '">'
-							label = '<label class"w3-margin w3-padding"  for="'+ syllabus[exam][key][x][0] + '">'+ syllabus[exam][key][x][1] + '</label><br><div id="topic_end"></div>'
+	                		input = '<input type="checkbox" class"p-4" id="'+ syllabus[exam][key][x][0] + '" name="c_topic" value="'+ syllabus[exam][key][x][0] + '">'
+							label = '<label class"m-3 p-3"  for="'+ syllabus[exam][key][x][0] + '">'+ syllabus[exam][key][x][1] + '</label><br><div id="topic_end"></div>'
 							$('#topic_list').append(input + label)
 	                	}
 	                	$('#topic_list').append('<br>')

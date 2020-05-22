@@ -1,0 +1,97 @@
+GAEEMLA01,Vector algebra,,Engineering Mathematics ,Linear Algebra
+GAEEMLA02,Matrix algebra,,Engineering Mathematics ,Linear Algebra
+GAEEMLA03, systems of linear equations,,Engineering Mathematics ,Linear Algebra
+GAEEMLA04,rank of a matrix,,Engineering Mathematics ,Linear Algebra
+GAEEMLA05,eigen values and eigenvectors,,Engineering Mathematics ,Linear Algebra
+GAEEMCA01,Functions of single variable,,Engineering Mathematics ,Calculus
+GAEEMCA02,"limits, continuity and differentiability",,Engineering Mathematics ,Calculus
+GAEEMCA03, mean value theorem,,Engineering Mathematics ,Calculus
+GAEEMCA04,chain rule,,Engineering Mathematics ,Calculus
+GAEEMCA05,partial derivatives,,Engineering Mathematics ,Calculus
+GAEEMCA06,maxima and minima,,Engineering Mathematics ,Calculus
+GAEEMCA07," gradient, divergence and curl",,Engineering Mathematics ,Calculus
+GAEEMCA08,directional derivatives,,Engineering Mathematics ,Calculus
+GAEEMCA09,Integration,,Engineering Mathematics ,Calculus
+GAEEMCA10," Line, surface and volume integrals",,Engineering Mathematics ,Calculus
+GAEEMCA11,"Theorems of Stokes, Gauss and Green",,Engineering Mathematics ,Calculus
+GAEEMDE01,First order linear and nonlinear differential equations,,Engineering Mathematics ,Differential Equations
+GAEEMDE02, higher order linear ODEs with constant coefficients,,Engineering Mathematics ,Differential Equations
+GAEEMDE03,Partial differential equations and separation of variables methods,,Engineering Mathematics ,Differential Equations
+GAEEMoo01, Fourier Series,,Engineering Mathematics ,None
+GAEEMoo02,Laplace Transforms,,Engineering Mathematics ,None
+GAEEMoo03,Numerical methods for linear and nonlinear algebraic equations,,Engineering Mathematics ,None
+GAEEMoo04, Numerical integration and differentiation,,Engineering Mathematics ,None
+GAEFMBA01,"Atmosphere: Properties, standard atmosphere",,Flight Mechanics ,Basics
+GAEFMBA02,Classification of aircraft,,Flight Mechanics ,Basics
+GAEFMBA03,Airplane (fixed wing aircraft) configuration and various parts,,Flight Mechanics ,Basics
+GAEFMAP01,Pressure altitude,,Flight Mechanics ,Airplane performance
+GAEFMAP02," equivalent, calibrated, indicated air speeds",,Flight Mechanics ,Airplane performance
+GAEFMAP03,"Primary flight instruments: Altimeter, ASI, VSI, Turn-bank indicator",,Flight Mechanics ,Airplane performance
+GAEFMAP04, Drag polar,,Flight Mechanics ,Airplane performance
+GAEFMAP05,takeoff and landing,,Flight Mechanics ,Airplane performance
+GAEFMAP06,"steady climb & descent, absolute and service ceiling",,Flight Mechanics ,Airplane performance
+GAEFMAP07," cruise, cruise climb, endurance or loiter",,Flight Mechanics ,Airplane performance
+GAEFMAP08," load factor, turning flight, V-n diagram",,Flight Mechanics ,Airplane performance
+GAEFMAP09," Winds: head, tail & cross winds",,Flight Mechanics ,Airplane performance
+GAEFMSS01," Angle of attack, sideslip",,Flight Mechanics ,Static stability
+GAEFMSS02," roll, pitch & yaw controls",,Flight Mechanics ,Static stability
+GAEFMSS03," longitudinal stick fixed & free stability, horizontal tail position and size",,Flight Mechanics ,Static stability
+GAEFMSS04," directional stability, vertical tail position and size",,Flight Mechanics ,Static stability
+GAEFMSS05,dihedral stability,,Flight Mechanics ,Static stability
+GAEFMSS06,"Wing dihedral, sweep & position",,Flight Mechanics ,Static stability
+GAEFMSS07," hinge moments, stick forces",,Flight Mechanics ,Static stability
+GAEFMoo01, Dynamic stability: Euler angles,,Flight Mechanics ,None
+GAEFMoo02,Equations of motion,,Flight Mechanics ,None
+GAEFMoo03,"aerodynamic forces and moments, stability & control derivatives",,Flight Mechanics ,None
+GAEFMoo04, decoupling of longitudinal and lateral-directional dynamics,,Flight Mechanics ,None
+GAEFMoo05,longitudinal modes,,Flight Mechanics ,None
+GAEFMoo06,lateral-directional modes,,Flight Mechanics ,None
+GAESDoo01,Central force motion,,Space Dynamics ,None
+GAESDoo02,determination of trajectory and orbital period in simple cases,,Space Dynamics ,None
+GAESDoo03,Orbit transfer,,Space Dynamics ,None
+GAESDoo04, in-plane and out-of-plane,,Space Dynamics ,None
+GAEADBF01,"Conservation laws: Mass, momentum (Integral and differential form)",,Aerodynamics ,Basic Fluid Mechanics
+GAEADBF02,"Potential flow theory: sources, sinks, doublets, line vortex and their superposition",,Aerodynamics ,Basic Fluid Mechanics
+GAEADBF03," Viscosity, Reynolds number",,Aerodynamics ,Basic Fluid Mechanics
+GAEADAW01,Airfoil nomenclature,,Aerodynamics ,Airfoils and wings
+GAEADAW02," Aerodynamic coefficients: lift, drag and  moment",,Aerodynamics ,Airfoils and wings
+GAEADAW03,Kutta-Joukoswki theorem,,Aerodynamics ,Airfoils and wings
+GAEADAW04,"Thin airfoil theory, Kutta condition, starting vortex",,Aerodynamics ,Airfoils and wings
+GAEADAW05,"Finite wing theory: Induced drag, Prandtl lifting line theory",,Aerodynamics ,Airfoils and wings
+GAEADAW06,Critical and drag divergence Mach number,,Aerodynamics ,Airfoils and wings
+GAEADCF01,"Basic concepts of compressibility, Conservation equations",,Aerodynamics ,Compressible Flows
+GAEADCF02," One dimensional compressible flows, Fanno flow, Rayleigh flow",,Aerodynamics ,Compressible Flows
+GAEADCF03,"Isentropic flows, normal and oblique shocks, Prandtl-Meyer flow",,Aerodynamics ,Compressible Flows
+GAEADCF04, Flow through nozzles and diffusers,,Aerodynamics ,Compressible Flows
+GAEADoo01,Elementary ideas of viscous flows including boundary layers,,Aerodynamics ,None
+GAEADoo02,Wind Tunnel Testing: Measurement and visualization techniques,,Aerodynamics ,None
+GAESTSM01, States of stress and strain,,Structures ,Strength of Materials
+GAESTSM02, Stress and strain transformation,,Structures ,Strength of Materials
+GAESTSM03, Mohrs Circle,,Structures ,Strength of Materials
+GAESTSM04,Principal stresses,,Structures ,Strength of Materials
+GAESTSM05,Three-dimensional Hookes law,,Structures ,Strength of Materials
+GAESTSM06, Plane stress and strain,,Structures ,Strength of Materials
+GAESTSM07," Failure theories: Maximum stress, Tresca and von Mises",,Structures ,Strength of Materials
+GAESTSM08, Strain energy,,Structures ,Strength of Materials
+GAESTSM09,Castiglianos principles,,Structures ,Strength of Materials
+GAESTSM10,Analysis of statically determinate and indeterminate trusses and beams,,Structures ,Strength of Materials
+GAESTSM11, Elastic flexural buckling of columns,,Structures ,Strength of Materials
+GAESTFV01,Characteristics of aircraft structures and materials,,Structures ,Flight vehicle structures
+GAESTFV02,"Torsion, bending and flexural shear of thin-walled sections",,Structures ,Flight vehicle structures
+GAESTFV03,Loads on aircraft,,Structures ,Flight vehicle structures
+GAESTSD01,Free and forced vibrations of undamped and damped SDOF systems,,Structures ,Structural Dynamics
+GAESTSD02, Free vibrations of undamped 2-DOF systems,,Structures ,Structural Dynamics
+GAESToo01,Vibration of beams,,Structures ,None
+GAESToo02,"Theory of elasticity: Equilibrium and compatibility equations, Airy’s stress function",,Structures ,None
+GAEPRBA01,Thermodynamics,,Propulsion ,Basics
+GAEPRBA02,boundary layers and heat transfer and combustion  thermochemistry,,Propulsion ,Basics
+GAEPRAE01,"Thrust, efficiency and engine performance of turbojet, turboprop, turbo shaft, turbofan and ramjet engines, thrust augmentation of turbojets and turbofan engines",,Propulsion ,Thermodynamics of aircraft engines
+GAEPRAE02,"Aerothermodynamics of non-rotating propulsion components such as intakes, combustor and nozzle",,Propulsion ,Thermodynamics of aircraft engines
+GAEPRAC01,"Angular momentum, work and compression",,Propulsion ,Axial compressors
+GAEPRAC02,characteristic performance of a single axial compressor stage,,Propulsion ,Axial compressors
+GAEPRAC03,efficiency of the compressor and degree of reaction,,Propulsion ,Axial compressors
+GAEPRAT01,Axial turbine stage efficiency,,Propulsion ,Axial turbines
+GAEPRCC01, Centrifugal compressor stage dynamics,,Propulsion ,Centrifugal compressor
+GAEPRCC02," inducer, impeller and diffuser",,Propulsion ,Centrifugal compressor
+GAEPRoo01,"Rocket propulsion: Thrust equation and specific impulse, vehicle acceleration, drag, gravity losses, multi-staging of rockets",,Propulsion ,None
+GAEPRoo02,"Classification of chemical rockets, performance of solid and liquid propellant rockets",,Propulsion ,None

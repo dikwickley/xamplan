@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Xam Plan | Configure</title>
+</head>
+<style>
+    * {
+    /*border: 1px dashed green;*/
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+#logo img {
+    width: 80%;
+}
+
+#nav-round-button 
+{    color: #00CCB1;
+    background-color: white;
+    font-size: 2vw;
+    height: 3.5vw;
+    border-radius: 1.75vw;
+    font-weight: 600;
+    padding: 0 1.25vw;
+    border: none;
+    outline: none;
+}
+
+#nav-round-button:hover {
+    color: white;
+    background-color: #00CCB1;
+    
+}
+
+#nav_button {
+    background-color: #00CCB1;
+    color: white;
+    border-radius: 9999px;
+
+}
+
+#xamplan {
+    font-size: 5em;
+    color: #eb4146;
+}
+
+#xamplan_mobile {
+    font-size: 2em;
+}
+#configure_form {
+    border-radius:  20px;
+    background-color: #eb4146;
+}
+
+.div_rounder {
+    border-radius: 20px;
+}
+
+label {
+	font-size: 1.05em;
+	font-weight: 500;
+}
+
+@media screen and (max-width: 425px) {
+    #logo img {
+        width: 100%;
+    }
+}
+#advanced{
+    border-radius: 9999px;
+    background-color: #eb4146;
+    color: white;
+    border: none;
+    outline: none;
+}
+#syllabus{
+    border: 1px solid gray;
+    display: none;z
+}
+#topic_end{
+        border-bottom: 1px solid lightgray;
+    }
+#makePlan{
+    border-radius: 9999px;
+    background-color: #363b4D;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 2em;
+}
+</style>
+<script type="text/javascript">
+    
+    var email = JSON.parse('{{ res | safe}}')
+
+    console.log(email)
+
+    var stream = {
+        gate : [['GCS', 'GATE-CS (Computer Science & IT Engineering)'], ['GME', 'GATE-ME (Mechanical Engineering)'], ['GCE', 'GATE-CE (Civil Engineering)' ], ['GEC', 'GATE-EC (Electronics & Communication Engineering)'], ['GEE', 'GATE-EE (Electrical Engineering)'], ['GPI', 'GATE-PI (Production & Industrial Engineering)'],['GAE', 'GATE-AE (Aerospace Engineering)']],
+        neet : [['NEET', 'National Eligblity cum Entrance Test']],
+        jee : [['M', 'JEE Mains'], ['MA', 'JEE Mains + Advanced']],
+        cat : [['CAT', 'Common Entrance and Aptitude Test']]
+
+    }
+
+    function getDropDown(){
+        var exam = document.getElementById('stream').value
+        document.getElementById('exams').innerHTML = ''
+        if(exam != 'None'){
+            for(sub in stream[exam]){
+                // console.log(stream[exam][sub])
+                $('#exams').append('<option value="' + stream[exam][sub][0] + '" >' + stream[exam][sub][1] +'</option>')
+                }
+        }
+    }
+
+</script>
+
+<body>
+    <div class="row container-fluid mb-3 m-0 p-0" id="heading">
+        <div class="col-3 p-0 p-md-3 col-md-2 container-fluid m-0" id="logo">
+            <img src="../static/img/red_logo_nobg.png" alt="Xam Plan Logo">
+        </div>
+        <div class="d-md-block d-none container-fluid col-9 col-md-10 py-auto">
+            <div class="container-fluid col-12 p-0 row m-0 " id="nav_name">
+                <div class="col-7 container-fluid py-auto text-center " id="xamplan">
+                    <span style="color: #363b4D">X</span>amPlan
+                </div>
+                <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
+                    <div class="container col-4 p-1">
+                        <button class="btn px-md-4 py-1 font-weight-bold" id="nav_button">
+                            HOME
+                        </button>
+                    </div>
+                    <div class="container col-4 p-1 pr-2">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            PREP
+                        </button>
+                    </div>
+                    <div class="container col-4 p-1">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            ABOUT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid col-6 col-offset-1 d-block d-md-none p-0">
+            <div class="container-fluid mr-2 col-4 p-3">
+                <button class="btn  text-white font-weight-bold" id="nav_button">
+                    HOME
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid row m-auto p-1 text-white">
+        <form action="{{ url_for('handle_config') }}" method="post" class="container col-12 col-md-10 p-4" id="configure_form">
+            <input type="email" name="email" id='email' style="display: none;"><br>
+            <h3>Configure Your Xam Plan</h3>
+            <div class="row container-fluid p-2 col-md-8">
+                <div class="form-group col-12">
+                    <label for="name">Name:</label>
+                    <input  type="text" class="div_rounder form-control" id="name" placeholder="Enter name" name="name">
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="institute">Institute(University/College/School):</label>
+                    <input  type="text" class="div_rounder form-control" id="institue" placeholder="Enter institue" name="college">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="year of study">Year of study:</label>
+                    <input  type="text" class="div_rounder form-control" id="year" placeholder="Enter year of study" name="college_year">
+                </div>
+            </div>
+        
+            </div>
+            <div class="container-fluid row m-0 text-white my-4">
+                <div class="col-md-4 p-3 m-0 text-center">
+                    <div class="m-0 p-2 div_rounder"  style="background-color: #00CCB1; height: 250px;">
+                        <h3>Step 1</h3>
+                        <h2> Choose Your Exam</h2>
+                        <div class="form-group container-fluid px-auto">
+                            <select class="form-control col-12 my-3" id='stream'  onchange="getDropDown();getSyllabus();" type="text" name="" placeholder="Choose Exam">
+                                <option value="none"></option>
+                            	<option value="gate"> GATE</option>
+                                <option value="cat" disabled="true"> CAT</option>
+                                <option value="jee" disabled="true"> JEE</option>
+                                <option value="neet" disabled="true"> NEET</option>
+                            </select>
+                            <select class="form-control col-12 my-3" onchange="getSyllabus()" id="exams" type="text" name="exam" placeholder="Choose Exam">
+                                
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 p-3 m-0 text-center">
+                    <div class=" m-0 p-2 div_rounder"  style="background-color: #00CCB1; height: 250px;">
+                        <h3>Step 2</h3>
+                        <h2> Choose Target Year</h2>
+                        <div class="form-group container-fluid px-auto">
+                            <select class="form-control col-12 my-3" type="text" name="year" placeholder="Choose Exam">
+                                <option value="2021"> 2021 </option>
+                                <option value="2022"> 2022 </option>
+                                <option value="2023"> 2023 </option>
+                                
+                            </select>
+                            <select class="form-control col-12 my-3" type="text" name="revision" placeholder="Choose Exam">
+                            <option value="0"> Revisie 0x </option>
+                            <option value="1"> Revisie 1x </option>
+                            <option value="2"> Revisie 2x </option>
+                            <option value="3"> Revisie 3x </option> 
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 p-3 m-0 text-center">
+                    <div class=" m-0 p-2 div_rounder"  style="background-color: #00CCB1; height: 250px;">
+                        <h3>Step 3</h3>
+                        <h2> Choose Effort Curve</h2>
+                         <div class="form-group container-fluid px-auto">
+                            <select class="form-control col-12 my-3" type="text" name="curve" placeholder="Choose Exam">
+                                <option value="nonlinear"> Non-Linear</option>
+                                <option value="increasing"> Increasing</option>
+                                <option value="decreasing"> Decreasing</option>
+                                <option value="linear"> Linear</option>
+                                
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                <button type="submit" class="py-2 px-4 div_rounder font-weight-bold" id='makePlan'>Make Your Plan!</button>
+            </div>
+
+            <div class="container bg-white my-3 p-3">
+            <label> Choose topics you don't want to study</label><br>
+            <button type='button' class="btn font-weight-bold" id="advanced" onclick="showSyllabus()">Advanced Options</button>
+
+            <div id="syllabus" class="my-3 p-4 font-weight-normal custom-control custom-checkbox">
+                
+            </div>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    document.getElementById('email').value = JSON.parse('{{ res | safe}}').email
+
+
+    function getSyllabus(){
+
+    if(document.getElementById('exams').value != 'none'){
+        console.log( document.getElementById('exams').value)
+        document.getElementById('advanced').innerHTML = 'Please Wait'
+        $.ajax({
+                url: '/send_syllabus',
+                data: {'exam' :  document.getElementById('exams').value},
+                type: 'POST',
+                success: function(response) {
+                    console.log(JSON.parse(response));
+                    syllabus = (JSON.parse(response));
+                    document.getElementById('syllabus').innerHTML = ''
+                    document.getElementById('advanced').disabled = false
+                    document.getElementById('advanced').innerHTML = "Choose Topics you have completed or Don't want to study"
+
+                    var exam = document.getElementById('exams').value;
+                    
+                    for(key in syllabus[exam]){
+                        $('#syllabus').append('<br><h4>' + syllabus[exam][key][0][3] + '</h4><br>')
+                        for(x in syllabus[exam][key]){
+                            input = '<input type="checkbox" class"custom-control-input p-4 m-2" id="'+ syllabus[exam][key][x][0] + '" name="c_topic" value="'+ syllabus[exam][key][x][0] + '">'
+                            label = '<label class"m-3 p-3"  for="'+ syllabus[exam][key][x][0] + '">'+ syllabus[exam][key][x][1] + '</label><br><div id="topic_end"></div>'
+                            $('#syllabus').append(input + label)
+                        }
+                        $('#syllabus').append('<br>')
+
+                    }
+
+
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+
+}
+
+
+    function showSyllabus(){
+    if(document.getElementById('syllabus').style.display == 'none'){
+        document.getElementById('syllabus').style.display = 'block'
+        //document.getElementById('syllabus_btn').style.display = 'block'
+    }
+    else{
+        document.getElementById('syllabus').style.display = 'none'
+        //document.getElementById('syllabus_btn').style.display = 'none'
+    }
+}
+</script>
+
+</html>

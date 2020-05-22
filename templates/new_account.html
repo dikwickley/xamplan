@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+	<title>Xam Plan |  Account</title>
+</head>
+<style>
+    * {
+    /*border: 1px dashed green;*/
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+#logo img {
+    width: 100%;
+}
+
+#nav-round-button 
+{    color: #00CCB1;
+    background-color: white;
+    font-size: 2vw;
+    height: 3.5vw;
+    border-radius: 1.75vw;
+    font-weight: 600;
+    padding: 0 1.25vw;
+    border: none;
+    outline: none;
+}
+
+#nav-round-button:hover {
+    color: white;
+    background-color: #00CCB1;
+    /*outline: 1px double #00CCB1;*/
+}
+
+#nav_button {
+    background-color: #00CCB1;
+    color: white;
+    border-radius: 9999px;
+
+}
+
+#xamplan {
+    font-size: 5em;
+    color: #eb4146;
+}
+#dashboard{
+	font-size: 3em;
+	color: #eb4146;
+}
+.card_header{
+	font-size: 1.5em;
+	color: white;
+	
+}
+.account_nav{
+	border-radius: 9999px;
+	background-color: #eb4146;
+	border: none;
+    outline: none;
+}
+.account_logout{
+	border-radius: 9999px;
+	background-color: #363b4d;
+	border: none;
+    outline: none;
+       
+}
+#motivation{
+	font-size: 0.7em;
+	color: white;
+	border-radius: 9999px;
+	border: none;
+    outline: none;
+}
+.topic_count{
+	font-size: 5em;
+}
+</style>
+<script type="text/javascript">
+	//GLOBAL FUNCTIONS
+	
+	function changeScreen(element){
+		console.log(element.innerHTML)
+		document.getElementById('Plan').style.display = 'none'
+		document.getElementById('Info').style.display = 'none'
+		document.getElementById('Account').style.display = 'none'
+		document.getElementById(element.innerHTML).style.display = 'block'
+	}
+
+</script>
+<body>
+	<div class="row container-fluid mb-1 m-0 p-0" id="heading">
+        <div class="col-3 p-0 p-md-3 col-md-2 container-fluid m-0" id="logo">
+            <img src="../static/img/red_logo_nobg.png" alt="Xam Plan Logo">
+        </div>
+        <div class="d-md-block d-none container-fluid col-9 col-md-10 py-auto">
+            <div class="container-fluid col-12 p-0 row m-0 " id="nav_name">
+                <div class="col-7 container-fluid py-auto text-center " id="xamplan">
+                    <span style="color: #363b4D">X</span>amPlan
+                </div>
+                <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
+                    <div class="container col-4 p-1">
+                        <button class="btn px-md-4 py-1 font-weight-bold" id="nav_button">
+                            HOME
+                        </button>
+                    </div>
+                    <div class="container col-4 p-1 pr-2">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            PREP
+                        </button>
+                    </div>
+                    <div class="container col-4 p-1">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            ABOUT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid col-6 col-offset-1 d-block d-md-none p-0">
+            <div class="container-fluid mr-2 col-4 p-3">
+                <button class="btn  text-white font-weight-bold" id="nav_button">
+                    HOME
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container my-2">
+    	<button class="account_nav mx-1 px-3 py-1 font-weight-bold text-white" onclick="changeScreen(this)">Account</button>
+		<button class="account_nav mx-1 px-3 py-1 font-weight-bold text-white" onclick="changeScreen(this)">Plan</button>
+		<button class="account_nav mx-1 px-3 py-1 font-weight-bold text-white" onclick="changeScreen(this)">Info</button>
+		<button class="account_logout mx-1 my-1 px-3 py-1 font-weight-bold text-white mr-3">Logout</button>  	
+    </div>
+	
+    <div class="container-fluid m-0" id="Account">
+
+		<div class="container font-weight-bold">
+			<h1  id="dashboard" >DashBoard</h1>
+
+				
+				
+			<div class="container my-3">
+				<p style="text-align: center;"> Days until your Exam </p>
+				<h1 id="timer" style="text-align: center; color: #EB4146; border: 1px solid gray; font-size: 3em;"></h1>
+				<p style="text-align: center;">Time's Running Out!</p>	
+			</div>
+				
+			
+		</div>
+	    <div class="container-fluid my-4 row m-0">
+			
+		
+	    	<div class="container-fluid col-md-6 col-12 p-2">
+	    		<div class="card_header font-weight-bold">
+	    			<div class="bg-info p-3">
+	    				Visual Analysis
+	    			</div>	
+	    			<div id="bar">
+						<canvas id="canvas1"  class="chartjs-render-monitor"></canvas>
+					</div>
+	    		</div>
+	    		
+	    	</div>
+	    	<div class="container-fluid col-md-2 col-12 p-2">
+	    		<div class="card_header font-weight-bold">
+	    			<div class="bg-warning p-3">
+	    				Streak	
+	    			</div>
+	    			<div class="text-center text-warning">
+	    				<h1>1</h1>
+	    				<span style="font-size: 5em;">⚡</span>
+	    			</div>
+	    			
+	    		</div>
+	    	</div>
+	    	<div class="container-fluid col-md-4 col-12 p-2">
+	    		<div class="card_header font-weight-bold">
+	    			<div class="bg-primary p-3">
+	    				Motivation	
+	    			</div>
+	    			<button class="bg-primary px-3 py-1 m-2 float-right font-weight-bold" id="motivation">More Motivation</button>
+	    			<br>
+	    			 <div class="text-dark m-4 text-right">
+	    				With Great power comes great responsiblity
+	    				<br>
+	    				-Stan Lee	
+	    			</div>	
+					
+					
+	    		</div>
+
+	    	</div>
+
+	    	<div class="container-fluid col-md-6 col-12 p-2">
+	    		<div class="card_header p-2 bg-success">
+	    			Completed	
+	    		</div>
+	    		<div class="topic_count text-success text-center font-weight-bold"> 
+	    			4
+	    		</div>
+	    	</div>
+
+	    	<div class="container-fluid col-md-6 col-12 p-2">
+	    		<div class="card_header p-2 bg-danger ">
+	    			Backlog	
+	    		</div>
+	    		<div class="topic_count text-danger text-center font-weight-bold"> 
+	    			10
+	    		</div>
+	    	</div>
+		    
+	    </div>
+	 </div>
+
+
+	 <div class="container-fluid m-0" id="Plan">
+		
+		<div class="container p-4">
+			<h1> The Plan</h1>
+		</div>
+	 	
+	 </div>
+
+	 <div class="container-fluid m-0" id="Info">
+	 	<div class="container p-4">
+			<h1> Account Info</h1>
+		</div>
+	 </div>
+
+</body>
+<script type="text/javascript">
+
+	
+	myChartData =  {											
+		labels: ['Pending','Completed','Backlogs'],
+		datasets: [{
+			label: 'prices', 
+			borderWidth: 2, 
+			hoverBorderWidth: 10,
+			hoverBorderColor: 'white' ,
+			backgroundColor: ['lightgray','lightgreen','tomato'], 
+			data: [10,20,15],
+			borderColor: 'white',
+			}]
+		}
+
+	var ctx1 = document.getElementById('canvas1').getContext('2d');
+	window.myChart = new Chart(ctx1, {
+		type: 'doughnut', 
+		data: myChartData,									//The Default data
+		labels: ['Pending','Completed','Backlogs'],
+		datasets: [{
+			label: 'prices', 
+			borderWidth: 5, 
+			hoverBorderWidth: 10, 
+			backgroundColor: ['lightgray','lightgreen','tomato'], 
+			data: [10,30,10],
+			borderColor: 'black',
+		}] ,
+		options: {
+			responsive: true,
+			scales: {
+		        xAxes: [{
+		        	ticks: {
+                		display: false
+            		},
+		            gridLines: {
+		                display:false
+		            }
+		        }],
+		        yAxes: [{
+		        	ticks: {
+                		display: false
+            		},
+		            gridLines: {
+		                display:false
+		            }   
+		        }]
+		    }, 
+			legend: {
+				position: 'top'
+			}, 
+			title: {
+				display: false,
+				text: 'Plan Progress'
+			}
+		}
+	});
+
+
+
+	//The Clock
+
+	// Set the date we're counting down to
+	var countDownDate = new Date("Feb 1, " + "2022" + " 00:00:00").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+
+	  // Get today's date and time
+	  var now = new Date().getTime();
+
+	  // Find the distance between now and the count down date
+	  var distance = countDownDate - now;
+
+	  // Time calculations for days, hours, minutes and seconds
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	  // Display the result in the element with id="timer"
+	  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+	  + minutes + "m " + seconds + "s ";
+
+	  // If the count down is finished, write some text
+	  if (distance < 0) {
+	    clearInterval(x);
+	    document.getElementById("timer").innerHTML = "EXPIRED";
+	  }
+	}, 1000);
+</script>
+</html>

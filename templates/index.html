@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>Xam Plan</title>
+    <title>Xam Plan | Home</title>
 </head>
 <style>
 * {
-    border: 1px dashed green;
+    /*border: 1px dashed green;*/
     margin: 0px;
     padding: 0px;
 }
@@ -20,7 +20,7 @@ body {
 }
 
 #logo img {
-    width: 60%;
+    width: 80%;
 }
 
 #nav-round-button {
@@ -44,7 +44,7 @@ body {
 #nav_button {
     background-color: #00CCB1;
     color: white;
-
+    border-radius: 9999px;
 }
 
 #signup,
@@ -112,31 +112,35 @@ body {
         width: 100%;
     }
 }
+#demo{
+    color:#363B4D;
+    font-size: 1.25em;
+}
 </style>
 
 <body>
     <div class="row container-fluid mb-3 m-0 p-0" id="heading">
-        <div class="col-3 p-0 col-md-2 continer-fluid m-0" id="logo">
+        <div class="col-3 p-0 p-md-3 col-md-2 container-fluid m-0" id="logo">
             <img src="../static/img/white_logo_nobg.png" alt="Xam Plan Logo">
         </div>
         <div class="d-md-block d-none container-fluid col-9 col-md-10">
             <div class="container-fluid col-12 p-0 row m-0 " id="nav_name">
                 <div class="col-7 container-fluid  my-auto text-center " id="xamplan">
-                    <span style="color: #363b4D">X</span>am Plan
+                    <span style="color: #363b4D">X</span>amPlan
                 </div>
                 <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
                     <div class="container col-4 p-1">
-                        <button class="btn  px-md-4 py-1" id="nav_button">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             HOME
                         </button>
                     </div>
-                    <div class="container col-4 p-1">
-                        <button class="btn  px-md-4 py-1" id="nav_button">
+                    <div class="container col-4 p-1 pr-2">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             PREP
                         </button>
                     </div>
                     <div class="container col-4 p-1">
-                        <button class="btn  px-md-4 py-1" id="nav_button">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             ABOUT
                         </button>
                     </div>
@@ -145,7 +149,7 @@ body {
         </div>
         <div class="container-fluid col-6 col-offset-1 d-block d-md-none p-0">
             <div class="container-fluid mr-2 col-4 p-3">
-                <button class="btn  text-white" id="nav_button">
+                <button class="btn  text-white font-weight-bold" id="nav_button">
                     HOME
                 </button>
             </div>
@@ -153,12 +157,15 @@ body {
     </div>
     <div id="moto" class="container text-center row col-md-12 m-0">
         <img src="../static/img/make-circle.png" alt="Make Your Exam Plan" class="container col-12 col-md-3">
-        <div class="row col-md-12 m-0">
+        <div class="row col-md-12 m-0 my-5">
             <div class="container col-md-6 m-0 text-md-right">
-                <button class="btn btn-lg text-white bg-dark px-md-5 px-4" id="login">LOGIN</button>
+                <a href="{{url_for('login')}}" class="btn btn-lg text-white bg-dark px-md-5 px-4 my-1" id="login">LOGIN</a>
             </div>
             <div class="container col-md-6 m-0 text-md-left">
-                <button class="btn btn-lg text-white bg-dark px-md-5 px-4" id="signup">SIGNUP</button>
+                <a href="{{url_for('create')}}" class="btn btn-lg text-white bg-dark px-md-5 px-4 my-1" id="signup">SIGNUP</a>
+            </div>
+            <div class="container px-auto mt-4 text-white font-weight-bold">
+                Or try it? <a href="#" id="demo">demo</a>  
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>Xam Plan Login</title>
+    <title>Xam Plan | Login</title>
 </head>
 <style>
     * {
@@ -44,6 +44,7 @@ body {
 #nav_button {
     background-color: #00CCB1;
     color: white;
+    border-radius: 9999px;
 
 }
 
@@ -59,8 +60,8 @@ body {
     border-radius:  20px;
 }
 
-#div_rounder {
-    border-radius: 24px;
+.div_rounder {
+    border-radius: 9999px;
 }
 
 @media screen and (max-width: 425px) {
@@ -69,6 +70,31 @@ body {
     }
 }
 </style>
+<script type="text/javascript">
+     var getParams = function (url) {
+        var params = {};
+        var parser = document.createElement('a');
+        parser.href = url;
+        var query = parser.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            params[pair[0]] = decodeURIComponent(pair[1]);
+        }
+        return params;
+    };
+
+    var url = (getParams(window.location.href));
+
+    if('msg' in url){
+        if(url.msg == 'email_error'){
+            alert('No Such Email Exist')
+        }
+        if(url.msg == 'password_error'){
+            alert('Password Incorrect')
+        }
+    }
+</script>
 
 <body>
     <div class="row container-fluid mb-3 m-0 p-0" id="heading">
@@ -82,17 +108,17 @@ body {
                 </div>
                 <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
                     <div class="container col-4 p-1">
-                        <button class="btn  px-md-4 py-1" id="nav_button">
+                        <a href="{{ url_for('main') }}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             HOME
-                        </button>
+                        </a>
                     </div>
                     <div class="container col-4 p-1 pr-2">
-                        <button class="btn  px-md-4 py-1" id="nav_button">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             PREP
                         </button>
                     </div>
                     <div class="container col-4 p-1">
-                        <button class="btn  px-md-4 py-1" id="nav_button">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             ABOUT
                         </button>
                     </div>
@@ -101,7 +127,7 @@ body {
         </div>
         <div class="container-fluid col-6 col-offset-1 d-block d-md-none p-0">
             <div class="container-fluid mr-2 col-4 p-3">
-                <button class="btn  text-white" id="nav_button">
+                <button class="btn  text-white font-weight-bold" id="nav_button">
                     HOME
                 </button>
             </div>
@@ -110,24 +136,24 @@ body {
     
     <div class="container-fluid row m-0 py-1 py-md-4" id="login_wrapper">
         <div class="col-12 col-md-6 py-1 py-md-2">
-            <form action="/action_page.php" class="bg-white p-4" id="login_form">
+            <form action='{{url_for("handle_login")}}' method='post' class="bg-white p-4" id="login_form">
                 <h3 class="text-center">Log into your<span style="color: #eb4146;"> Account</span></h3>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input id="div_rounder" type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input  type="email" class="div_rounder form-control" id="email" placeholder="Enter email" name="email" required="true">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input id="div_rounder" type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                    <input  type="password" class="div_rounder form-control" id="pwd" placeholder="Enter password" name="password" required="true">
                 </div>
                 <div class="checkbox mb-1">
                     <label><input type="checkbox" name="remember"> Remember me</label>
                 </div>
                 <div class="text-right px-4 mb-1">
-                    <button id="div_rounder" type="submit" class="btn btn-default text-white px-4" style="background-color: #eb4146;"><h5>Login</h5></button>
+                    <button  type="submit" class="div_rounder btn btn-default text-white px-4" style="background-color: #eb4146;"><h5>Login</h5></button>
                 </div>
                 <div class="signup_msg text-center">
-                    <h5>Dont have an account?<div style="color: #eb4146;"> SignUp!</div></h5>
+                    <p>Already have an account?<a href="{{ url_for('create') }}" style="color: #eb4146;"> Sign Up!</a></p>
                 </div>
             </form>
         </div>

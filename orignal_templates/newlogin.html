@@ -37,8 +37,11 @@
 					<h1 class="w3-xxxlarge" style="color: #363B4D;"> Create Your Account </h1>
 				</div>
 				<input type="email" name="email" placeholder="Enter your email" class="w3-input w3-border w3-round-large w3-padding w3-margin" required="true">
+
 				<input type="password" name="password1" id='password1' placeholder="Enter a password" class="w3-input w3-border w3-round-large w3-padding w3-margin" required="true">
+
 				<input type="password" name="password2" id='password2' placeholder="Enter your password again" class="w3-input w3-border w3-round-large w3-padding w3-margin" required="true" onchange="checkMatch()" onclick="document.getElementById('createBtn').disabled = false; document.getElementById('passmsg').innerHTML = ''">
+				
 				<span id="passmsg" class="m-3 text-danger"></span>
 				<br>
 				<input type="submit" id='createBtn' class="btn m-3" style="color: white; background-color: #363B4D;" value="Create">

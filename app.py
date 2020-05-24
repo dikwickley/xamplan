@@ -248,6 +248,37 @@ def test():
 	return render_template('privacypolicy.html')
 
 
+@app.route('/demo')
+def demo():
+	return render_template('demo.html')
+
+@app.route('/get_demo', methods=['POST','GET'])
+def get_demo():
+	if request.method == 'POST':
+		data = dict(request.form)
+		
+		year = data['year']
+		curve = data['curve']
+		allTopicList = allTopicCode(data['exam'])
+		revision = data['revision']
+		
+
+		all_topics = {}
+		topic_data =  mongo.db.syllabus.find_one({'exam': data['exam']})
+		for key in topic_data[data['exam']]:
+			topics = topic_data[data['exam']][key]
+			for topic in topics:
+				all_topics[topic[0]] = topic[1:5]
+		res = {
+		'plan' : getPlan(target_year=str(year),curve=curve,topic_list=allTopicList,revision=int(revision)),
+		'topics' : all_topics
+		}
+		
+		return json.dumps(res)
+	else:
+		return  "request not post"
+
+
 @app.route('/survey')
 def survey():
 	return render_template('survey.html')
@@ -472,7 +503,7 @@ def account():
 		print(quote)
 		del quote['_id']
 
-		return render_template('account.html',data=json.dumps(data, sort_keys=False),date=json.dumps({'month':month, 'streak': streak}),topics=json.dumps({'topics':allTopicList(exam=data['exam'])}), motivation=json.dumps(quote))
+		return render_template('new_account.html',data=json.dumps(data, sort_keys=False),date=json.dumps({'month':month, 'streak': streak}),topics=json.dumps({'topics':allTopicList(exam=data['exam'])}), motivation=json.dumps(quote))
 	else:
 		return redirect(url_for('login'))
 

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Xam Plan | Home</title>
 </head>
 <style>
@@ -38,7 +39,7 @@ body {
 #nav-round-button:hover {
     color: white;
     background-color: #00CCB1;
-    /*outline: 1px double #00CCB1;*/
+    
 }
 
 #nav_button {
@@ -116,6 +117,9 @@ body {
     color:#363B4D;
     font-size: 1.25em;
 }
+.description_text{
+    color: #363B4D;
+}
 </style>
 
 <body>
@@ -165,7 +169,7 @@ body {
                 <a href="{{url_for('create')}}" class="btn btn-lg text-white bg-dark px-md-5 px-4 my-1" id="signup">SIGNUP</a>
             </div>
             <div class="container px-auto mt-4 text-white font-weight-bold">
-                Or try it? <a href="#" id="demo">demo</a>  
+                Or try it? <a href="{{ url_for('demo') }}" id="demo">demo</a>  
             </div>
         </div>
     </div>
@@ -179,7 +183,7 @@ body {
                     Step1 <br>
                     <span id='step_text'>
                         Choose your target exam
-                    </span>
+                    </span> 
                 </div>
             </div>
             <div class="container col-12 my-1 col-md-3">
@@ -198,6 +202,70 @@ body {
                     </span>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="container-fluid row mt-5 mx-0 font-weight-light">
+        <div id="id01" class="w3-modal">
+              <div class="w3-modal-content w3-animate-zoom w3-animate-opacity">
+                <div class="w3-container">
+                  <span onclick="document.getElementById('id01').style.display='none'"
+                  class="w3-button w3-display-topright p-4">close &times;</span>
+                  <br>
+                  <br>
+                  <h3 class="description_text font-weight-bold">What is an Effort Curve</h3>
+                  <p class="font-weight-bold">It is defined as the rate of a person's progress in gaining experience or new skills. Basically, the amount of effort you put into learning.</p>
+                  <p class="font-weight-bold">Your study plan will be made according to the study plan you choose</p>
+                  <p class="font-weight-bold">You can choose from <span style="color: #Eb4146">3</span> diffrent learning curves </p>
+                  <div class="row">
+                        <div class="col-12 col-md-6 ">
+                            <div class="container m-2">
+                                <img src="./static/img/decreasingcurve.png" class="col-12">
+                                <p class="text-center">Decreasing Effort</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 ">
+                            <div class="container m-2">
+                                <img src="./static/img/linearcurve.png" class="col-12">
+                                <p class="text-center">Linear Effort</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="container m-2">
+                                <img src="./static/img/increasingcurve.png" class="col-12">
+                                <p class="text-center">Increasing Effort</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="container m-2">
+                                <img src="./static/img/nonlinearcurve.png" class="col-12">
+                                <p class="text-center">Non Linear Effort</p>
+                            </div>
+                        </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        <div class="container p-3">
+            <h3 class="text-white">We help you make the perfect plan...</h3>
+            <h3 class="text-white  text-right mb-3">...With help of Advanced Algorithms and Machine Learning.</h3>
+            <h1 class="description_text">
+                Make your customised plan that is easy to follow and guarantees your success!
+            </h1>
+            <p class="text-white lead font-weight-bold">
+                Using our tool, you can study systmatically efficiently. With most of the common and popular exam's syllabus on our database you can easily choose and make plan of your concerned exam and ace them. <br>
+                With constant updation of the syllabus and machine learning algorithms, we ensure that you always have the latest syllabus to work on.<br>
+                If you don't see your exam in the choose an exam option, just leave us a message in the feedback form and we will try to include that exam asap.<br>
+            </p>
+
+            <h1 class="description_text"> What's an <span style="color: #00CCB1">  Effort Curve </span>? </h1>
+            <p class="text-white lead font-weight-bold">
+                A new concept that we deveploved that is good way to optimize perfomance and make a plan that fits your study style more
+                You can learn more <a onclick="document.getElementById('id01').style.display='block'"  style="color: #363B4D"> here</a>.
+            </p>
+
+            <br><br>
         </div>
     </div>
     <!-- <img src="../static/img/bg-snip.png" style="position: absolute; right: 0; top: 0; z-index: -1;" class="col-md-10 col-9 p-0 m-0"> -->

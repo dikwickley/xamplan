@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<title>Xam Plan |  Account</title>
 </head>
 <style>
@@ -85,6 +86,36 @@ body {
 .topic_count{
 	font-size: 5em;
 }
+#hard{
+		color: red;
+	}
+	#med{
+		color: orange;
+	}
+	#easy{
+		color: lightgreen;
+	}
+	#hard_topic{
+		background-color: rgba(253,0,0,0.3);
+		color: black;
+		margin: 5px;
+		padding: 5px;
+	}
+	#med_topic{
+		background-color: rgba(253,227,167,0.3);
+		color: black;
+		margin: 5px;
+		padding: 5px;
+	}
+	#easy_topic{
+		background-color: rgba(0,253,0,0.3);
+		color: black;
+		margin: 5px;
+		padding: 5px;
+	}
+	#current_month{
+		background-color: lightgreen;
+	}
 </style>
 <script type="text/javascript">
 	//GLOBAL FUNCTIONS
@@ -95,6 +126,175 @@ body {
 		document.getElementById('Info').style.display = 'none'
 		document.getElementById('Account').style.display = 'none'
 		document.getElementById(element.innerHTML).style.display = 'block'
+	}
+
+	var data = JSON.parse('{{ data | safe }}');
+	console.log('data: ',data)
+	var topics = JSON.parse('{{ topics | safe }}');
+	console.log('topics: ', topics.topics)
+	var date = JSON.parse('{{ date | safe}}');
+	console.log('date: ',date)
+	var motivation = JSON.parse('{{ motivation | safe }}')
+	console.log('motivation: ', motivation)
+
+	function titleCase(str) {
+	   var splitStr = str.toLowerCase().split(' ');
+	   for (var i = 0; i < splitStr.length; i++) {
+	       // You do not need to check if i is larger than splitStr length, as your for does that for you
+	       // Assign it back to the array
+	       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+	   }
+	   // Directly return the joined string
+	   return splitStr.join(' '); 
+	}
+
+	function getTopicStatus(){
+
+		var status = [0,0,0]  //[pending,completed,backlog]
+
+		for(month in data['plan']){
+			for(week in data['plan'][month]){
+				for(topic_difficulty in data['plan'][month][week]){
+					for(topic in data['plan'][month][week][topic_difficulty]){
+						
+						if(data['plan'][month][week][topic_difficulty][topic][1] == 'P')
+							status[0] += 1;
+						if(data['plan'][month][week][topic_difficulty][topic][1] == 'C')
+							status[1] += 1;
+						if(data['plan'][month][week][topic_difficulty][topic][1] == 'B')
+							status[2] += 1;
+					}
+				}
+			}
+		}
+
+		return status;
+	}
+
+	
+
+
+
+	function openModal(id){
+		document.getElementById('modal').style.display='block'
+		document.getElementById('modal_heading').innerHTML = titleCase(id.split('_').join(' '))
+		//console.log(data.plan[id])
+		var weeks = ['week1','week2','week3','week4']
+
+		for(w in weeks){
+
+			if(weeks[w] in data.plan[id]){
+				//add in week 1 div
+				document.getElementById(weeks[w]).innerHTML = ''
+				// console.log(id)
+				// console.log("hard: ",data.plan[id][weeks[w]][0])	//hard
+				// console.log("medium: ",data.plan[id][weeks[w]][1])	//medium
+				// console.log("easy: ",data.plan[id][weeks[w]][2])	//easy
+
+				var hard_div = '<div id="hard"><h2 style="color: black;">' + titleCase(weeks[w]) +'</h2><h3>Hard Topic</h3>'
+				for(var x=0;x<data.plan[id][weeks[w]][0].length;x++){
+
+
+
+					topic = '<div id="hard_topic">'
+
+					if(date.month == id){
+
+						if(data.plan[id][weeks[w]][0][x][1] == 'P'){
+						checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][0][x][0] + '|' + id + '|' + weeks[w]  +'" onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						if(data.plan[id][weeks[w]][0][x][1] == 'C'){
+							checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][0][x][0] + '|' + id + '|' + weeks[w]  + '" checked onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						topic += checkbox
+					}
+
+					//this is the topic name
+					topic += '<span>Topic: </span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][0][x][0]][0])
+					//this is the topic subject
+					topic += '<br><span>Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][0][x][0]][2])
+					//this is the sub subject topic
+					topic += '<br><span>Sub-Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][0][x][0]][3])
+					topic += '</div>'
+					hard_div += topic
+
+					
+				}
+				hard_div += '</div>'
+
+
+				var med_div = '<div id="med"><h3>Medium Topic</h3>'
+				for(var x=0;x<data.plan[id][weeks[w]][1].length;x++){
+					
+					topic = '<div id="med_topic">'
+
+					if(date.month == id){
+
+						if(data.plan[id][weeks[w]][1][x][1] == 'P'){
+						checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][1][x][0] + '|' + id + '|' + weeks[w]  + '" onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						if(data.plan[id][weeks[w]][1][x][1] == 'C'){
+							checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][1][x][0] + '|' + id + '|' + weeks[w]  + '" checked onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						topic += checkbox
+					}
+
+					//this is the topic name
+					topic += '<span>Topic: </span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][1][x][0]][0])
+					//this is the topic subject
+					topic += '<br><span>Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][1][x][0]][2])
+					//this is the sub subject topic
+					topic += '<br><span>Sub-Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][1][x][0]][3])
+					topic += '</div>'
+
+					med_div += topic
+				}
+				med_div += '</div>'
+
+				var easy_div = '<div id="easy"><h3>Easy Topic</h3>'
+				for(var x=0;x<data.plan[id][weeks[w]][2].length;x++){
+
+					topic = '<div id="easy_topic">'
+
+					if(date.month == id){
+
+						if(data.plan[id][weeks[w]][2][x][1] == 'P'){
+						checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][2][x][0] + '|' + id + '|' + weeks[w]  + '"onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						if(data.plan[id][weeks[w]][2][x][1] == 'C'){
+							checkbox = '<input class="w3-check w3-right w3-small" type="checkbox" id="topic_checkbox" value="' + data.plan[id][weeks[w]][2][x][0] + '|' + id + '|' + weeks[w]  + '" checked onchange="topicCheckBoxChanged(this)" name="topicCheckBox">'
+						}
+
+						topic += checkbox
+					}
+
+					//this is the topic name
+					topic += '<span>Topic: </span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][2][x][0]][0])
+					//this is the topic subject
+					topic += '<br><span>Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][2][x][0]][2])
+					//this is the sub subject topic
+					topic += '<br><span>Sub-Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][2][x][0]][3])
+					topic += '</div>'
+
+					easy_div += topic
+				}
+				easy_div += '</div>'
+
+
+				$('#' + weeks[w]).append(hard_div)
+				$('#' + weeks[w]).append(med_div)
+				$('#' + weeks[w]).append(easy_div)
+			}
+			else{
+				document.getElementById(weeks[w]).innerHTML = ''
+				$('#' + weeks[w]).append("<h2>" + titleCase(weeks[w]) +"</h2><h1>None</h1>")
+			}
+		}
 	}
 
 </script>
@@ -110,9 +310,9 @@ body {
                 </div>
                 <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
                     <div class="container col-4 p-1">
-                        <button class="btn px-md-4 py-1 font-weight-bold" id="nav_button">
+                        <a href="{{ url_for('main') }}" class="btn px-md-4 py-1 font-weight-bold" id="nav_button">
                             HOME
-                        </button>
+                        </a>
                     </div>
                     <div class="container col-4 p-1 pr-2">
                         <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
@@ -129,9 +329,9 @@ body {
         </div>
         <div class="container-fluid col-6 col-offset-1 d-block d-md-none p-0">
             <div class="container-fluid mr-2 col-4 p-3">
-                <button class="btn  text-white font-weight-bold" id="nav_button">
+                <a href="{{ url_for('main') }}" class="btn  text-white font-weight-bold" id="nav_button">
                     HOME
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -140,7 +340,7 @@ body {
     	<button class="account_nav mx-1 px-3 py-1 font-weight-bold text-white" onclick="changeScreen(this)">Account</button>
 		<button class="account_nav mx-1 px-3 py-1 font-weight-bold text-white" onclick="changeScreen(this)">Plan</button>
 		<button class="account_nav mx-1 px-3 py-1 font-weight-bold text-white" onclick="changeScreen(this)">Info</button>
-		<button class="account_logout mx-1 my-1 px-3 py-1 font-weight-bold text-white mr-3">Logout</button>  	
+		<a href="{{ url_for('logout') }}" class="account_logout mx-1 my-1 px-3 py-1 font-weight-bold text-white mr-3">Logout</a>  	
     </div>
 	
     <div class="container-fluid m-0" id="Account">
@@ -148,7 +348,7 @@ body {
 		<div class="container font-weight-bold">
 			<h1  id="dashboard" >DashBoard</h1>
 
-				
+			<!-- 	
 				
 			<div class="container my-3">
 				<p style="text-align: center;"> Days until your Exam </p>
@@ -218,7 +418,76 @@ body {
 	    		<div class="topic_count text-danger text-center font-weight-bold"> 
 	    			10
 	    		</div>
-	    	</div>
+	    	</div> -->
+
+	    	<p style="text-align: center; color: #363b4d;"> Days until your Exam </p>
+				<h1 id="timer" style="text-align: center; color: #EB4146; border: 1px solid gray; font-size: 3em;"></h1>
+				<p style="text-align: center; color:#363b4d;">Time's Running Out!</p>
+				
+				<div class=" row p-1">
+
+					<div class="container  col-12 col-md-6 p-2">
+
+						<div class="container p-2">
+							<h3 class="container bg-info py-2 text-white" >Plan Progress</h3>
+							<div id="bar">
+							<canvas id="canvas1"  class="chartjs-render-monitor"></canvas>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="container  col-12 col-md-2 p-2">
+
+						<div class="container text-white p-2 text-center">
+							<h3 class="container bg-warning py-2">Streak</h3>
+							<div class="text-dark"> <h1 id='streak_count'> </h1><span style='font-size:6em;'>&#9889;</span></div>
+						</div>
+						
+					</div>
+
+
+					<div class="container  col-12 col-md-4 p-2">
+						
+						<div class="container p-2">
+							<h3 class="container bg-primary py-2 text-white" >Motivation</h3>
+							<button class="btn bg-primary text-center text-white w3-right" onclick="getMotivationFromServer()">Get More!</button><br>
+							<div id="quote" class="w3-xlarge">
+							</div>
+							<div id='author' class="w3-right w3-large">
+							</div>
+
+							
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class=" row p-1">
+
+					<div class="container  col-12 col-md-6 p-2">
+
+						<div class="container  p-2">
+							<h3 class="container bg-success py-2 text-white" >Completed Topics</h3>
+							<div id="completed_count" class="text-center text-success display-3">
+							</div>
+						</div>
+						
+					</div>
+
+
+					<div class="container  col-12 col-md-6 p-2">
+						
+						<div class="container p-2">
+							<h3 class="container bg-danger py-2 text-white" >Backlogs</h3>
+							<div id="backlog_count" class="text-center text-danger display-3">
+							</div>
+						</div>
+
+					</div>
+
+				</div>
 		    
 	    </div>
 	 </div>
@@ -228,6 +497,51 @@ body {
 		
 		<div class="container p-4">
 			<h1> The Plan</h1>
+			<div id="modal" class="w3-modal">
+				  <div class="w3-modal-content w3-animate-top">
+				    <div class="w3-container">
+				      <span onclick="document.getElementById('modal').style.display='none'"
+				      class="w3-button w3-display-topright">close &times;</span>
+				      
+				      <div class="p-2 m-2">
+				      	<h3 id='modal_heading'></h3>
+
+				      	<div class="w3-section w3-center">
+							    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev Week</button>
+							    <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next Week ❯</button>
+						</div>
+				      	
+				      	<div class="w3-content" style="max-width:800px">
+				      		<form>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week1">
+									week 1 
+								</div>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week2">
+									week 2 
+								</div>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week3">
+									week 3 
+								</div>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week4">
+									week 4 
+								</div>							
+							</form>
+						</div>
+
+						<div class="w3-center"> 
+							<button class="w3-button demo" id="slide_btn" onclick="currentDiv(1)">1</button>
+							<button class="w3-button demo" id="slide_btn"onclick="currentDiv(2)">2</button> 
+							<button class="w3-button demo" id="slide_btn"onclick="currentDiv(3)">3</button>
+							<button class="w3-button demo"id="slide_btn" onclick="currentDiv(4)">4</button> 
+						</div>
+				      </div>
+				      
+				    </div>
+				  </div>
+				</div>
+
+		      <div id='month_list' class="container p-2 row">
+		      </div>
 		</div>
 	 	
 	 </div>
@@ -235,13 +549,66 @@ body {
 	 <div class="container-fluid m-0" id="Info">
 	 	<div class="container p-4">
 			<h1> Account Info</h1>
+
+		      <div id="info_div">
+		      </div>
+		      <img id='curve_img' src='' alt='Your Curve' class="col-12 col-md-5">
 		</div>
 	 </div>
 
 </body>
 <script type="text/javascript">
 
+	console.log(data.name)
+
+	document.getElementById('Plan').style.display = 'none'
+	document.getElementById('Info').style.display = 'none'
 	
+	//Name Heading and Streaks and completed and backlog count
+
+	// document.getElementById('heading_name1').innerHTML = data.name;
+	// document.getElementById('heading_name2').innerHTML = data.name;
+	document.getElementById('streak_count').innerHTML = date.streak;
+	var topicStatusCount = getTopicStatus()
+	
+	document.getElementById('completed_count').innerHTML = topicStatusCount[1]
+	document.getElementById('backlog_count').innerHTML = topicStatusCount[2]
+
+	//Motivation
+	document.getElementById('quote').innerHTML =  motivation.quote
+	document.getElementById('author').innerHTML =  motivation.author
+
+
+	document.getElementById('info_div')
+	var college = '<h3><span style="color: #EB4146; font-size: 1.5em" >College</span>: ' + data.college + '</h3>'
+	$('#info_div').append(college)
+	var exam_name = '<h3><span style="color: #EB4146; font-size: 1.5em" >Exam</span>: ' + data.exam + '</h3>'
+	$('#info_div').append(exam_name)
+	var email_id = '<h3><span style="color: #EB4146; font-size: 1.5em" >Email</span>: ' + data.email + '</h3>'
+	$('#info_div').append(email_id)
+	var learning_curve = '<h3><span style="color: #EB4146; font-size: 1.5em" >Learning Curve</span>: ' + titleCase(data.curve) + '</h3>'
+	$('#info_div').append(learning_curve)
+
+	document.getElementById('curve_img').src = './static/img/' + data.curve + 'curve.png'
+
+
+	//month Button Script
+
+	for(key in data.plan){
+
+		if (date.month == key){
+			button = '<div class="col-12 "><button onclick="openModal(this.id)" id=' + key + ' class="m-2 w3-button w3-round-xxlarge container-fluid w3-green">' + titleCase(key.split('_').join(' ')) +'</button></div>'
+		} else {
+			button = '<div class="col-12 "><button onclick="openModal(this.id)" id=' + key + ' class="m-2 w3-button w3-round-xxlarge container-fluid w3-gray">' + titleCase(key.split('_').join(' ')) +'</button></div>'
+		}
+		
+		$('#month_list').append(button)
+		
+	}
+
+
+//CHARTS CREATION
+
 	myChartData =  {											
 		labels: ['Pending','Completed','Backlogs'],
 		datasets: [{
@@ -250,7 +617,7 @@ body {
 			hoverBorderWidth: 10,
 			hoverBorderColor: 'white' ,
 			backgroundColor: ['lightgray','lightgreen','tomato'], 
-			data: [10,20,15],
+			data: getTopicStatus(),
 			borderColor: 'white',
 			}]
 		}
@@ -298,6 +665,100 @@ body {
 		}
 	});
 
+	function getMotivationFromServer(){
+
+		$.ajax({
+
+			url: '/send_motivation',
+			data : 'motivation',
+			type : 'POST',
+			success: function(response){
+
+				console.log(response)
+				document.getElementById('quote').innerHTML =  response.quote
+				document.getElementById('author').innerHTML =  response.author
+
+			}
+		});
+	}
+
+
+	function topicCheckBoxChanged(topicCheck){
+
+		topicData = topicCheck.value.split('|');
+
+		//The check topic state
+		checkedTopicData = {
+				'email' : data.email,
+				'topicCode' : topicData[0],
+				'topicMonth' : topicData[1],
+				'topicWeek' : topicData[2],
+				'topicState' : topicCheck.checked
+		}
+
+		console.log(checkedTopicData);
+
+
+		///Make an AJAX Function to send this data to the back end and save it's state
+
+		$.ajax({
+	            url: '/send_checked_topics',
+	            data: checkedTopicData,
+	            type: 'POST',
+	            success: function(response) {
+	                console.log(response)
+	                checkedDifficulty = (checkedTopicData['topicCode'].charAt(checkedTopicData['topicCode'].length - 1))  //gives me difficulty
+					//Update the chart, update the counter here
+					for(topicDifficulty in data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']]){
+						for(topic in data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty]){
+							console.log(data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty][topic])
+							if(data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty][topic][0] == checkedTopicData['topicCode']){
+								console.log("FOUND")
+								if(checkedTopicData['topicState'] == true)
+									data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty][topic][1] = 'C'
+								else{
+									data['plan'][checkedTopicData['topicMonth']][checkedTopicData['topicWeek']][topicDifficulty][topic][1] = 'P'
+								}
+							}
+						}
+					}
+					var topicStatusCount = getTopicStatus()
+					document.getElementById('completed_count').innerHTML = topicStatusCount[1]
+					document.getElementById('backlog_count').innerHTML = topicStatusCount[2]
+					myChartData.datasets[0].data = getTopicStatus()
+					window.myChart.update()
+	            }
+	    });
+	}
+
+
+	//Modal Slide Show 
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+	  showDivs(slideIndex += n);
+	}
+
+	function currentDiv(n) {
+	  showDivs(slideIndex = n);
+	}
+
+	function showDivs(n) {
+	  var i;
+	  var x = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("demo");
+	  if (n > x.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = x.length}
+	  for (i = 0; i < x.length; i++) {
+	    x[i].style.display = "none";  
+	  }
+	  for (i = 0; i < dots.length; i++) {
+	    dots[i].className = dots[i].className.replace(" w3-red", "");
+	  }
+	  x[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " w3-red";
+	}
 
 
 	//The Clock

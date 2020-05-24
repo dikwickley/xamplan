@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xam Plan | Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<style>
+    * {
+    /*border: 1px dashed green;*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #eb4146;
+}
+
+#logo img {
+    width: 100%;
+}
+
+#nav-round-button 
+{    color: #00CCB1;
+    background-color: white;
+    font-size: 2vw;
+    height: 3.5vw;
+    border-radius: 1.75vw;
+    font-weight: 600;
+    padding: 0 1.25vw;
+    border: none;
+    outline: none;
+}
+
+#nav-round-button:hover {
+    color: white;
+    background-color: #00CCB1;
+    /*outline: 1px double #00CCB1;*/
+}
+
+#nav_button {
+    background-color: #00CCB1;
+    color: white;
+    border-radius: 9999px;
+
+}
+
+#xamplan {
+    font-size: 5em;
+    color: #ffffff;
+}
+
+#xamplan_mobile {
+    font-size: 2em;
+}
+#hard{
+		color: red;
+	}
+	#med{
+		color: orange;
+	}
+	#easy{
+		color: lightgreen;
+	}
+	#hard_topic{
+		background-color: rgba(253,0,0,0.3);
+		color: black;
+		margin: 5px;
+		padding: 5px;
+	}
+	#med_topic{
+		background-color: rgba(253,227,167,0.3);
+		color: black;
+		margin: 5px;
+		padding: 5px;
+	}
+	#easy_topic{
+		background-color: rgba(0,253,0,0.3);
+		color: black;
+		margin: 5px;
+		padding: 5px;
+	}
+	#make_account{
+		border-radius: 9999px;
+		background-color: #00CCB1;
+	}
+</style>
+
+<body>
+	<div class="row container-fluid mb-3 m-0 p-0" id="heading">
+        <div class="col-3 p-0 p-md-3 col-md-2 container-fluid m-0" id="logo">
+            <img src="../static/img/white_logo_nobg.png" alt="Xam Plan Logo">
+        </div>
+        <div class="d-md-block d-none container-fluid col-9 col-md-10">
+            <div class="container-fluid col-12 p-0 row m-0 " id="nav_name">
+                <div class="col-7 container-fluid  my-auto text-center " id="xamplan">
+                    <span style="color: #363b4D">X</span>amPlan
+                </div>
+                <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
+                    <div class="container col-4 p-1">
+                        <a href="{{ url_for('main') }}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            HOME
+                        </a>
+                    </div>
+                    <div class="container col-4 p-1 pr-2">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            PREP
+                        </button>
+                    </div>
+                    <div class="container col-4 p-1">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            ABOUT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid col-6 col-offset-1 d-block d-md-none p-0">
+            <div class="container-fluid mr-2 col-4 p-3">
+                <a href="{{ url_for('main') }}" class="btn  text-white font-weight-bold" id="nav_button">
+                    HOME
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-white p-3 my-4">
+		<div class="text-right">
+			<a href="{{ url_for('create') }}" class="btn px-3 py-1 text-white font-weight-bold" id='make_account'> Make an Account!</a>	
+		</div>
+    	
+
+    	<h1>Demo</h1>
+    	<p class="font-weight-bold" style="color: #363b4D"> This is demo version of the tool so that you can quickley view how a plan made by our algorithm will work. This of course is just the plan, make an account to configure the plan according to your needs and view it anytime you want, for free of course.</p>
+
+    	<h2> Choose Your Exam</h2>
+            <div class="form-group container-fluid px-auto p-3">
+				<label for="stream">Choose Stream</label>
+                <select class="form-control col-12 my-3" id='stream'  onchange="getDropDown();" type="text" name="stream" placeholder="Choose Exam">
+                    <option value="none"></option>
+                	<option value="gate"> GATE</option>
+                    <option value="cat" disabled="true"> CAT</option>
+                    <option value="jee" disabled="true"> JEE</option>
+                    <option value="neet" disabled="true"> NEET</option>
+                </select>
+                <label for='exam'>Choose Exam</label>
+                <select class="form-control col-12 my-3" id="exams" type="text" name="exam" placeholder="Choose Exam">
+                </select>
+            </div>
+        <h2> Configure</h2>
+        	<div class="form-group container-fluid px-auto mx-auto p-1 row">
+				<div class="container-fluid p-2 col-6 col-md-4">
+					<label for='year'>Choose Year</label>
+					<select name='year' id='year' class="form-control my-3">
+	        			<option value="2021">2021</option>
+	        			<option value="2022">2022</option>
+	        			<option value="2023">2023</option>
+	        		</select>
+				</div>
+        		
+
+        		<div class="container-fluid p-2 col-6 col-md-4">
+        			<label for="revision">Revision Cycle</label>
+					<select name="revision" id='revision' class="form-control my-3">
+	        			<option value="1">1x</option>
+	        			<option value="2">2x</option>
+	        			<option value="3">3x</option>
+	        		</select>
+				</div>
+
+				<div class="container-fluid p-2 col-12 col-md-4">
+        			<label for="curve">Select Effort Curve</label>
+					<select name="curve" id='curve' class="form-control my-3">
+	        			<option value="nonlinear">Non Linear</option>
+	        			<option value="increasing">Increasing</option>
+	        			<option value="decreasing">Decreasing</option>
+	        			<option value="linear" disabled="true">Linear</option>
+	        		</select>
+				</div>
+
+        	</div>
+
+			<div class="container-fluid text-center">
+				<button class="btn font-weight-bold" id='nav_button' onclick="getDemoPlan()">Get A Demo Plan</button>		
+			</div>
+        	
+
+        	<div id="plan" class="container "><br>
+		      <!-- <h2 style="text-align:center;">Your Plan</h2> -->
+
+				<div id="modal" class="w3-modal">
+				  <div class="w3-modal-content w3-animate-top">
+				    <div class="w3-container">
+				      <span onclick="document.getElementById('modal').style.display='none'"
+				      class="w3-button w3-display-topright">close &times;</span>
+				      
+				      <div class="p-2 m-2">
+				      	<h3 id='modal_heading'></h3>
+
+				      	<div class="w3-section w3-center">
+							    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev Week</button>
+							    <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next Week ❯</button>
+						</div>
+				      	
+				      	<div class="w3-content" style="max-width:800px">
+				      		<form>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week1">
+									week 1 
+								</div>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week2">
+									week 2 
+								</div>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week3">
+									week 3 
+								</div>
+								<div class="mySlides w3-animate-opacity"  style="width:100%" id="week4">
+									week 4 
+								</div>							
+							</form>
+						</div>
+
+						<div class="w3-center"> 
+							<button class="w3-button demo" id="slide_btn" onclick="currentDiv(1)">1</button>
+							<button class="w3-button demo" id="slide_btn"onclick="currentDiv(2)">2</button> 
+							<button class="w3-button demo" id="slide_btn"onclick="currentDiv(3)">3</button>
+							<button class="w3-button demo"id="slide_btn" onclick="currentDiv(4)">4</button> 
+						</div>
+				      </div>
+				      
+				    </div>
+				  </div>
+				</div>
+
+		      <div id='month_list' class="container p-2 row">
+		      </div>
+		    </div>
+
+
+
+    	
+    </div>
+
+</body>
+<script type="text/javascript">
+	
+	var data;
+	var topics = {};
+
+
+	
+
+	function getDemoPlan(){
+		data = {
+			exam : document.getElementById('exams').value,
+			year : document.getElementById('year').value,
+			curve : document.getElementById('curve').value,
+			revision : document.getElementById('revision').value
+		}
+
+		console.log(data)
+		document.getElementById('month_list').innerHTML = '<h1 class="text-center"> Getting Plan </h1>'
+
+		$.ajax({
+			url : '/get_demo',
+			data : data,
+			method: 'post',
+			success(response){
+				response = JSON.parse(response)
+				data = response
+				topics['topics'] = response.topics
+
+				
+				document.getElementById('month_list').innerHTML = ''
+				for(key in data.plan){
+					
+						button = '<div class="col-12 "><button onclick="openModal(this.id)" id=' + key + ' class="m-2 w3-button w3-round-xxlarge container-fluid w3-gray">' + titleCase(key.split('_').join(' ')) +'</button></div>'
+					
+					
+					$('#month_list').append(button)
+						
+				}
+		
+			}
+		});
+	}
+
+
+
+	
+
+
+	//Modal Slide Show 
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+	  showDivs(slideIndex += n);
+	}
+
+	function currentDiv(n) {
+	  showDivs(slideIndex = n);
+	}
+
+	function showDivs(n) {
+	  var i;
+	  var x = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("demo");
+	  if (n > x.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = x.length}
+	  for (i = 0; i < x.length; i++) {
+	    x[i].style.display = "none";  
+	  }
+	  for (i = 0; i < dots.length; i++) {
+	    dots[i].className = dots[i].className.replace(" w3-red", "");
+	  }
+	  x[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " w3-red";
+	}
+
+
+</script>
+
+<script type="text/javascript">
+	var stream = {
+        gate : [['GCS', 'GATE-CS (Computer Science & IT Engineering)'], ['GME', 'GATE-ME (Mechanical Engineering)'], ['GCE', 'GATE-CE (Civil Engineering)' ], ['GEC', 'GATE-EC (Electronics & Communication Engineering)'], ['GEE', 'GATE-EE (Electrical Engineering)'], ['GPI', 'GATE-PI (Production & Industrial Engineering)'],['GAE', 'GATE-AE (Aerospace Engineering)']],
+        neet : [['NEET', 'National Eligblity cum Entrance Test']],
+        jee : [['M', 'JEE Mains'], ['MA', 'JEE Mains + Advanced']],
+        cat : [['CAT', 'Common Entrance and Aptitude Test']]
+
+    }
+
+    function titleCase(str) {
+	   var splitStr = str.toLowerCase().split(' ');
+	   for (var i = 0; i < splitStr.length; i++) {
+	       // You do not need to check if i is larger than splitStr length, as your for does that for you
+	       // Assign it back to the array
+	       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+	   }
+	   // Directly return the joined string
+	   return splitStr.join(' '); 
+	}
+
+    function getDropDown(){
+        var exam = document.getElementById('stream').value
+        document.getElementById('exams').innerHTML = ''
+        if(exam != 'None'){
+            for(sub in stream[exam]){
+                // console.log(stream[exam][sub])
+                $('#exams').append('<option value="' + stream[exam][sub][0] + '" >' + stream[exam][sub][1] +'</option>')
+                }
+        }
+    }
+
+    function openModal(id){
+		document.getElementById('modal').style.display='block'
+		document.getElementById('modal_heading').innerHTML = titleCase(id.split('_').join(' '))
+		//console.log(data.plan[id])
+		var weeks = ['week1','week2','week3','week4']
+
+		for(w in weeks){
+
+			if(weeks[w] in data.plan[id]){
+				//add in week 1 div
+				document.getElementById(weeks[w]).innerHTML = ''
+				// console.log(id)
+				// console.log("hard: ",data.plan[id][weeks[w]][0])	//hard
+				// console.log("medium: ",data.plan[id][weeks[w]][1])	//medium
+				// console.log("easy: ",data.plan[id][weeks[w]][2])	//easy
+
+				var hard_div = '<div id="hard"><h2 style="color: black;">' + titleCase(weeks[w]) +'</h2><h3>Hard Topic</h3>'
+				for(var x=0;x<data.plan[id][weeks[w]][0].length;x++){
+
+
+
+					topic = '<div id="hard_topic">'
+
+					
+
+					//this is the topic name
+					topic += '<span>Topic: </span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][0][x][0]][0])
+					//this is the topic subject
+					topic += '<br><span>Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][0][x][0]][2])
+					//this is the sub subject topic
+					topic += '<br><span>Sub-Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][0][x][0]][3])
+					topic += '</div>'
+					hard_div += topic
+
+					
+				}
+				hard_div += '</div>'
+
+
+				var med_div = '<div id="med"><h3>Medium Topic</h3>'
+				for(var x=0;x<data.plan[id][weeks[w]][1].length;x++){
+					
+					topic = '<div id="med_topic">'
+
+					
+
+					//this is the topic name
+					topic += '<span>Topic: </span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][1][x][0]][0])
+					//this is the topic subject
+					topic += '<br><span>Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][1][x][0]][2])
+					//this is the sub subject topic
+					topic += '<br><span>Sub-Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][1][x][0]][3])
+					topic += '</div>'
+
+					med_div += topic
+				}
+				med_div += '</div>'
+
+				var easy_div = '<div id="easy"><h3>Easy Topic</h3>'
+				for(var x=0;x<data.plan[id][weeks[w]][2].length;x++){
+
+					topic = '<div id="easy_topic">'
+
+					
+
+					//this is the topic name
+					topic += '<span>Topic: </span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][2][x][0]][0])
+					//this is the topic subject
+					topic += '<br><span>Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][2][x][0]][2])
+					//this is the sub subject topic
+					topic += '<br><span>Sub-Subject: <span> ' + titleCase(topics.topics[data.plan[id][weeks[w]][2][x][0]][3])
+					topic += '</div>'
+
+					easy_div += topic
+				}
+				easy_div += '</div>'
+
+
+				$('#' + weeks[w]).append(hard_div)
+				$('#' + weeks[w]).append(med_div)
+				$('#' + weeks[w]).append(easy_div)
+			}
+			else{
+				document.getElementById(weeks[w]).innerHTML = ''
+				$('#' + weeks[w]).append("<h2>" + titleCase(weeks[w]) +"</h2><h1>None</h1>")
+			}
+		}
+	}
+</script>
+
+</html>

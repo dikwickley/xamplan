@@ -248,6 +248,22 @@ def test():
 	return render_template('privacypolicy.html')
 
 
+@app.route('/privacypolicy')
+def privacypolicy():
+	return render_template('privacypolicy.html')
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
+
+@app.route('/submit_feedback', methods=['POST','GET'])
+def submit_feedback():
+	if request.method == 'POST':
+		data = dict(request.form)
+		print(data)	
+
+		return "Feedback Submitted. Thank You."
+
 @app.route('/demo')
 def demo():
 	return render_template('demo.html')

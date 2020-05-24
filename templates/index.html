@@ -9,6 +9,57 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Xam Plan | Home</title>
 </head>
+<style type="text/css" media="screen">
+    @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    section {
+        padding: 10px 0;
+    }
+
+    section .section-title {
+        text-align: center;
+        color: #007b5e;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+
+    #footer {
+        background: #343a40 !important;
+    }
+
+    #footer a {
+        color: #ffffff;
+        text-decoration: none !important;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    #footer ul.social li {
+        padding: 3px 0;
+    }
+
+    #footer ul.social li a i {
+        margin-right: 5px;
+        font-size: 25px;
+        -webkit-transition: .3s all ease;
+        -moz-transition: .3s all ease;
+        transition: .3s all ease;
+    }
+
+    #footer ul.social li:hover a i {
+        font-size: 30px;
+        margin-top: -10px;
+    }
+
+    #footer ul.social li a,
+    #footer ul.quick-links li a {
+        color: #ffffff;
+    }
+
+    #footer ul.social li a:hover {
+        color: #eeeeee;
+    }
+
+    </style>
 <style>
 * {
     /*border: 1px dashed green;*/
@@ -144,9 +195,9 @@ body {
                         </button>
                     </div>
                     <div class="container col-4 p-1">
-                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                        <a href="{{ url_for('about')}}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             ABOUT
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -269,6 +320,31 @@ body {
         </div>
     </div>
     <!-- <img src="../static/img/bg-snip.png" style="position: absolute; right: 0; top: 0; z-index: -1;" class="col-md-10 col-9 p-0 m-0"> -->
+     <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-1 mt-sm-3">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href=""><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item"><a href="" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p><u><a href="{{ url_for('main')}}">Xamplan exam planner</a></u>  <a href="{{url_for('privacypolicy')}}">Privacy Policy</a></p>
+                    <p class="h6">© All Rights Reversed.<a class="text-green ml-2" href="" target="_blank">Xamplan</a></p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <!-- ./Footer -->
 </body>
 
 </html>

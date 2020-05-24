@@ -16,7 +16,7 @@ step14: Add Motivation Changer									[done]
 Step14: Add the point system									[not needed]
 Step15: Add More info											[done]
 Step16: Make feedback form 										[]
-Step17: Finish Up the front end (footer, cookie warning, etc) 	[]
+Step17: Finish Up the front end (footer, cookie warning, etc) 	[half done]
 Step18: Buy domain and mail										[done]
 
 hosting-> domain -> privacy policy 								[done]
@@ -36,9 +36,9 @@ Step5: Add the blog functionality and hire a content writer		[]
 
 
 things to complete before release:
-	1) Demo page
-	2) footer and link all profiles
-	3) About page
+	1) Demo Page 												[done]
+	2) footer and link all profiles	
+	3) About Page 	
 	4) Data of all the exams
 
 

@@ -1,38 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Xam Plan | About Us</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>Xam Plan | Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<script type="text/javascript">
-    
-    var getParams = function (url) {
-        var params = {};
-        var parser = document.createElement('a');
-        parser.href = url;
-        var query = parser.search.substring(1);
-        var vars = query.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split('=');
-            params[pair[0]] = decodeURIComponent(pair[1]);
-        }
-        return params;
-    };
-
-    var url = (getParams(window.location.href));
-
-    if('msg' in url){
-        if(url.msg == 'email_exists'){
-            alert('Emai Already In Use.')
-        }
-    }
-
-</script>
- <style type="text/css" media="screen">
+<style type="text/css" media="screen">
     @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     section {
         padding: 10px 0;
@@ -88,10 +64,11 @@
     /*border: 1px dashed green;*/
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #eb4146;
+    background-color: #ffffff;
 }
 
 #logo img {
@@ -113,55 +90,64 @@ body {
 #nav-round-button:hover {
     color: white;
     background-color: #00CCB1;
-    /*outline: 1px double #00CCB1;*/
+    
 }
 
 #nav_button {
     background-color: #00CCB1;
     color: white;
-    border-radius:  9999px;
+    border-radius: 9999px;
+    border: none;
+    outline: none;
 
+}
+
+.nav_button {
+    background-color: #00CCB1;
+    color: white;
+    border-radius: 9999px;
+	border: none;
+    outline: none;
 }
 
 #xamplan {
     font-size: 5em;
-    color: #ffffff;
+    color: #eb4146;
 }
-
-#xamplan_mobile {
-    font-size: 2em;
-}
-#login_form {
-    border-radius:  24px;
-}
-
 .div_rounder {
     border-radius: 24px;
 }
-#createBtn{
-    border-radius: 9999px;
+.xamplan_red{
+	background-color: #eb4146;
 }
-
-@media screen and (max-width: 425px) {
-    #logo img {
-        width: 100%;
-    }
+.xamplan_text_black{
+	color: #363b4D;
+}
+.xamplan_text_green{
+	color: #00CCB1;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
 }
 </style>
-
 <body>
-    <div class="row container-fluid mb-3 m-0 p-0" id="heading">
+
+	<div class="row container-fluid mb-3 m-0 p-0" id="heading">
         <div class="col-3 p-0 p-md-3 col-md-2 container-fluid m-0" id="logo">
-            <img src="../static/img/white_logo_nobg.png" alt="Xam Plan Logo">
+            <img src="../static/img/red_logo_nobg.png" alt="Xam Plan Logo">
         </div>
-        <div class="d-md-block d-none container-fluid col-9 col-md-10">
+        <div class="d-md-block d-none container-fluid col-9 col-md-10 py-auto">
             <div class="container-fluid col-12 p-0 row m-0 " id="nav_name">
-                <div class="col-7 container-fluid  my-auto text-center " id="xamplan">
+                <div class="col-7 container-fluid py-auto text-center " id="xamplan">
                     <span style="color: #363b4D">X</span>amPlan
                 </div>
                 <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
                     <div class="container col-4 p-1">
-                        <a href="{{ url_for('main') }}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                        <a href="{{ url_for('main') }}" class="btn px-md-4 py-1 font-weight-bold" id="nav_button">
                             HOME
                         </a>
                     </div>
@@ -171,9 +157,9 @@ body {
                         </button>
                     </div>
                     <div class="container col-4 p-1">
-                        <a href="{{ url_for('about')}}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             ABOUT
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -186,39 +172,73 @@ body {
             </div>
         </div>
     </div>
-    <div class="container-fluid row m-0 py-1 py-md-4" id="login_wrapper">
-        <div class="col-12 col-md-6 py-1 py-md-2">
-            <form action="{{ url_for('handle_create') }}" method='post' class="bg-white p-4" id="login_form">
-                <h3 class="text-center">Create your<span style="color: #eb4146;"> Account</span></h3>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input  type="email" class="div_rounder form-control" id="email" placeholder="Enter email" name="email" required="true">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input  type="password" class="div_rounder form-control" id="password1" placeholder="Enter password" name="password1" required="true">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Retype Password:</label>
-                    <input  type="password" class="div_rounder form-control" id="password2" placeholder="Retype password" name="password2" onchange="checkMatch()" onclick="document.getElementById('createBtn').disabled = false; document.getElementById('passmsg').innerHTML = ''" required="true">
-                </div>
-                <span id="passmsg" class="m-3 text-danger"></span>
-                <br>
-                <div class="text-right px-4 mb-1">
-                    <button id="createBtn" type="submit" class="btn btn-default text-white px-4" style="background-color: #eb4146;">
-                        <h5>Signup</h5>
-                    </button>
-                </div>
-                <div class="signup_msg text-center">
-                    <p>Already have an account?<a href="{{ url_for('login') }}" style="color: #eb4146;"> Log in!</a></p>
-                </div>
-            </form>
-        </div>
-        <div id="moto" class="container text-center col-12 col-md-6 py-md-4 my-3 m-md-0 d-none d-md-block">
-            <img src="../static/img/make-circle.png" alt="Make Your Exam Plan" class="container col-12 col-md-8 p-1">
-        </div>
+
+    <div class="container p-3 xamplan_red text-white ">
+
+    	<h1> About Us</h1>
+
+    	<div  class="container-fluid row m-0 p-0">
+	
+	    	<div class="container-fluid p-2 col-md-6 col-12">
+	    		<div class="container-fluid   xamplan_text_green p-4 div_rounder">
+
+	    			<h3>Meet the Creators</h3><br>
+
+	    			<div class="container-fluid  p-1 xamplan_text_black font-weight-bold text-center">
+	    				<h4>Aniket Singh Rawat  [Founder]</h4>
+	    				<a target="_blank"  href="https://instagram.com/aniket.singh.rawat"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+	    				<a target="_blank" href="https://github.com/DiKwickley"><i class="fa fa-github" aria-hidden="true"></i></a>
+	    				<a target="_blank" href="https://www.linkedin.com/in/aniket-singh-rawat-7537051a1/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+	    			</div>
+
+	    			<div class="container-fluid xamplan_text_black font-weight-bold text-center">
+	    				<h4>Dev Sharma  [Co-Founder]</h4>
+	    				<a target="_blank"  href="https://instagram.com/cryptus_neoxys"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+	    				<a target="_blank" href="https://github.com/cryptus-neoxys"><i class="fa fa-github" aria-hidden="true"></i></a>
+	    				<a target="_blank" href="https://www.linkedin.com/in/dev-sharma-9970b4190/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+	    			</div>
+	    			
+	    		</div>
+	    	</div>
+
+	    	<div class="container-fluid p-2 col-md-6 col-12 ">
+	    		<div class="container-fluid xamplan_text_green   p-4 div_rounder">
+
+	    			<h3>About Xam Plan</h3>
+	    			<p class="xamplan_text_black font-weight-bold">
+	    			Xam Plan was created in hopes of automating the process of creating plan that nearly every student does before starting the preparation of an exam.</p>
+	    			<p class="xamplan_text_black font-weight-bold">
+	    				The created  plan is easy to follow and you can complete your course and you won't even reaslise.
+	    			</p>
+	    			</p>
+	    			<p class="xamplan_text_black font-weight-bold">
+	    				This is a new start up so please support us. If you find any bugs please report them at the feed back form. Your suggestions are valuable to us 😄.
+	    			</p>
+
+	    		</div>	
+	    	</div>
+
+	    	<div class="container-fluid p-2 col-12">
+
+	    		<div class="container  div_rounder xamplan_text_black p-4">
+					<h3 class="xamplan_text_green">Feedback Form</h3>
+
+					<div class="mx-auto form-group row font-weight-bold xamplan_text_black">
+					  	<label for="comment">Feedback:</label>
+						<textarea class="form-control my-2 col-12" rows="5" id="feedback"></textarea>
+						<label for="email">Email:</label>
+						<input type="email" class="form-control my-2 col-12" name="email" id="email">
+						<input type="button" class="font-weight-bold my-4 px-4 py-1 nav_button" id="feedback_submit" value="Submit Feedback" onclick="submitFeedback()"> 
+					</div>
+	    		</div>
+	    		
+	    	</div>
+
+	    </div>
+
     </div>
-     <!-- Footer -->
+
+    <!-- Footer -->
     <section id="footer">
         <div class="container">
             <div class="row">
@@ -243,19 +263,25 @@ body {
         </div>
     </section>
     <!-- ./Footer -->
+
 </body>
 <script type="text/javascript">
-    function checkMatch(){
-    console.log('change called')
-    if (document.getElementById('password1').value != document.getElementById('password2').value){
-        document.getElementById('createBtn').disabled = true;
-        document.getElementById('passmsg').innerHTML = 'Passwords do not match'
-    }
 
-    else{
-        document.getElementById('createBtn').disabled = false;
-        document.getElementById('passmsg').innerHTML = ''
-    }
-}
+	function submitFeedback(){
+		var feedbackData = {
+			feedback : document.getElementById('feedback').value,
+			email : document.getElementById('email').value
+		}
+
+		$.ajax({
+			url: '/submit_feedback',
+			data : feedbackData,
+			method : 'post',
+			success(response){
+				alert(response)
+			}
+		});
+	}
+
 </script>
 </html>

@@ -247,6 +247,14 @@ app.permanent_session_lifetime = timedelta(days = 28)
 def test():
 	return render_template('privacypolicy.html')
 
+@app.route('/blog')
+def blog():
+	return "blogs comming soon"
+
+@app.route('/prep')
+def prep():
+	return "prep comming soon"
+
 
 @app.route('/privacypolicy')
 def privacypolicy():
@@ -328,7 +336,12 @@ def main():
 	now = datetime.now()
 	date = now.strftime("%Y-%m-%d/%H:%M:%S")
 	mongo.db.ip.insert_one({'ip':ip,'date':date})
-	return render_template('index.html')
+	if 'user' in session:
+		return render_template('index.html', res=json.dumps({'login': session['user']}))	
+	else:
+		return render_template('index.html', res=json.dumps({'login': 'loggedout'}))	
+
+	
 
 @app.route('/create')
 def create():

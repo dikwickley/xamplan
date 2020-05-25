@@ -150,7 +150,28 @@ body {
 }
 </style>
 
+
+<link rel="icon" href="./static/img/xamplan.ico">
+<link rel="stylesheet" href="./static/css/overlay.css">
+<script type="text/javascript" src="./static/js/overlay.js"></script>
+
 <body>
+    <div id="myNav" class="overlay">
+
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <a href="{{ url_for('main')}}">Home</a>
+        <a href="{{ url_for('prep')}}">Prep</a>
+        <a href="{{ url_for('blog')}}">Blogs</a>
+        <a href="{{ url_for('about')}}">About</a>
+        <a href="{{ url_for('privacypolicy')}}">Privacy Policy</a>
+        <a href="{{ url_for('logout')}}">Logout</a>
+      </div>
+
+    </div>
     <div class="row container-fluid mb-3 m-0 p-0" id="heading">
         <div class="col-3 p-0 p-md-3 col-md-2 container-fluid m-0" id="logo">
             <img src="../static/img/white_logo_nobg.png" alt="Xam Plan Logo">
@@ -162,28 +183,28 @@ body {
                 </div>
                 <div class="col-5 container-fluid text-white my-auto row text-dark p-0 text-right m-0" id="nav_items">
                     <div class="container col-4 p-1">
-                        <a href="{{ url_for('main') }}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                        <a href="{{ url_for('main')}}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             HOME
                         </a>
                     </div>
-                    <div class="container col-4 p-1 pr-2">
-                        <button class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
-                            PREP
-                        </button>
-                    </div>
                     <div class="container col-4 p-1">
-                        <a href="{{ url_for('about')}}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
-                            ABOUT
+                        <a href="{{ url_for('prep')}}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            PREP
                         </a>
+                    </div>
+                    <div class="container col-4 p-1 pr-2">
+                        <button onclick="openNav()" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            MORE
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-fluid col-6 col-offset-1 d-block d-md-none p-0">
             <div class="container-fluid mr-2 col-4 p-3">
-                <a href="{{ url_for('main') }}" class="btn  text-white font-weight-bold" id="nav_button">
-                    HOME
-                </a>
+                <button onclick="openNav()" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
+                            MENU
+                </button>
             </div>
         </div>
     </div>

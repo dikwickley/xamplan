@@ -1,0 +1,65 @@
+Phase 1:
+Step1: Decide Datastorage										[done]
+Step2: Write the algorithm 										[done]
+Step3: Make Create User functionality							[done]
+Step4: Find the learning curve function 						[not needed]
+Step5: Collect data 											[done]
+Step6: Config Plan Page 										[done]
+Step7: Integrate the algorithm									[done]
+Step8: Make individual user tables								[done]
+Step9: Make Login												[done]
+Step10: Make Account page 										[done]
+Step11: Fetch data to account page 								[done]
+Step12: Display data to account Page 							[done!]
+step13: Add Chart and --->Streak<-- Logic						[done]
+step14: Add Motivation Changer									[done]
+Step14: Add the point system									[not needed]
+Step15: Add More info											[done]
+Step16: Make feedback form 										[done]
+Step17: Finish Up the front end (footer, cookie warning, etc) 	[done]
+Step18: Buy domain and mail										[done]
+
+hosting-> domain -> privacy policy 								[done]
+
+more:
+	Remember to add email and password error in the alert		[done]
+	drop down for mobile menu									[done]
+	Add links to all pages										[done]
+	Clean up unnecessary pages									[done]
+
+
+
+
+Phase 2:
+
+Step1: Make Privacy policy and terms of users 					[done]
+Step2: Get copyright and Trademark								[won't be doing the c and tm]		
+Step3: Get OAuth												[]					
+Step4: SEO*****													[]		dev
+Step5: Add the blog functionality and hire a content writer		[]
+
+
+things to complete before release:
+	1) Demo Page 												[done]
+	2) footer and link all profiles								[done]
+	3) About Page 												[done]
+	4) Data of all the exams
+
+
+
+Phase 3:
+(This is the phase where we monetize our site and development of premium features)
+(The * features are part of the premium plan of the website)
+
+Step1: Add Payment Methods (paytm, upi)							[]
+Step2: Make services for paid users (refer paid.txt)			[]
+Step3: Affiliate marketing for the prep page 					[]
+Step4: Google Ad Sense											[]
+Step5: *View Detailed list of completed/backlog topics			[]
+Step6: *Shift topic to some other week							[]
+Step7: *Ability to change the function at any time				[]
+Step8: *Ability to merge two exams together						[]
+Step9: *Streak protection for two days							[]
+Step10: *Personalised daily whats app subscription				[]
+Step11: Refral code 											[]
+

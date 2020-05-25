@@ -1,0 +1,12 @@
+
+FLASK ->(JSON)-> HTML/JS
+
+{
+	key : data
+}
+
+
+{
+	'title' : [title here],
+
+}

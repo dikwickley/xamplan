@@ -1,0 +1,94 @@
+To Run the Server on the local Machine
+
+mongo "mongodb+srv://subs-fvucj.mongodb.net/test" --username Dikwickley
+
+basic Translation
+
+RDBMS					MongoDB
+---------------------------------
+Database				Database
+Table					Collection
+Tuple/Row				Document
+column					Field
+Table Join				Embedded Documents
+Primary Key				Primary Key (Default key _id provided by MongoDB itself)
+		
+	Database Server and Client
+---------------------------------
+mysqld/Oracle			mongod
+mysql/sqlplus			mongo
+
+
+
+document is basically the row with fields as the column header
+
+Data Visualisation in SQL
+
+email 	|	name 	|	membership					
+-----------------------------------
+a@gmail	|	aniket	|	paid
+-----------------------------------	
+b@gmail	|	aarush	|	unpaid		
+-----------------------------------
+c@gmail	|	anirudh	|	unpaid		
+
+Data Visualisation in MONGO DB
+
+{
+	"_id" : someid,
+	"email" 	: "a@gmail",
+	"name" 	: "aniket"
+}
+{
+	"_id" : someid,
+	"email" 	: "b@gmail",
+	"name" 	: "aarush"
+}
+{
+	"_id" : someid,
+	"email" 	: "c@gmail",
+	"name" 	: "anirudh"
+}
+
+
+
+Basically Stored in Object format
+
+A row is stored as DOCUMENT
+The header, attributes are The FEILDS
+
+There is no limit to the the coumns
+
+to use  a db, just type =>						'use [db_name]'
+to create a collection(table) =>				'db.createCollection([])'
+to insert into the collection(table) 	=>		'db.[collection_name].insert(document)'
+to select all from a collection(table)	=>		'db.[collection_name].find().pretty()'
+to select one from the Collection 		=>		'db.[collectoin_name].findOne({field_name: 'field_value'})'
+
+
+Where Clause Translation:
+
+db.mycol.find({"by":"tutorials point"}).pretty()				where by = 'tutorials point
+{<key>:{$eg;<value>}}
+
+db.mycol.find({"likes":{$lt:50}}).pretty()						where likes < 50
+{<key>:{$lt:<value>}}
+
+db.mycol.find({"likes":{$lte:50}}).pretty()						where likes <= 50
+{<key>:{$lte:<value>}}
+
+db.mycol.find({"likes":{$gt:50}}).pretty()						where likes > 50
+{<key>:{$gt:<value>}}
+
+db.mycol.find({"likes":{$gte:50}}).pretty()						where likes >= 50
+{<key>:{$gte:<value>}}
+
+db.mycol.find({"likes":{$ne:50}}).pretty()						where likes != 50
+{<key>:{$ne:<value>}}
+
+db.mycol.find({"name":{$in:["Raj", "Ram", "Raghu"]}}).pretty()	Where name matches any of the value in :["Raj", "Ram", "Raghu"]
+{<key>:{$in:[<value1>, <value2>,……<valueN>]}}
+
+
+
+

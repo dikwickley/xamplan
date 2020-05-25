@@ -1,0 +1,54 @@
+FIGURE OUT AN ALGORITHM!!!!!!!!!!!!!
+Figured out bitch
+The Algorithm is created for half of the coditions
+the algo rithm will be completed tomorrow
+
+
+plan : {
+		jan20{
+			week1 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+			week2 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+			.
+			.
+			week4 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+		},
+		feb20{
+			week1 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+			week2 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+			.
+			.
+			week4 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+		}
+	}
+
+This is the current DATA Structure.
+User will enter the target Year.
+Basically, months will be calculated January of that year.
+number of weeks = 4*no_of_months
+then after getting number of months A disytribution array will be made according to the number of topics
+sorting according to difficulty that will be sorted in the python itself
+An account can be made in middle of themonth as well so give the week number accordingly
+
+ALSO, check boxes of completion will only be shown to the topics of current month
+
+All this will be done in handle_config
+
+------------------------------------------------------
+For The Streaks
+
+from datetime import date
+
+f_date = date(2014, 7, 2)
+l_date = date(2014, 7, 11)
+delta = l_date - f_date
+print(delta.days)
+
+
+#ALGORITHM	
+
+if ( last date - current date > 2) :
+	start date = current date
+
+last date = current date
+
+streak = start date - last date

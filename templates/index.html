@@ -175,6 +175,30 @@ body {
 .description_text{
     color: #363B4D;
 }
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #363b4D; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
 </style>
 <script type="text/javascript">
     var res = JSON.parse('{{ res | safe }}')
@@ -193,6 +217,7 @@ body {
       <!-- Overlay content -->
       <div class="overlay-content">
         <a href="{{ url_for('main')}}">Home</a>
+        <a href="{{ url_for('login')}}">Login</a>
         <a href="{{ url_for('prep')}}">Prep</a>
         <a href="{{ url_for('blog')}}">Blogs</a>
         <a href="{{ url_for('about')}}">About</a>
@@ -355,7 +380,13 @@ body {
     </div>
     <!-- <img src="../static/img/bg-snip.png" style="position: absolute; right: 0; top: 0; z-index: -1;" class="col-md-10 col-9 p-0 m-0"> -->
      <!-- Footer -->
-    <section id="footer">
+     <div class="alert fixed-bottom col-12 col-md-6 mx-auto float-right" id='cookieAlert'>
+      <span class="closebtn" onclick="this.parentElement.style.display='none'; setCookie('cookie','accepted','60');">&times;</span>
+      <p>Our site uses cookies to enhance your experice. By using our site you allow us to collect cookies. 
+      Read more in the privacy policy. <a href="{{ url_for('privacypolicy') }}"><u>Privacy Policy</u> </a>
+        </p>
+    </div>
+    <section id="footer" class="float-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-1 mt-sm-3">
@@ -390,6 +421,40 @@ body {
         document.getElementById('signup').style.display = 'none'
         document.getElementById('login').style.display = 'none'
     }
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      
+    }
+
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function checkCookie() {
+      var cookie = getCookie("cookie");
+      
+      if (cookie == "accepted") {
+        document.getElementById('cookieAlert').style.display = 'none';
+      } else {
+        document.getElementById('cookieAlert').style.display = 'block';
+      }
+    }
+
+    checkCookie()
 </script>
 
 </html>

@@ -1,0 +1,163 @@
+List of required tables and their content:
+
+
+#	|\  | |====| =====
+#	| \ | |    |   |	gonna use SQL
+#	|  \| |====|   |		
+
+
+MONGO DB BITCHES
+
+
+https://flask-pymongo.readthedocs.io/en/latest/
+
+=>		$ pip install Flask-PyMongo
+
+=>		from flask_pymongo import PyMongo
+		app = Flask(__name__)
+		app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
+		mongo = PyMongo(app)
+
+
+*update: 	I was successful in making a login system from mongo db and it works fine
+			It will take some time to get used to the new format but let's see how that turns out
+
+
+*new format:
+
+Cred Collection
+
+{
+	email: [email],
+	name : [name],
+	membership : [unpaid],
+	streak :{
+		startDate : [start date]
+		lastDate : [last date]
+	}
+}
+
+User Collection
+
+{
+	email : [email],
+	name : [name],
+	exam : [exam],
+	target-year : [year],
+	curve : [curve],
+	college : [college],
+	college_year : [college_year] 
+	plan : {
+		jan20{
+			week1 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+			week2 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+			.
+			.
+			week4 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+		},
+		feb20{
+			week1 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+			week2 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+			.
+			.
+			week4 : [[topic code1, status],[topic code2, status].....[topic coden, status]],
+		}
+	}
+}
+
+Topics Collection
+
+
+exam1[the code] : {
+	subject1[the code] :	{
+		['topic code', 'topic name','difficulty' ,'topic subject', 'topic sub subject'],
+		.
+		.
+
+	},
+	subject2[the code] :	{
+		['topic code', 'topic name', 'topic subject', 'topic sub subject'],
+		.
+		.
+		
+	}
+	.
+	.
+	.
+},
+exam2 : {
+	subject1 :	{
+		['topic code', 'topic name', 'topic subject', 'topic sub subject'],
+		.
+		.
+
+	},
+	subject2 :	{
+		['topic code', 'topic name', 'topic subject', 'topic sub subject'],
+		.
+		.
+		
+	}
+	.
+	.
+	.
+}
+
+
+
+IP collection
+
+{
+	ip : [ip address],
+	datetime : [date time]	
+}
+
+
+Motivation collection 
+
+{
+	'motivation' : "the motivatoin",
+	'author' : "the author of motivation",
+	'likes' : "number of likes"
+}
+
+1) Cred Table:
+	email,password,membership
+
+	sql>>create table cred ( email varchar(1000), password varchar(1000), membership varchar(10));
+	
+2) User table:
+	email,exam,target-year,learning-curve function,Pre completed topics,
+
+3) Topics Table:
+	table name ie. the exam
+	topic code, topic name, topic difficulty
+
+4) IP Table:  
+	ipaddress,datetime
+
+
+
+So as for the current discovery a database can store up to 2,147,483,647 (2.1 billion tables) given the memory Soooooooooooooooooooooo I have decided to do the forbidden
+
+I AM GOING TO CREATE INDIVIDUAL TABLES FOR EACH USER:
+ tablename : emailidfull without can special characters
+ 	col1: week number
+ 	col2: topic code
+ 	col3: topic status
+
+ basically I'll be changing the statuses column basically
+ Display the progress. Backlogs, pending and completed in charts
+
+
+
+
+#not using this any more
+ Online free database:
+Host: sql12.freesqldatabase.com
+Database name: sql12338969
+Database user: sql12338969
+Database password: NCtZqL2KY2
+Port number: 3306
+
+To view Database: http://www.phpmyadmin.co/index.php

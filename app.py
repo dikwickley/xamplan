@@ -249,11 +249,11 @@ def test():
 
 @app.route('/blog')
 def blog():
-	return "blogs comming soon"
+	return "<h1>blogs comming soon</h1>"
 
 @app.route('/prep')
 def prep():
-	return "prep comming soon"
+	return "<h1>prep comming soon</h1>"
 
 
 @app.route('/privacypolicy')
@@ -268,8 +268,8 @@ def about():
 def submit_feedback():
 	if request.method == 'POST':
 		data = dict(request.form)
-		print(data)	
-
+		x = mongo.db.feedback.insert_one(data)
+		print(x)
 		return "Feedback Submitted. Thank You."
 
 @app.route('/demo')

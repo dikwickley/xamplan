@@ -1,0 +1,17 @@
+The Code Rule for the Topics:
+
+1) First Character will be The Exam's  Initials Code (1 char)
+2) Then the Discpline's Code (2 char)
+3) The Subject Initials (2 char)
+4) Subtopic code initials (2 char) if no subtopic [00]
+5) topic Number (2 char)
+6) Difficulty Level (1 char {H,M,E})
+
+
+
+Config options
+
+1)select exam use {ajax to get the list for that exam}
+2)choose target year three years
+3)select learning curve
+4)advanced options (distributed subjectwise)

@@ -121,6 +121,20 @@ Motivation collection
 	'likes' : "number of likes"
 }
 
+Blog collection
+
+{
+	blog_id  : [timeblog is created],
+	blog_intro : [intro text],
+	blog_body : [body text],
+	blog_conc : [conc text],
+	blog_author : [author name],
+	published_time : [time]
+	upadte_time : [NULL by default, get's filled when it's updated]
+
+
+}
+
 1) Cred Table:
 	email,password,membership
 

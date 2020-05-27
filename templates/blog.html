@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Xam Plan | About Us</title>
-    <meta name="theme-color" content="#eb4146" />
-    <meta name="msapplication-navbutton-color" content="#eb4146" />
+	<title>Xam Plan | Blogs</title>
+	<meta name="theme-color" content="#eb4146" />
+	<meta name="msapplication-navbutton-color" content="#eb4146" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#eb4146" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style type="text/css" media="screen">
     @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -67,11 +66,10 @@
     /*border: 1px dashed green;*/
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #eb4146;
 }
 
 #logo img {
@@ -93,57 +91,66 @@ body {
 #nav-round-button:hover {
     color: white;
     background-color: #00CCB1;
-    
+    /*outline: 1px double #00CCB1;*/
 }
 
 #nav_button {
     background-color: #00CCB1;
     color: white;
     border-radius: 9999px;
-    border: none;
-    outline: none;
 
-}
-
-.nav_button {
-    background-color: #00CCB1;
-    color: white;
-    border-radius: 9999px;
-	border: none;
-    outline: none;
 }
 
 #xamplan {
     font-size: 5em;
-    color: #eb4146;
+    color: #ffffff;
 }
-.div_rounder {
-    border-radius: 24px;
+
+#xamplan_mobile {
+    font-size: 2em;
 }
-.xamplan_red{
-	background-color: #eb4146;
-}
-.xamplan_text_black{
-	color: #363b4D;
-}
-.xamplan_text_green{
-	color: #00CCB1;
-}
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-}
+#hard{
+		color: red;
+	}
+	#med{
+		color: orange;
+	}
+	#easy{
+		color: lightgreen;
+	}
+	#hard_topic{
+		background-color: rgba(253,0,0,0.3);
+		color: black;
+		margin: 5px;
+		padding: 5px;
+	}
+	#med_topic{
+		background-color: rgba(253,227,167,0.3);
+		color: black;
+		margin: 5px;
+		padding: 5px;
+	}
+	#easy_topic{
+		background-color: rgba(0,253,0,0.3);
+		color: black;
+		margin: 5px;
+		padding: 5px;
+	}
+	#make_account{
+		border-radius: 9999px;
+		background-color: #00CCB1;
+	}
 </style>
+
+
 
 <link rel="icon" href="./static/img/xamplan.ico">
 <link rel="stylesheet" href="./static/css/overlay.css">
 <script type="text/javascript" src="./static/js/overlay.js"></script>
 
 <body>
-    <div id="myNav" class="overlay">
+
+	 <div id="myNav" class="overlay">
 
       <!-- Button to close the overlay navigation -->
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -162,7 +169,7 @@ body {
     </div>
     <div class="row container-fluid mb-3 m-0 p-0" id="heading">
         <div class="col-3 p-0 p-md-3 col-md-2 container-fluid m-0" id="logo">
-            <img src="../static/img/red_logo_nobg.png" alt="Xam Plan Logo">
+            <img src="../static/img/white_logo_nobg.png" alt="Xam Plan Logo">
         </div>
         <div class="d-md-block d-none container-fluid col-9 col-md-10">
             <div class="container-fluid col-12 p-0 row m-0 " id="nav_name">
@@ -173,7 +180,7 @@ body {
                     <div class="container col-4 p-1">
                         <a href="{{ url_for('main')}}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             HOME
-                        </a>
+                        </a href="{{ url_for('main')}}">
                     </div>
                     <div class="container col-4 p-1">
                         <a href="{{ url_for('prep')}}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
@@ -197,73 +204,15 @@ body {
         </div>
     </div>
 
-    <div class="container p-3 xamplan_red text-white ">
+    <div class="container p-0">
 
-    	<h1> About Us</h1>
-
-    	<div  class="container-fluid row m-0 p-0">
-	
-	    	<div class="container-fluid p-2 col-md-6 col-12">
-	    		<div class="container-fluid   xamplan_text_green p-4 div_rounder">
-
-	    			<h3>Meet the Creators</h3><br>
-
-	    			<div class="container-fluid  p-1 xamplan_text_black font-weight-bold text-center">
-	    				<h4>Aniket Singh Rawat  [Founder]</h4>
-	    				<a target="_blank"  href="https://instagram.com/aniket.singh.rawat"><i class="text-white fa fa-instagram" aria-hidden="true"></i></a>
-	    				<a target="_blank" href="https://github.com/DiKwickley"><i class="text-white fa fa-github" aria-hidden="true"></i></a>
-	    				<a target="_blank" href="https://www.linkedin.com/in/aniket-singh-rawat-7537051a1/"><i class="text-white fa fa-linkedin" aria-hidden="true"></i></a>
-	    			</div>
-
-	    			<div class="container-fluid xamplan_text_black font-weight-bold text-center">
-	    				<h4>Dev Sharma  [Co-Founder]</h4>
-	    				<a target="_blank"  href="https://instagram.com/cryptus_neoxys"><i class="text-white fa fa-instagram" aria-hidden="true"></i></a>
-	    				<a target="_blank" href="https://github.com/cryptus-neoxys"><i class="text-white fa fa-github" aria-hidden="true"></i></a>
-	    				<a target="_blank" href="https://www.linkedin.com/in/dev-sharma-9970b4190/"><i class="text-white fa fa-linkedin" aria-hidden="true"></i></a>
-	    			</div>
-	    			
-	    		</div>
-	    	</div>
-
-	    	<div class="container-fluid p-2 col-md-6 col-12 ">
-	    		<div class="container-fluid xamplan_text_green   p-4 div_rounder">
-
-	    			<h3>About Xam Plan</h3>
-	    			<p class="text-white font-weight-bold">
-	    			Xam Plan was created in hopes of automating the process of creating plan that nearly every student does before starting the preparation of an exam.</p>
-	    			<p class="text-white font-weight-bold">
-	    				The created  plan is easy to follow and you can complete your course and you won't even reaslise.
-	    			</p>
-	    			</p>
-	    			<p class="text-white font-weight-bold">
-	    				This is a new start up so please support us. If you find any bugs please report them at the feed back form. Your suggestions are valuable to us 😄.
-	    			</p>
-
-	    		</div>	
-	    	</div>
-
-	    	<div class="container-fluid p-2 col-12">
-
-	    		<div class="container  div_rounder xamplan_text_black p-4">
-					<h3 class="xamplan_text_green">Feedback Form</h3>
-
-					<div class="mx-auto form-group row font-weight-bold xamplan_text_black">
-					  	<label for="comment">Feedback:</label>
-						<textarea class="form-control my-2 col-12" rows="5" id="feedback" placeholder="Your feedback here"></textarea>
-						<label for="email">Email:</label>
-						<input type="email" class="form-control my-2 col-12" name="email" id="email" placeholder="Your email">
-						<input type="button" class="font-weight-bold my-4 px-4 py-1 nav_button" id="feedback_submit" value="Submit Feedback" onclick="submitFeedback()"> 
-					</div>
-	    		</div>
-	    		
-	    	</div>
-
-	    </div>
-
+    	<h1 class="text-white font-weight-bold">Blogs coming soon...</h1>
+    	
     </div>
+		
 
-    <!-- Footer -->
-    <section id="footer" class="float-bottom">
+	<!-- Footer -->
+    <section id="footer" class="fixed-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-1 mt-sm-3">
@@ -287,27 +236,5 @@ body {
         </div>
     </section>
     <!-- ./Footer -->
-
 </body>
-<script type="text/javascript">
-
-	function submitFeedback(){
-		var feedbackData = {
-			feedback : document.getElementById('feedback').value,
-			email : document.getElementById('email').value
-		}
-
-		$.ajax({
-			url: '/submit_feedback',
-			data : feedbackData,
-			method : 'post',
-			success(response){
-				alert(response)
-                document.getElementById('feedback').value= ''
-                document.getElementById('email').value = ''
-			}
-		});
-	}
-
-</script>
 </html>

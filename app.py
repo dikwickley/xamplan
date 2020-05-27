@@ -247,13 +247,18 @@ app.permanent_session_lifetime = timedelta(days = 28)
 def test():
 	return render_template('privacypolicy.html')
 
+
+@app.route('/blogadmin')
+def blogadmin():
+	return render_template('blogadmin.html')
+
 @app.route('/blog')
 def blog():
-	return "<h1>blogs comming soon</h1>"
+	return render_template('blog.html')
 
 @app.route('/prep')
 def prep():
-	return "<h1>prep comming soon</h1>"
+	return render_template('prep.html')
 
 
 @app.route('/privacypolicy')

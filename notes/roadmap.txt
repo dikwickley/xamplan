@@ -45,6 +45,8 @@ things to complete before release:
 	3) About Page 												[done]
 	4) Data of all the exams
 
+****IMPORTANT****
+ability to change the type of any subject/Topic
 
 
 Phase 3:

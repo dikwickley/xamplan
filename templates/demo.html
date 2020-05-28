@@ -112,27 +112,30 @@ body {
 }
 #hard{
 		color: red;
+		
 	}
 	#med{
 		color: orange;
+		
 	}
 	#easy{
 		color: lightgreen;
+		
 	}
 	#hard_topic{
-		background-color: rgba(253,0,0,0.3);
+		background-color: rgba(0,0,0,0.1);
 		color: black;
 		margin: 5px;
 		padding: 5px;
 	}
 	#med_topic{
-		background-color: rgba(253,227,167,0.3);
+		background-color: rgba(0,0,0,0.1);
 		color: black;
 		margin: 5px;
 		padding: 5px;
 	}
 	#easy_topic{
-		background-color: rgba(0,253,0,0.3);
+		background-color: rgba(0,0,0,0.1);
 		color: black;
 		margin: 5px;
 		padding: 5px;
@@ -327,7 +330,7 @@ body {
                     <ul class="list-unstyled list-inline social text-center">
                         <li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
                         <li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href=""><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="https://instagram.com/xamplan"><i class="fa fa-instagram"></i></a></li>
                         <li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
                         <li class="list-inline-item"><a href="" target="_blank"><i class="fa fa-envelope"></i></a></li>
                     </ul>
@@ -472,7 +475,7 @@ body {
 				// console.log("medium: ",data.plan[id][weeks[w]][1])	//medium
 				// console.log("easy: ",data.plan[id][weeks[w]][2])	//easy
 
-				var hard_div = '<div id="hard"><h2 style="color: black;">' + titleCase(weeks[w]) +'</h2><h3>Hard Topic</h3>'
+				var hard_div = '<div id="hard"><h2 style="color: black;">' + titleCase(weeks[w]) +'</h2>'
 				for(var x=0;x<data.plan[id][weeks[w]][0].length;x++){
 
 
@@ -495,7 +498,7 @@ body {
 				hard_div += '</div>'
 
 
-				var med_div = '<div id="med"><h3>Medium Topic</h3>'
+				var med_div = '<div id="med">'
 				for(var x=0;x<data.plan[id][weeks[w]][1].length;x++){
 					
 					topic = '<div id="med_topic">'
@@ -514,7 +517,7 @@ body {
 				}
 				med_div += '</div>'
 
-				var easy_div = '<div id="easy"><h3>Easy Topic</h3>'
+				var easy_div = '<div id="easy">'
 				for(var x=0;x<data.plan[id][weeks[w]][2].length;x++){
 
 					topic = '<div id="easy_topic">'

@@ -54,18 +54,23 @@ def pretty(d, indent=0):
 
 def getStreak(email):
 	data = mongo.db.cred.find_one({'email' : email})
+	print(data['streak'])
 	currentStreak = data['streak'][0]
 	start_date = date(int(data['streak'][0]['start_date'][0]), int(data['streak'][0]['start_date'][1]), int(data['streak'][0]['start_date'][2]))
 	last_date = date(int(data['streak'][0]['last_date'][0]), int(data['streak'][0]['last_date'][1]), int(data['streak'][0]['last_date'][2]))
 	today_date = date.today()
+	print('Start Date: ', start_date)
+	print('last_date: ', last_date)
+	print('today: ', today_date)
 	if (today_date - last_date).days > 1:
 		currentStreak['start_date'] = [today_date.year,today_date.month,today_date.day]
 		currentStreak['last_date'] = [today_date.year,today_date.month,today_date.day]
 		print('Current Streak: ', currentStreak)
-		mongo.db.cred.update({'email':email},{'$set':{'streak':[currentStreak]}})
+		mongo.db.cred.update_one({'email':email},{'$set':{'streak':[currentStreak]}})
 		return 0
 	else:
 		currentStreak['last_date'] = [today_date.year,today_date.month,today_date.day]
+		mongo.db.cred.update_one({'email':email},{'$set':{'streak':[currentStreak]}})
 		return (today_date -  start_date).days
 	
 
@@ -245,7 +250,8 @@ app.permanent_session_lifetime = timedelta(days = 28)
 
 @app.route('/test')
 def test():
-	return render_template('privacypolicy.html')
+	print(getStreak('sprx077@gmail.com'))
+	return "this is test"
 
 
 @app.route('/blogadmin')
@@ -562,6 +568,27 @@ def delete_account():
 		else:
 			print('password error')
 			return "Incorrect Password"
+
+
+#ERROR HANDLING
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('Error.html'), 404
+
+@app.errorhandler(403)
+def page_forbidden(e):
+    return render_template('Error.html'), 403
+
+@app.errorhandler(410)
+def page_gone(e):
+    return render_template('Error.html'), 410
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('Error.html'), 500
+
+
 
 
 if __name__ == "__main__":

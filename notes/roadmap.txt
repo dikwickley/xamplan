@@ -34,16 +34,30 @@ Phase 2:
 
 Step1: Make Privacy policy and terms of users 					[done]
 Step2: Get copyright and Trademark								[won't be doing the c and tm]		
-Step3: Get OAuth												[]					
-Step4: SEO*****													[]		dev
-Step5: Add the blog functionality and hire a content writer		[]
+Step3: Get OAuth												[not right now]					
+Step4: SEO*****													[]		furkan
+Step5: Add the blog functionality and hire a content writer		[will do later]
 
 
 things to complete before release:
 	1) Demo Page 												[done]
 	2) footer and link all profiles								[done]
 	3) About Page 												[done]
-	4) Data of all the exams
+	4) Data of all the exams									[done except for jee and neet]
+
+
+%%%%%%%%%*************RELEASE TILL SATURDAY 30th******************%%%%%%%%
+	SEO 
+	Script for sorting									[done]
+	Uploading Syllabus									[converted to csv]
+	Fix Streak Logic									[done]
+	Error page 											[done]
+	Improve Website text/paragrph						
+	Affiliate links [Prep page, only for main exams]	[after some user base is formed]
+
+
+
+
 
 ****IMPORTANT****
 ability to change the type of any subject/Topic

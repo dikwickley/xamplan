@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html  style="height: 100%;">
 <head>
-	<title>Xam Plan | Blogs</title>
+	<title>Xam Plan | Something Went Wrong</title>
 	<meta name="theme-color" content="#eb4146" />
-	<meta name="msapplication-navbutton-color" content="#eb4146" />
+    <meta name="msapplication-navbutton-color" content="#eb4146" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#eb4146" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -109,46 +109,23 @@ body {
 #xamplan_mobile {
     font-size: 2em;
 }
-#hard{
-		color: red;
-	}
-	#med{
-		color: orange;
-	}
-	#easy{
-		color: lightgreen;
-	}
-	#hard_topic{
-		background-color: rgba(253,0,0,0.3);
-		color: black;
-		margin: 5px;
-		padding: 5px;
-	}
-	#med_topic{
-		background-color: rgba(253,227,167,0.3);
-		color: black;
-		margin: 5px;
-		padding: 5px;
-	}
-	#easy_topic{
-		background-color: rgba(0,253,0,0.3);
-		color: black;
-		margin: 5px;
-		padding: 5px;
-	}
-	#make_account{
-		border-radius: 9999px;
-		background-color: #00CCB1;
-	}
+.xamplan_red{
+	background-color: #eb4146;
+}
+.xamplan_text_black{
+	color: #363b4D;
+}
+.xamplan_text_green{
+	color: #00CCB1;
+}
 </style>
-
-
 
 <link rel="icon" href="./static/img/xamplan.ico">
 <link rel="stylesheet" href="./static/css/overlay.css">
 <script type="text/javascript" src="./static/js/overlay.js"></script>
 
-<body>
+
+<body style="height: 100%;">
 
 	 <div id="myNav" class="overlay">
 
@@ -180,7 +157,7 @@ body {
                     <div class="container col-4 p-1">
                         <a href="{{ url_for('main')}}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
                             HOME
-                        </a href="{{ url_for('main')}}">
+                        </a>
                     </div>
                     <div class="container col-4 p-1">
                         <a href="{{ url_for('prep')}}" class="btn  px-md-4 py-1 font-weight-bold" id="nav_button">
@@ -204,15 +181,18 @@ body {
         </div>
     </div>
 
-    <div class="container p-0">
+	<div class="container h-75 font-weight-bold text-white text-center">
 
-    	<h1 class="text-white font-weight-bold">Blogs coming soon...</h1>
-    	
-    </div>
+		<h1>Something went wrong</h1>
+
+		<p>Sorry for inconvinence, we will try to fix this error soon. Please leave us a message in the <a href="{{ url_for('about')}}" class="xamplan_text_black"> Feedback Form</a>.</p>
 		
+	</div>
 
-	<!-- Footer -->
-    <section id="footer">
+
+
+     <!-- Footer -->
+    <section id="footer" class="float-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-1 mt-sm-3">
@@ -236,5 +216,6 @@ body {
         </div>
     </section>
     <!-- ./Footer -->
+
 </body>
 </html>

@@ -47,7 +47,7 @@ things to complete before release:
 
 
 %%%%%%%%%*************RELEASE TILL SATURDAY 30th******************%%%%%%%%
-	SEO 
+	SEO 												[done]
 	Script for sorting									[done]
 	Uploading Syllabus									[converted to csv]
 	Fix Streak Logic									[done]

@@ -1,14 +1,29 @@
 #this is the algorithm to have an increasing or decreasing density
 
+
+
+def algo(w,t):
+    if(w < t):
+        week_list = [int(w/t)]*w
+    else:
+        week_list = [0]*w
+    return week_list
+
 def getDistribution(weeks,topics):
+    orignal_topics = topics
+    hard_week = algo(weeks,topics)
     wm = weeks
+    topics -= sum(hard_week)
+    #print("hard_week", hard_week)
     h = topics 
     H = h
-    hard_week = [0]*wm
+    
+    
     
     end = wm
-    total = 0
+    total = sum(hard_week)
     while h > 0:
+        #print(hard_week)
         if(h%2!=0 and h!=1):
             h += 1
         h = round(h/2)
@@ -31,11 +46,23 @@ def getDistribution(weeks,topics):
            
         total += h
 
+
+    if orignal_topics > sum(hard_week):
+        hard_week[0] += orignal_topics - sum(hard_week)
+    else:
+        hard_week[0] -= sum(hard_week) - orignal_topics
+
+    print("total weeks: ", wm)
+    print("total topics: ",orignal_topics)
+    print("distributed topics: ", sum(hard_week))
+    return hard_week
+    '''
     while sum(hard_week) < H:
         for x in range(wm):
             if sum(hard_week) > H:
                 break
             hard_week[x] += 1
+
             
     if(sum(hard_week) > H):
         hard_week[0] -= (sum(hard_week) - H)
@@ -46,11 +73,13 @@ def getDistribution(weeks,topics):
     print("total topics: ",H)
     print("distributed topics: ", sum(hard_week))
     return hard_week
+    '''
 
 
-#print(getDistribution(weeks=100,topics=50))
+
+
         
-
+#print(getDistribution(weeks=25,topics=200))
 
     
     

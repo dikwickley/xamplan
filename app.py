@@ -37,6 +37,14 @@ def nonlinear_curve(number_of_weeks, number_of_topics):
 	nonlinear_distribution = distribution_half1
 	return nonlinear_distribution
 
+def linear_curve(number_of_weeks, number_of_topics):
+	topics_half1 = int(number_of_topics/2)
+	topics_half2 =  number_of_topics - topics_half1
+
+	a = increasing_curve(number_of_weeks, topics_half1)
+	b = decreasing_curve(number_of_weeks, topics_half2)
+	
+	return [a[i]+b[i] for i in range(len(a))]
 
 #------------------------------------Algorithm Funcitons Ends
 
@@ -250,7 +258,7 @@ app.permanent_session_lifetime = timedelta(days = 28)
 
 @app.route('/test')
 def test():
-	print(getStreak('sprx077@gmail.com'))
+	print(linear_curve(100,210))
 	return "this is test"
 
 

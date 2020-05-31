@@ -536,7 +536,10 @@ def account():
 		email = session['login']
 		session.pop('login', None)
 		data = (mongo.db.user.find_one({"email": email}))
-		del data['_id']		#can't be sent in the json object, and it was not required anyway
+		if data != None:
+			del data['_id']		#can't be sent in the json object, and it was not required anyway
+		else:
+			return redirect(url_for('main'))
 		
 		#sending current month
 		today = date.today()

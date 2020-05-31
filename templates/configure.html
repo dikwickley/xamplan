@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Xam Plan | Configure</title>
 </head>
 <style type="text/css" media="screen">
@@ -152,6 +153,37 @@ label {
     outline: none;
     font-size: 2em;
 }
+#demo{
+    color:#363B4D;
+    font-size: 1.25em;
+}
+.description_text{
+    color: #363B4D;
+}
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #363b4D; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
 </style>
 <script type="text/javascript">
     
@@ -160,7 +192,7 @@ label {
     console.log(email)
 
     var stream = {
-        gate : [['GCS', 'GATE-CS (Computer Science & IT Engineering)'], ['GME', 'GATE-ME (Mechanical Engineering)'], ['GCE', 'GATE-CE (Civil Engineering)' ], ['GEC', 'GATE-EC (Electronics & Communication Engineering)'], ['GEE', 'GATE-EE (Electrical Engineering)'], ['GPI', 'GATE-PI (Production & Industrial Engineering)'],['GAE', 'GATE-AE (Aerospace Engineering)']],
+        gate : [['GAE', 'GATE-AE (Aerospace Engineering)'], ['GAG','GATE-AG (Agricultural Engineering)'],['GAR','GATE-AR (Architecture and Planning)'],['GBM','GATE-BM (Biomedical Engineering)'],['GBT','GATE-BT (Biotechnology)'],['GCE','GATE-CE (Civil Engineering)'],['GCH','GATE-CH (Chemical Engineering)'],['GCS','GATE-CS (Computer Sc. and Information Technology)'],['GCY','GATE-CY (Chemistry)'],['GEC','GATE-EC (Electronics and Communication Engg.)'],['GEE','GATE-EE (Electrical Engineering)'],['GEY','GATE-EY (Ecology and Evolution)'],['GGG','GATE-GG (Geology and Geophysics)'],['GIN','GATE-IN (Instrumentation Engineering)'],['GMA','GATE-MA (Mathematics)'],['GME','GATE-ME (Mechanical Engineering)'],['GMN','GATE-MN (Mining Engineering)'],['GMT','GATE-MT (Metallurgical Engineering)'],['GPE','GATE-PE (Petroleum Engineering)'],['GPH','GATE-PH (Physics)'],['GPI','GATE-PI (Production and Industrial Engineering)'],['GST','GATE-ST (Statistics)'],['GTF','GATE-TF (Textile Engineering and Fibre Science)']],
         neet : [['NEET', 'National Eligblity cum Entrance Test']],
         jee : [['M', 'JEE Mains'], ['MA', 'JEE Mains + Advanced']],
         cat : [['CAT', 'Common Entrance and Aptitude Test']]
@@ -240,6 +272,50 @@ label {
         </div>
     </div>
     <div class="container-fluid row m-auto p-1 text-white">
+
+        <div id="id01" class="w3-modal text-dark">
+              <div class="w3-modal-content w3-animate-zoom w3-animate-opacity">
+                <div class="w3-container">
+                  <span onclick="document.getElementById('id01').style.display='none'"
+                  class="w3-button w3-display-topright p-4">close &times;</span>
+                  <br>
+                  <br>
+                  <h3 class="description_text font-weight-bold">What is an Effort Curve</h3>
+                  <p class="font-weight-bold">It is defined as the rate of a person's progress in gaining experience or new skills. Basically, the amount of effort you put into learning.</p>
+                  <p class="font-weight-bold">Your study plan will be made according to the study plan you choose</p>
+                  <p class="font-weight-bold">You can choose from <span style="color: #Eb4146">4</span> diffrent learning curves </p>
+                  <div class="row">
+                        <div class="col-12 col-md-6 ">
+                            <div class="container m-2">
+                                <img src="./static/img/decreasingcurve.png" class="col-12">
+                                <p class="text-center">Decreasing Effort</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 ">
+                            <div class="container m-2">
+                                <img src="./static/img/linearcurve.png" class="col-12">
+                                <p class="text-center">Valley Effort</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="container m-2">
+                                <img src="./static/img/increasingcurve.png" class="col-12">
+                                <p class="text-center">Increasing Effort</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="container m-2">
+                                <img src="./static/img/nonlinearcurve.png" class="col-12">
+                                <p class="text-center">Turtle Effort</p>
+                            </div>
+                        </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
         <form action="{{ url_for('handle_config') }}" method="post" class="container col-12 col-md-10 p-4" id="configure_form">
             <input type="email" name="email" id='email' style="display: none;"><br>
             <h3>Configure Your Xam Plan</h3>
@@ -307,9 +383,10 @@ label {
                                 <option value="nonlinear"> Turtle</option>
                                 <option value="increasing"> Increasing</option>
                                 <option value="decreasing"> Decreasing</option>
-                                <option value="linear" disabled="true"> Valey</option>
+                                <option value="linear"> Valley</option>
                                 
                             </select>
+                            <p class="font-weight-bold">You can learn more <a onclick="document.getElementById('id01').style.display='block'"  style="color: #eb4146; cursor: pointer;"> here</a>.</p>
                             
                         </div>
                     </div>
@@ -379,8 +456,8 @@ label {
                     for(key in syllabus[exam]){
                         $('#syllabus').append('<br><h4>' + syllabus[exam][key][0][3] + '</h4><br>')
                         for(x in syllabus[exam][key]){
-                            input = '<input type="checkbox" class"custom-control-input p-4 m-2" id="'+ syllabus[exam][key][x][0] + '" name="c_topic" value="'+ syllabus[exam][key][x][0] + '">'
-                            label = '<label class"m-3 p-3"  for="'+ syllabus[exam][key][x][0] + '">'+ syllabus[exam][key][x][1] + '</label><br><div id="topic_end"></div>'
+                            input = '<input type="checkbox" class"custom-control-input p-4 my-2" id="'+ syllabus[exam][key][x][0] + '" name="c_topic" value="'+ syllabus[exam][key][x][0] + '">'
+                            label = '<label class"m-3 p-3"  for="'+ syllabus[exam][key][x][0] + '">'+ "--" + syllabus[exam][key][x][1] + '</label><br><div id="topic_end"></div>'
                             $('#syllabus').append(input + label)
                         }
                         $('#syllabus').append('<br>')

@@ -144,6 +144,37 @@ body {
 		border-radius: 9999px;
 		background-color: #00CCB1;
 	}
+    #demo{
+    color:#363B4D;
+    font-size: 1.25em;
+    }
+    .description_text{
+        color: #363B4D;
+    }
+    /* The alert message box */
+    .alert {
+      padding: 20px;
+      background-color: #363b4D; /* Red */
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    /* The close button */
+    .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    /* When moving the mouse over the close button */
+    .closebtn:hover {
+      color: black;
+    }
 </style>
 
 
@@ -207,7 +238,7 @@ body {
         </div>
     </div>
 
-    <div class="container bg-white p-3 my-4">
+    <div class="container bg-white p-4 my-4">
 		<div class="text-right">
 			<a href="{{ url_for('create') }}" class="btn px-3 py-1 text-white font-weight-bold" id='make_account'> Make an Account!</a>	
 		</div>
@@ -215,6 +246,50 @@ body {
 
     	<h1>Demo</h1>
     	<p class="font-weight-bold" style="color: #363b4D"> This is demo version of the tool so that you can quickley view how a plan made by our algorithm will work. This of course is just the plan, make an account to configure the plan according to your needs and view it anytime you want, for free of course.</p>
+
+
+    	<div id="id01" class="w3-modal">
+              <div class="w3-modal-content w3-animate-zoom w3-animate-opacity">
+                <div class="w3-container">
+                  <span onclick="document.getElementById('id01').style.display='none'"
+                  class="w3-button w3-display-topright p-4">close &times;</span>
+                  <br>
+                  <br>
+                  <h3 class="description_text font-weight-bold">What is an Effort Curve</h3>
+                  <p class="font-weight-bold">It is defined as the rate of a person's progress in gaining experience or new skills. Basically, the amount of effort you put into learning.</p>
+                  <p class="font-weight-bold">Your study plan will be made according to the study plan you choose</p>
+                  <p class="font-weight-bold">You can choose from <span style="color: #Eb4146">4</span> diffrent learning curves </p>
+                  <div class="row">
+                        <div class="col-12 col-md-6 ">
+                            <div class="container m-2">
+                                <img src="./static/img/decreasingcurve.png" class="col-12">
+                                <p class="text-center">Decreasing Effort</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 ">
+                            <div class="container m-2">
+                                <img src="./static/img/linearcurve.png" class="col-12">
+                                <p class="text-center">Valley Effort</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="container m-2">
+                                <img src="./static/img/increasingcurve.png" class="col-12">
+                                <p class="text-center">Increasing Effort</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="container m-2">
+                                <img src="./static/img/nonlinearcurve.png" class="col-12">
+                                <p class="text-center">Turtle Effort</p>
+                            </div>
+                        </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
 
     	<h2> Choose Your Exam</h2>
             <div class="form-group container-fluid px-auto p-3">
@@ -254,11 +329,12 @@ body {
 				<div class="container-fluid p-2 col-12 col-md-4">
         			<label for="curve">Select Effort Curve</label>
 					<select name="curve" id='curve' class="form-control my-3">
-	        			<option value="nonlinear">Non Linear</option>
-	        			<option value="increasing">Increasing</option>
-	        			<option value="decreasing">Decreasing</option>
-	        			<option value="linear" disabled="true">Linear</option>
+	        			<option value="nonlinear"> Turtle</option>
+                        <option value="increasing"> Increasing</option>
+                        <option value="decreasing"> Decreasing</option>
+                        <option value="linear"> Valley</option>
 	        		</select>
+	        		<p class="font-weight-bold">You can learn more <a onclick="document.getElementById('id01').style.display='block'"  style="color: #eb4146; cursor: pointer;"> here</a>.</p>
 				</div>
 
         	</div>
@@ -430,7 +506,7 @@ body {
 
 <script type="text/javascript">
 	var stream = {
-        gate : [['GCS', 'GATE-CS (Computer Science & IT Engineering)'], ['GME', 'GATE-ME (Mechanical Engineering)'], ['GCE', 'GATE-CE (Civil Engineering)' ], ['GEC', 'GATE-EC (Electronics & Communication Engineering)'], ['GEE', 'GATE-EE (Electrical Engineering)'], ['GPI', 'GATE-PI (Production & Industrial Engineering)'],['GAE', 'GATE-AE (Aerospace Engineering)']],
+        gate : [['GAE', 'GATE-AE (Aerospace Engineering)'], ['GAG','GATE-AG (Agricultural Engineering)'],['GAR','GATE-AR (Architecture and Planning)'],['GBM','GATE-BM (Biomedical Engineering)'],['GBT','GATE-BT (Biotechnology)'],['GCE','GATE-CE (Civil Engineering)'],['GCH','GATE-CH (Chemical Engineering)'],['GCS','GATE-CS (Computer Sc. and Information Technology)'],['GCY','GATE-CY (Chemistry)'],['GEC','GATE-EC (Electronics and Communication Engg.)'],['GEE','GATE-EE (Electrical Engineering)'],['GEY','GATE-EY (Ecology and Evolution)'],['GGG','GATE-GG (Geology and Geophysics)'],['GIN','GATE-IN (Instrumentation Engineering)'],['GMA','GATE-MA (Mathematics)'],['GME','GATE-ME (Mechanical Engineering)'],['GMN','GATE-MN (Mining Engineering)'],['GMT','GATE-MT (Metallurgical Engineering)'],['GPE','GATE-PE (Petroleum Engineering)'],['GPH','GATE-PH (Physics)'],['GPI','GATE-PI (Production and Industrial Engineering)'],['GST','GATE-ST (Statistics)'],['GTF','GATE-TF (Textile Engineering and Fibre Science)']],
         neet : [['NEET', 'National Eligblity cum Entrance Test']],
         jee : [['M', 'JEE Mains'], ['MA', 'JEE Mains + Advanced']],
         cat : [['CAT', 'Common Entrance and Aptitude Test']]
